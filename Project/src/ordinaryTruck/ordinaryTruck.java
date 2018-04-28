@@ -22,12 +22,12 @@ public class ordinaryTruck {
 	
 	// Test 3: add item to truck
 	@Before @Test
-	public void addItemToOrdinaryTruckTest() {
+	public void addItemTest() {
 		String itemName = "Coffee";
 		int costPrice = 3;
 		int quantity = 300;
 		
-		addItemToOrdinaryTruck(itemName, costPrice, quantity);
+		ordinaryTruck.addItem(itemName, costPrice, quantity);
 	}
 	
 	// Test 4: get hash map where item and cost are stored
@@ -39,7 +39,7 @@ public class ordinaryTruck {
 		int quantity = 300;
 		itemQuantityMap = ordinaryTruck.GetHashMap();
 		
-		assertEquals(quatity, itemQuantityMap("Coffee"));	
+		assertEquals(quatity, itemQuantityMap.get("Coffee"));	
 	}
 	
 	// Test 5: get the quantity of items held in the truck 
