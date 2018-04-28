@@ -34,12 +34,21 @@ public class refrigeratedTruckTest {
 		@Test
 		public void getTemperatureTest() {
 			int temperature = -20;
-			
 			assertEquals(temperature, refrigeratedTruck.getTemperature());
 		}
 		
+		//Test 5: check temperature range
+		@Test
+		public void tempRangeTest() {
+			int temperature = refrigeratedTruck.getTemperature();
+			
+			if((temperature <=-20) | (temperature >= 10)) {
+				fail("temperature not in range");
+			}
+		}
 		
-		// Test 5: get hash map where item and cost are stored
+		
+		// Test 6: get hash map where item and cost are stored
 		// note later we can implement in iterator to return each item in the map
 		// when writing to CSV thoughts? 
 		@Test
@@ -51,14 +60,14 @@ public class refrigeratedTruckTest {
 			assertEquals(quatity, itemQuantityMap.get("iceream"));	
 		}
 		
-		// Test 5: get the quantity of items held in the truck 
+		// Test 7: get the quantity of items held in the truck 
 		@Test
 		public void getTotalQuantityTest() {
 			int quantity = 300;
 			assertEquals(quatity, refrigeratedTruck.getTotalQuantity());
 		}
 				
-		// Test 6: check if quantity is greater than 800 
+		// Test 8: check if quantity is greater than 800 
 		@Test
 		public void getQuantityMaxTest() {
 			if( refrigeratedTruck.getTotalQuantity() > 800) {
@@ -66,13 +75,12 @@ public class refrigeratedTruckTest {
 			}
 		}
 			
-		// Test 7: get the total cost of the order including item cost
+		// Test 9: get the total cost of the order including item cost
 		@Test
 		public void getCostTest() {
-			double expectedCost = 3.00*300.00 + 900.00+0.7;
+			double expectedCost = 8880.266349;
 			assertEquals(quatity, refrigeratedTruck.getCostTest());
 		}
 		
-		// Need arraylist to be implemented to check if item requires refrigeration
 
 	}
