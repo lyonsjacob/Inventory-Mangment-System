@@ -1,0 +1,14 @@
+package ordinaryTruck;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ordinaryTruck {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
