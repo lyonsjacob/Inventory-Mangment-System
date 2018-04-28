@@ -2,12 +2,15 @@ package ordinaryTruck;
 
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Before;
 import org.junit.Test;
 
 
 public class ordinaryTruck {
-	
+	// im expecting this to be a bit buggy let me know how you go.
 	// Test 0: Declaring Item objects.
 	OrdinaryTruck ordinaryTruck;
 	
@@ -27,22 +30,34 @@ public class ordinaryTruck {
 		addItemToOrdinaryTruck(itemName, costPrice, quantity);
 	}
 	
-	// Test 4: get the quantity of items held in the truck 
+	// Test 4: get hash map where item and cost are stored
+	// note later we can implement in iterator to return each item in the map
+	// when writing to CSV thoughts? 
 	@Test
-	public void getQuantityTest() {
+	public void GetHashMapTest() {	
+		Map<String, Integer> itemQuantityMap;// = new HashMap<String, Integer>();
 		int quantity = 300;
-		assertEquals(quatity, ordinaryTruck.getQuantity());
+		itemQuantityMap = GetHashMap();
+		
+		assertEquals(quatity, itemQuantityMap("Coffee"));	
+	}
+	
+	// Test 5: get the quantity of items held in the truck 
+	@Test
+	public void getTotalQuantityTest() {
+		int quantity = 300;
+		assertEquals(quatity, ordinaryTruck.getTotalQuantity());
 	}
 			
-	// Test 5: check if quantity is greater than 1000 
+	// Test 6: check if quantity is greater than 1000 
 	@Test
 	public void getQuantityMaxTest() {
-		if( ordinaryTruck.getQuantity() > 1000) {
+		if( ordinaryTruck.getTotalQuantity() > 1000) {
 			fail("To many items in truck");
 		}
 	}
 		
-	// Test 6: get the total cost of the order including item cost
+	// Test 7: get the total cost of the order including item cost
 	@Test
 	public void getCostTest() {
 		double expectedCost = 3.00*300.00 + 750.00+0.25*300.00;
