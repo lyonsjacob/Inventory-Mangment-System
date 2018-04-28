@@ -42,7 +42,7 @@ public class refrigeratedTruckTest {
 		public void tempRangeTest() {
 			int temperature = refrigeratedTruck.getTemperature();
 			
-			if((temperature <=-20) | (temperature >= 10)) {
+			if((temperature <-20) | (temperature > 10)) {
 				fail("temperature not in range");
 			}
 		}
