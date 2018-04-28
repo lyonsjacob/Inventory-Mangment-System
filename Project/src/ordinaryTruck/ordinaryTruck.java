@@ -37,7 +37,7 @@ public class ordinaryTruck {
 	public void GetHashMapTest() {	
 		Map<String, Integer> itemQuantityMap;// = new HashMap<String, Integer>();
 		int quantity = 300;
-		itemQuantityMap = GetHashMap();
+		itemQuantityMap = ordinaryTruck.GetHashMap();
 		
 		assertEquals(quatity, itemQuantityMap("Coffee"));	
 	}
