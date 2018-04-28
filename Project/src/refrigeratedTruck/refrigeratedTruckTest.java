@@ -57,14 +57,14 @@ public class refrigeratedTruckTest {
 			int quantity = 300;
 			itemQuantityMap = refrigeratedTruck.GetHashMap();
 			
-			assertEquals(quatity, itemQuantityMap.get("iceream"));	
+			assertEquals(quantity, itemQuantityMap.get("iceream"));	
 		}
 		
 		// Test 7: get the quantity of items held in the truck 
 		@Test
 		public void getTotalQuantityTest() {
 			int quantity = 300;
-			assertEquals(quatity, refrigeratedTruck.getTotalQuantity());
+			assertEquals(quantity, refrigeratedTruck.getTotalQuantity());
 		}
 				
 		// Test 8: check if quantity is greater than 800 
@@ -79,7 +79,7 @@ public class refrigeratedTruckTest {
 		@Test
 		public void getCostTest() {
 			double expectedCost = 8880.266349;
-			assertEquals(quatity, refrigeratedTruck.getCostTest());
+			assertEquals(expectedCost, refrigeratedTruck.getCostTest());
 		}
 		
 

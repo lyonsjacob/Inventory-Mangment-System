@@ -39,20 +39,20 @@ public class ordinaryTruck {
 		int quantity = 300;
 		itemQuantityMap = ordinaryTruck.GetHashMap();
 		
-		assertEquals(quatity, itemQuantityMap.get("Coffee"));	
+		assertEquals(quantity, itemQuantityMap.get("Coffee"));	
 	}
 	
 	// Test 5: get the quantity of items held in the truck 
 	@Test
 	public void getTotalQuantityTest() {
 		int quantity = 300;
-		assertEquals(quatity, ordinaryTruck.getTotalQuantity());
+		assertEquals(quantity, ordinaryTruck.getTotalQuantity());
 	}
 			
 	// Test 6: check if quantity is greater than 1000 
 	@Test
 	public void getQuantityMaxTest() {
-		if( ordinaryTruck.getTotalQuantity() > 1000) {
+		if(ordinaryTruck.getTotalQuantity() > 1000) {
 			fail("To many items in truck");
 		}
 	}
@@ -61,7 +61,7 @@ public class ordinaryTruck {
 	@Test
 	public void getCostTest() {
 		double expectedCost = 3.00*300.00 + 750.00+0.25*300.00;
-		assertEquals(quatity, ordinaryTruck.getCostTest());
+		assertEquals(expectedCost, ordinaryTruck.getCostTest());
 	}
 	
 	// Need arraylist to be implemented to check if item requires refrigeration
