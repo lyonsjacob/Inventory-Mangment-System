@@ -18,10 +18,10 @@ import static org.junit.Assert.*;
  */
 public class StockTest {
 	
-	// Test 0: Declaring Stock object.
+	//Test 0: Declaring Stock object.
 	Stock stock;
 
-	// Test 1: Constructing an empty Stock object.
+	//Test 1: Constructing an empty Stock object.
 	@Before @Test
 	public void setUpStock() {
 		stock = new Stock();
@@ -33,10 +33,22 @@ public class StockTest {
 		Item testItem = new Item("Ice Cream", 3, 4, 300, 400, -20);
 		stock.add(testItem);
 		
-		int expectedCount = 1;
-		assertEquals(expectedCount, stock.getCount());
+		String expectedOutput = "Ice Cream, 3, 4, 300, 400, -20\n";
+		assertEquals(expectedOutput, stock.toString());
 	}
 	
-	//Test 3: 
-
+	//Test 3: Remove Item.
+	@Test
+	public void removeItem() {
+		Item testItem1 = new Item("Ice Cream", 3, 4, 300, 400, -20);
+		Item testItem2 = new Item("Milk", 3, 4, 100, 150, 3);
+		
+		stock.add(testItem1);
+		stock.add(testItem2);
+		stock.remove(testItem1);
+		
+		String expectedOutput = "Milk, 3, 4, 100, 150, 3\n";
+		assertEquals(expectedOutput, stock.toString());
+	}
+	
 }
