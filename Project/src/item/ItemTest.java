@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  * The following tests are for the basic functionality of
  * the item class.
  * 
- * @author mitchellwillemse
+ * @author Mitchell Willemse
  *
  */
 public class ItemTest {
@@ -56,7 +56,7 @@ public class ItemTest {
 	@Test
 	public void getReorderPoint() {
 		int expectedReorderPoint = 300;
-		assertEquals(expectedReorderPoint, item.getReorderPoint);
+		assertEquals(expectedReorderPoint, item.getReorderPoint());
 	}
 	
 	//Test 6: Get Reorder Amount
