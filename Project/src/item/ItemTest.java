@@ -22,11 +22,11 @@ public class ItemTest {
 	@Before @Test
 	public void setUpItem() {
 		String name = "Ice Cream";
-		double costPrice = 3;
-		double sellPrice = 4;
+		double costPrice = 3.0;
+		double sellPrice = 4.0;
 		int reorderPoint = 300;
 		int reorderAmount = 400;
-		double temperature = -20;
+		double temperature = -20.0;
 		
 		item = new Item(name, costPrice, sellPrice, reorderPoint, reorderAmount, temperature);
 	}
@@ -63,13 +63,23 @@ public class ItemTest {
 	@Test
 	public void getReorderAmount() {
 		int expectedReorderAmount = 400;
-		assertEquals(expectedReorderAmount, item.getReorderAmount);
+		assertEquals(expectedReorderAmount, item.getReorderAmount());
 	}
 	
 	//Test 7: Get Temperature
 	@Test
 	public void getTemperature() {
 		double expectedTemperature = -20;
-		assertEquals(expectedTemperature, item.getTemperature);
+		assertEquals(expectedTemperature, item.getTemperature());
+	}
+	
+	//Test 8: Item With No Temperature
+	//Not sure how we should best handle this. Do we have a new constructor, 
+	//implement optional parameters or just pass temperature as null if there
+	//is none?
+	@Test
+	public void testItemNoTemperature() {
+		item = new Item("Coffee", 2.0, 3.0, 200, 225, null);
+		assertNull(item.getTemperature());
 	}
 }
