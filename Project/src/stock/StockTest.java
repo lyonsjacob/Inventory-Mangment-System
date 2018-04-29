@@ -51,7 +51,7 @@ public class StockTest {
 	
 	//Test 4: Can't Add Same Item Twice.
 	@Test (expected = StockException.class)
-	public void duplicateItem() {
+	public void duplicateItem() throws StockException {
 		Item testItem = new Item("Ice Cream", 3, 4, 300, 400, -20);
 		stock.addItem(testItem, 0);
 		stock.addItem(testItem, 0);
@@ -59,7 +59,7 @@ public class StockTest {
 	
 	//Test 5: Can't Have Negative Quantity.
 	@Test (expected = StockException.class)
-	public void negativeQuantity() {
+	public void negativeQuantity() throws StockException {
 		Item testItem = new Item("Ice Cream", 3, 4, 300, 400, -20);
 		stock.addItem(testItem, 0);
 		stock.setQuantity(testItem, -5);
@@ -67,7 +67,7 @@ public class StockTest {
 	
 	//Test 6: Can't Set Quantity for Non-Existent Item.
 	@Test (expected = StockException.class) 
-	public void unkmownItem() {
+	public void unkmownItem() throws StockException {
 		Item testItem = new Item("Ice Cream", 3, 4, 300, 400, -20);
 		stock.setQuantity(testItem, 500);
 	}
