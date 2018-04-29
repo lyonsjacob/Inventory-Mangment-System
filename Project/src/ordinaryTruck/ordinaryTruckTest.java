@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class ordinaryTruck {
+public class ordinaryTruckTest {
 	// im expecting this to be a bit buggy let me know how you go.
 	// Test 0: Declaring Item objects.
 	OrdinaryTruck ordinaryTruck;
