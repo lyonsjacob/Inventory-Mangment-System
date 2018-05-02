@@ -82,7 +82,7 @@ public class refrigeratedTruckTest {
 		@Test
 		public void getCostTest() {
 			double expectedCost = 8880.266349;
-			assertEquals(expectedCost, refrigeratedTruck.getCostTest());
+			assertEquals(expectedCost, refrigeratedTruck.getCost());
 		}
 		
 

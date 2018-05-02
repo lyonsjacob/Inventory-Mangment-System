@@ -25,16 +25,30 @@ public class Manifest {
 
 		//Test 1: Constructing an empty Manifest object.
 		@Before @Test
-		public void Manifest() {
+		public void ManifestTest() {
 			manifest = new Manifest();
 		}
 		
 		//Test 2: Adding a truck to Manifest.
 		@Before @Test
 		public void addTruckTest() {
-			OrdinaryTruck = ordinaryTruck.addItem(itemName, costPrice, quantity);
 			
-			addTruckTest();
+			String itemName = "Coffee";
+			int costPrice = 3;
+			int quantity = 300;
+			OrdinaryTruck ordinaryTruck = new OrdinaryTruck();
+			ordinaryTruck.addItem(itemName, costPrice, quantity);
+			addTruck(ordinaryTruck);
+			
+			// will update the getTruck to iterator method in future.
+			assertEquals(ordinaryTruck, getTruck());
 		}
-
+		
+		//Test 3: Adding cost of truck to Manifest.
+		@Test
+		public void getManifestCostTest() {
+			double cost = ordinaryTruck.getCost();
+			assertEquals(cost, getManifestCost()); 	
+		}
+		
 }

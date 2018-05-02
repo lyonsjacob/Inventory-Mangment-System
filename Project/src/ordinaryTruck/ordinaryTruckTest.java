@@ -64,7 +64,7 @@ public class ordinaryTruckTest {
 	@Test
 	public void getCostTest() {
 		double expectedCost = 3.00*300.00 + 750.00+0.25*300.00;
-		assertEquals(expectedCost, ordinaryTruck.getCostTest());
+		assertEquals(expectedCost, ordinaryTruck.getCost());
 	}
 	
 	// Need arraylist to be implemented to check if item requires refrigeration
