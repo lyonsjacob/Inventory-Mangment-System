@@ -8,11 +8,19 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
+import manifest.Manifest;
+
 
 public class ordinaryTruckTest {
 	// im expecting this to be a bit buggy let me know how you go.
 	// Test 0: Declaring Item objects.
 	OrdinaryTruck ordinaryTruck;
+	
+	//Test 1: Constructing an empty ordinary truck object.
+	@Before @Test
+	public void Manifest() {
+		ordinaryTruck = new OrdinaryTruck();
+	}
 	
 	// Test 1: add item to truck, item and quantity in hash map.
 	//cost price added to a running cost total.

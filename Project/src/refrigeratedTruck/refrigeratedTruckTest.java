@@ -7,12 +7,19 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
+import ordinaryTruck.OrdinaryTruck;
+
 public class refrigeratedTruckTest {
 
 	// im expecting this to be a bit buggy let me know how you go.
-		// Test 1: Declaring Item objects.
+		// Test 0: Declaring Item objects.
 		RefrigeratedTruck refrigeratedTruck;
 
+		//Test 1: Constructing an empty refrigerated truck object.
+		@Before @Test
+		public void refrigeratedTruck() {
+			refrigeratedTruck = new RefrigeratedTruck();
+		}
 		
 		// Test 2: add item to truck, item and quantity in hash map.
 		//cost price added to a running cost total.

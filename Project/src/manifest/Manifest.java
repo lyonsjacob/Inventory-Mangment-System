@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import ordinaryTruck.OrdinaryTruck;
 import stock.Stock;
 
 /**
@@ -31,6 +32,8 @@ public class Manifest {
 		//Test 2: Adding a truck to Manifest.
 		@Before @Test
 		public void addTruckTest() {
+			OrdinaryTruck = ordinaryTruck.addItem(itemName, costPrice, quantity);
+			
 			addTruckTest();
 		}
 
