@@ -14,7 +14,8 @@ public class ordinaryTruckTest {
 	// Test 0: Declaring Item objects.
 	OrdinaryTruck ordinaryTruck;
 	
-	// Test 1: add item to truck
+	// Test 1: add item to truck, item and quantity in hash map.
+	//cost price added to a running cost total.
 	@Before @Test
 	public void addItemTest() {
 		String itemName = "Coffee";

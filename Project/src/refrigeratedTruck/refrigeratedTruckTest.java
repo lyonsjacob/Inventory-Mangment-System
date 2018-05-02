@@ -14,7 +14,8 @@ public class refrigeratedTruckTest {
 		RefrigeratedTruck refrigeratedTruck;
 
 		
-		// Test 2: add item to truck
+		// Test 2: add item to truck, item and quantity in hash map.
+		//cost price added to a running cost total.
 		@Before @Test
 		public void addItemToOrdinaryTruckTest() {
 			String itemName = "iceream";
