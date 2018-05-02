@@ -14,13 +14,7 @@ public class ordinaryTruckTest {
 	// Test 0: Declaring Item objects.
 	OrdinaryTruck ordinaryTruck;
 	
-	// Test 1: Constructing an empty Item object.
-	@Before @Test
-	public void setUpEmptyTruckTest() {
-		ordinaryTruck = new OrdinaryTruck();
-	}
-	
-	// Test 3: add item to truck
+	// Test 1: add item to truck
 	@Before @Test
 	public void addItemTest() {
 		String itemName = "Coffee";
@@ -30,7 +24,7 @@ public class ordinaryTruckTest {
 		ordinaryTruck.addItem(itemName, costPrice, quantity);
 	}
 	
-	// Test 4: get hash map where item and cost are stored
+	// Test 2: get hash map where item and cost are stored
 	// note later we can implement in iterator to return each item in the map
 	// when writing to CSV thoughts? 
 	@Test
@@ -42,14 +36,14 @@ public class ordinaryTruckTest {
 		assertEquals(quantity, itemQuantityMap.get("Coffee"));	
 	}
 	
-	// Test 5: get the quantity of items held in the truck 
+	// Test 3: get the quantity of items held in the truck 
 	@Test
 	public void getTotalQuantityTest() {
 		int quantity = 300;
 		assertEquals(quantity, ordinaryTruck.getTotalQuantity());
 	}
 			
-	// Test 6: check if quantity is greater than 1000 
+	// Test 4: check if quantity is greater than 1000 
 	@Test
 	public void getQuantityMaxTest() {
 		if(ordinaryTruck.getTotalQuantity() > 1000) {
@@ -57,7 +51,7 @@ public class ordinaryTruckTest {
 		}
 	}
 		
-	// Test 7: get the total cost of the order including item cost
+	// Test 5: get the total cost of the order including item cost
 	@Test
 	public void getCostTest() {
 		double expectedCost = 3.00*300.00 + 750.00+0.25*300.00;

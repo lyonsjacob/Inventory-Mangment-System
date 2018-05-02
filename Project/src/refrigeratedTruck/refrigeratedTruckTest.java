@@ -10,16 +10,11 @@ import org.junit.Test;
 public class refrigeratedTruckTest {
 
 	// im expecting this to be a bit buggy let me know how you go.
-		// Test 0: Declaring Item objects.
+		// Test 1: Declaring Item objects.
 		RefrigeratedTruck refrigeratedTruck;
+
 		
-		// Test 1: Constructing an empty Item object.
-		@Before @Test
-		public void setUpEmptyTruckTest() {
-			refrigeratedTruck = new RefrigeratedTruck();
-		}
-		
-		// Test 3: add item to truck
+		// Test 2: add item to truck
 		@Before @Test
 		public void addItemToOrdinaryTruckTest() {
 			String itemName = "iceream";
@@ -30,14 +25,14 @@ public class refrigeratedTruckTest {
 			refrigeratedTruck.addItem(itemName, costPrice, quantity, temperature);
 		}
 		
-		// Test 4: get truck temperature
+		// Test 3: get truck temperature
 		@Test
 		public void getTemperatureTest() {
 			int temperature = -20;
 			assertEquals(temperature, refrigeratedTruck.getTemperature());
 		}
 		
-		//Test 5: check temperature range
+		//Test 4: check temperature range
 		@Test
 		public void tempRangeTest() {
 			int temperature = refrigeratedTruck.getTemperature();
@@ -48,7 +43,7 @@ public class refrigeratedTruckTest {
 		}
 		
 		
-		// Test 6: get hash map where item and cost are stored
+		// Test 5: get hash map where item and cost are stored
 		// note later we can implement in iterator to return each item in the map
 		// when writing to CSV thoughts? 
 		@Test
@@ -60,14 +55,14 @@ public class refrigeratedTruckTest {
 			assertEquals(quantity, itemQuantityMap.get("iceream"));	
 		}
 		
-		// Test 7: get the quantity of items held in the truck 
+		// Test 6: get the quantity of items held in the truck 
 		@Test
 		public void getTotalQuantityTest() {
 			int quantity = 300;
 			assertEquals(quantity, refrigeratedTruck.getTotalQuantity());
 		}
 				
-		// Test 8: check if quantity is greater than 800 
+		// Test 7: check if quantity is greater than 800 
 		@Test
 		public void getQuantityMaxTest() {
 			if( refrigeratedTruck.getTotalQuantity() > 800) {
@@ -75,7 +70,7 @@ public class refrigeratedTruckTest {
 			}
 		}
 			
-		// Test 9: get the total cost of the order including item cost
+		// Test 8: get the total cost of the order including item cost
 		@Test
 		public void getCostTest() {
 			double expectedCost = 8880.266349;
