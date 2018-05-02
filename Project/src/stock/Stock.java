@@ -14,9 +14,15 @@ public class Stock {
 	
 	private ArrayList<Item> storeStock;
 
+	/**
+	 * Initilises an empty array list
+	 */
 	public Stock() {
 		storeStock = new ArrayList<Item>();
 	}
 	
-	public void addItem() {
+	
+	public void addItem(Item) {
+		
+	}
 }
