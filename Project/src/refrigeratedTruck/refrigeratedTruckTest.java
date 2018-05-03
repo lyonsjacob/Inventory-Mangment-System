@@ -40,14 +40,6 @@ public class refrigeratedTruckTest {
 			refrigeratedTruck.addItem(itemName, quantity);
 				}
 	    
-	    
-	    @Test
-		public void addWarmItemToRefrigeratedTruckTest() {
-			String itemName = "bread";
-			int quantity = 300;
-			int temperature = -20;	
-			refrigeratedTruck.addItem(itemName, quantity);
-				}
 		
 		// Test 3: get truck temperature
 		@Test
@@ -68,8 +60,6 @@ public class refrigeratedTruckTest {
 		
 		
 		// Test 5: get hash map where item and cost are stored
-		// note later we can implement in iterator to return each item in the map
-		// when writing to CSV thoughts? 
 		@Test
 		public void GetHashMapTest() {	
 			Map<String, Integer> itemQuantityMap;// = new HashMap<String, Integer>();

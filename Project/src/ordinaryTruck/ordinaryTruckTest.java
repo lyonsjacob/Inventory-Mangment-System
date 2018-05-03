@@ -34,8 +34,6 @@ public class ordinaryTruckTest {
 	}
 	
 	// Test 2: get hash map where item and cost are stored
-	// note later we can implement in iterator to return each item in the map
-	// when writing to CSV thoughts? 
 	@Test
 	public void GetHashMapTest() {	
 		Map<String, Integer> itemQuantityMap;// = new HashMap<String, Integer>();
