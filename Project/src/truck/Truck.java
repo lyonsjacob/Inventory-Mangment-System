@@ -1,32 +1,19 @@
 package truck;
 
+import java.util.Map;
+
+import item.Item;
+
 /**
- * An abstract class for a "truck" that holds quantity of items
- * and has a total price. Both refrigerated and ordinary truck inherit
- * from this class.  
- * 
- * @author Mitchell Willemse
+ * Truck Interface class to build OrdinaryTruck and RefigeratedTruck.
+ * @author Mitchell Willemse (n9470620).
  *
  */
-public abstract class Truck {
+public interface Truck {
 	
-	private int quantity;
-	private double cost;
-	
-	/**
-	 * Returns the quantity of items on the truck.
-	 * @return The quantity of items.
-	 */
-	public int getTotalQuantity() {
-		return this.quantity;
-	}
-	
-	/**
-	 * Returns the total cost of the truck.
-	 * @return The cost.
-	 */
-	public double getCostTest() {
-		return this.cost;
-	}
+	public double getCost();
+	public void addItem(Item item, int Quantity);
+	public int getTotalQuantity();
+	public Map<Item, Integer> getHashMap();
 
 }
