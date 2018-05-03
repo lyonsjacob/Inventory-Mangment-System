@@ -25,7 +25,6 @@ public class refrigeratedTruckTest {
 		@Before @Test
 		public void addItemToOrdinaryTruckTest() {
 			String itemName = "iceream";
-			int costPrice = 3;
 			int quantity = 300;
 			int temperature = -20;
 			
@@ -102,5 +101,11 @@ public class refrigeratedTruckTest {
 			assertEquals(itemString, refrigeratedTruck.toString());
 		}
 		
+		// Test 3: get truck cost
+		@Test
+		public void getcostTest() {
+			double cost = 900 + 200.00*Math.pow(0.70,-20.00/5.00);	
+			assertEquals(cost, refrigeratedTruck.getcost());
+		}
 
 	}

@@ -59,6 +59,22 @@ public class ordinaryTruckTest {
 			fail("To many items in truck");
 		}
 	}
+	
+	// Test 5: get string 
+	public void toStringTest() {
+		
+		ordinaryTruck.addItem("milk", 100);
+		String itemString = ">Ordinary Truck \n Coffee, 300 \n milk, 100";
+		assertEquals(itemString, ordinaryTruck.toString());
+	}
+	
+	// Test 4: check if quantity is greater than 1000 
+	@Test
+	public void getCostTest() {
+	 double cost = 750 + 0.25*300;
+	 assertEquals(cost, ordinaryTruck.getCost());
+	}
+	
 
 	
 	// Need arraylist to be implemented to check if item requires refrigeration
