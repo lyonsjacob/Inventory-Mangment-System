@@ -16,21 +16,21 @@ public class ordinaryTruckTest {
 	// Test 0: Declaring Item objects.
 	OrdinaryTruck ordinaryTruck;
 	
-	//Test 1: Constructing an empty ordinary truck object.
+	//Test 0: Constructing an empty ordinary truck object.
 	@Before @Test
 	public void Manifest() {
 		ordinaryTruck = new OrdinaryTruck();
 	}
 	
 	// Test 1: add item to truck, item and quantity in hash map.
-	//cost price added to a running cost total.
+	//cost price
 	@Before @Test
 	public void addItemTest() {
 		String itemName = "Coffee";
 		int costPrice = 3;
 		int quantity = 300;
 		
-		ordinaryTruck.addItem(itemName, costPrice, quantity);
+		ordinaryTruck.addItem(itemName, quantity);
 	}
 	
 	// Test 2: get hash map where item and cost are stored
@@ -59,13 +59,7 @@ public class ordinaryTruckTest {
 			fail("To many items in truck");
 		}
 	}
-		
-	// Test 5: get the total cost of the order including item cost
-	@Test
-	public void getCostTest() {
-		double expectedCost = 3.00*300.00 + 750.00+0.25*300.00;
-		assertEquals(expectedCost, ordinaryTruck.getCost());
-	}
+
 	
 	// Need arraylist to be implemented to check if item requires refrigeration
 

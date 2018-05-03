@@ -30,7 +30,7 @@ public class refrigeratedTruckTest {
 			int quantity = 300;
 			int temperature = -20;
 			
-			refrigeratedTruck.addItem(itemName, costPrice, quantity, temperature);
+			refrigeratedTruck.addItem(itemName, quantity, temperature);
 		}
 		
 		// Test 3: get truck temperature
@@ -76,13 +76,6 @@ public class refrigeratedTruckTest {
 			if( refrigeratedTruck.getTotalQuantity() > 800) {
 				fail("To many items in truck");
 			}
-		}
-			
-		// Test 8: get the total cost of the order including item cost
-		@Test
-		public void getCostTest() {
-			double expectedCost = 8880.266349;
-			assertEquals(expectedCost, refrigeratedTruck.getCost());
 		}
 		
 
