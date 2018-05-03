@@ -10,7 +10,7 @@ import item.Item;
  * @author Jacob Lyons N9507175
  *
  */
-public class Stock {
+public class Stock  {
 	
 	private ArrayList<Item> storeStock;
 

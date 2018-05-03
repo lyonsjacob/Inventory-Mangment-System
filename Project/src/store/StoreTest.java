@@ -34,6 +34,7 @@ public class StoreTest {
 		Store s1 = Store.getInstance();
 		Store s2 = Store.getInstance();
 		
+		
 		assertEquals("Both Store Objects are Same", s1, s2);
 	}
 	
@@ -43,7 +44,7 @@ public class StoreTest {
 		//Initial Capital is $100,000 as per spec sheet.
 		double expectedinitialCapital = 100000.00;
 		
-		assertEquals(expectedinitialCapital, store.getCapital());
+		assertSame(expectedinitialCapital, store.getCapital());
 	}
 	
 	//Test 4: Set Capital.
@@ -54,7 +55,7 @@ public class StoreTest {
 		store.setCapital(capital);
 		double expectedCapital = 99700.01;
 		
-		assertEquals(expectedCapital, store.getCapital());
+		assertSame(expectedCapital, store.getCapital());
 	}
 	
 	//Test 5: Test Empty Name.
@@ -79,8 +80,8 @@ public class StoreTest {
 		Stock inventory = store.getInventory();
 		
 		//Create Test Item to Add to inventory.
-		Item testItem = new Item("Ice Cream", 3, 4, 300, 400, -20);
-		inventory.addItem(testItem, 400);
+		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
+		inventory.addItem(testItem);
 		
 		//Set This Back to the Store's Inventory.
 		store.setInventory(inventory);
