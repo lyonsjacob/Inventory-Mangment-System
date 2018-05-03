@@ -22,7 +22,6 @@ public class refrigeratedTruckTest {
 		}
 		
 		// Test 2: add item to truck, item and quantity in hash map.
-		//cost price added to a running cost total.
 		@Before @Test
 		public void addItemToOrdinaryTruckTest() {
 			String itemName = "iceream";
@@ -32,6 +31,24 @@ public class refrigeratedTruckTest {
 			
 			refrigeratedTruck.addItem(itemName, quantity, temperature);
 		}
+		
+		// Test 2: add warm item to truck, item and quantity in hash map.
+	    @Test
+		public void addWarmItemToRefrigeratedTruckTest() {
+			String itemName = "bread";
+			int quantity = 300;
+			int temperature = -20;	
+			refrigeratedTruck.addItem(itemName, quantity);
+				}
+	    
+	    
+	    @Test
+		public void addWarmItemToRefrigeratedTruckTest() {
+			String itemName = "bread";
+			int quantity = 300;
+			int temperature = -20;	
+			refrigeratedTruck.addItem(itemName, quantity);
+				}
 		
 		// Test 3: get truck temperature
 		@Test
@@ -76,6 +93,13 @@ public class refrigeratedTruckTest {
 			if( refrigeratedTruck.getTotalQuantity() > 800) {
 				fail("To many items in truck");
 			}
+		}
+		
+		public void toStringTest() {
+			
+			refrigeratedTruck.addItem("milk", 100);
+			String itemString = ">Ordinary Truck \n icecream, 300 \n milk, 100";
+			assertEquals(itemString, refrigeratedTruck.toString());
 		}
 		
 
