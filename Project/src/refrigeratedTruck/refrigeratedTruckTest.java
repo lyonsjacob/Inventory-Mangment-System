@@ -24,6 +24,11 @@ public class refrigeratedTruckTest {
 		// Test 2: add item to truck, item and quantity in hash map.
 		@Before @Test
 		public void addItemToOrdinaryTruckTest() {
+			//Had to add this sorry or would be getting null exceptions. Junit tests aren't actually
+			//run in any particular order, so this would actually run before Test1 and cause a null
+			//exception as refrigeratedTruck wasn't initialized.
+			refrigeratedTruck = new RefrigeratedTruck(); 
+			
 			String itemName = "iceream";
 			int quantity = 300;
 			int temperature = -20;
