@@ -36,7 +36,7 @@ public class StockTest {
 	public void addItem() {
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		stock.put(testItem);
-		assertEquals(0, stock.getAmount(testItem));
+		assertEquals(0, stock.get(testItem));
 	}
 	
 	//Test 3: Set Quantity.
@@ -47,7 +47,7 @@ public class StockTest {
 		int newQuantity = 700;
 		stock.setAmount(testItem, newQuantity);
 		
-		assertEquals(newQuantity, stock.getAmount(testItem));
+		assertEquals(newQuantity, stock.get(testItem));
 	}
 	
 	//Test 4: Can't Add Same Item Twice.

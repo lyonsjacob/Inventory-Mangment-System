@@ -72,7 +72,7 @@ public class ItemTest {
 	//Test 6: Needs Reorder
 	@Test
 	public void needsReorder() {
-		assertEquals(false, item.isBelowReorderPoint());
+		assertEquals(true, item.isBelowReorderPoint());
 	}
 	
 	//Test 7: Get Name.
@@ -129,7 +129,7 @@ public class ItemTest {
 	@Test
 	public void testToString() {
 		item = new Item(0, "Milk", 3, 4, 100, 150, 3);
-		String expectedOutput = "0, Milk, 3, 4, 100, 150, 3\n";
+		String expectedOutput = "0, Milk, 3.0, 4.0, 100, 150, 3\n";
 		
 		assertEquals(expectedOutput, item.toString());
 	}
@@ -138,7 +138,7 @@ public class ItemTest {
 	@Test
 	public void testToStringNoTemperature() {
 		item = new Item(0, "Coffee", 2, 3, 200, 225);
-		String expectedOutput = "0, Coffee, 2, 3, 200, 225\n";
+		String expectedOutput = "0, Coffee, 2.0, 3.0, 200, 225\n";
 		
 		assertEquals(expectedOutput, item.toString());
 	}
