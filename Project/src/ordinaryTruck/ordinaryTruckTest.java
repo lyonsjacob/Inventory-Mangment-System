@@ -8,7 +8,7 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import manifest.Manifest;
+import manifest.ManifestTest;
 
 
 public class ordinaryTruckTest {

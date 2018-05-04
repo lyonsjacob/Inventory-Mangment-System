@@ -18,7 +18,7 @@ import stock.Stock;
  * @author Jacob Lyons
  *
  */
-public class Manifest {
+public class ManifestTest {
 	
 		//Declaring Manifest object.
 		Manifest manifest;
