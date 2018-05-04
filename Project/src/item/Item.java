@@ -1,5 +1,7 @@
 package item;
 
+import exceptions.StockException;
+
 /**
  * The class constructs an item witch stores the items name 
  * cost price, sale price, reorder point and reorder amount. 
@@ -8,32 +10,62 @@ package item;
 
 public class Item {
 	
+	private int amount;
 	private String name;
-	private int costPrice; // double?
-	private int salePrice; // double?
+	private double costPrice; 
+	private double salePrice;
 	private int reorderPoint;
 	private int reorderAmount;
-	private int temperature;
+	private Integer temperature;
+	
+	
+	
 	
 	/**
 	 * This is a constructor of the item class
-	 * @param name			-name of item 
+	 * 
+	 * @param amount
+	 * @param name			-name of item
 	 * @param costPrice		-cost price of item
 	 * @param salePrice		-sale price of item
 	 * @param reorderPoint	-quantity when item requires re-stocking 
-	 * @param reorderAmount	- order quantity
+	 * @param reorderAmount	-order quantity
 	 */
-	public Item(String name, int costPrice, int salePrice, int reorderPoint, int reorderAmount, int temperature) {
+	public Item(int amount, String name, double costPrice, double salePrice, int reorderPoint, int reorderAmount, int temperature) {
 		this.name = name;
-		this.costPrice = costPrice; // double?
-		this.salePrice = salePrice; // double?
+		this.costPrice = costPrice;
+		this.salePrice = salePrice; 
 		this.reorderAmount = reorderAmount;
 		this.reorderPoint = reorderPoint;
 		this.temperature = temperature;
+		this.amount = amount;
 	}
 	
 	/**
-	 * This method retuns the name of the item
+	 * This is a second constructor witch does not include temperature 
+	 * 
+	 * @param amount
+	 * @param name			-Name of item
+	 * @param costPrice2		-Cost price of item
+	 * @param sellPrice		-Sale price of item
+	 * @param reorderPoint	-Quantity when item requires re-stocking 
+	 * @param reorderAmount	-Order quantity
+	 * @param temperature 	-Item temperature
+	 */
+	public Item(int amount, String name, double costPrice2, double sellPrice, int reorderPoint, int reorderAmount) {
+		this.name = name;
+		this.costPrice = costPrice2; 
+		this.salePrice = sellPrice; 
+		this.reorderAmount = reorderAmount;
+		this.reorderPoint = reorderPoint;
+		
+		this.amount = amount;
+	}
+	
+	
+	
+	/**
+	 * This method returns the name of the item
 	 * @return Name of the item.
 	 */
 	public String getName() {
@@ -44,7 +76,7 @@ public class Item {
 	 * This method gets the cost of the item
 	 * @return Cost of item in dollars.
 	 */
-	public int getCostPrice() {
+	public double getCostPrice() {
 		return this.costPrice;
 	}
 	
@@ -52,7 +84,7 @@ public class Item {
 	 * Gets the sale price of item
 	 * @return Sale price of item in dollars.
 	 */
-	public int getSellPrice() {
+	public double getSellPrice() {
 		return this.salePrice;
 	}
 	
@@ -76,16 +108,56 @@ public class Item {
 	 * Gets item temperature 
 	 * @return Item temperature.
 	 */
-	public int getTemperature() {
+	public Integer getTemperature() {
+		if(temperature == null) {
+			return null;
+		}
 		return this.temperature;
 	}
 	
 	
+	/**
+	 * Returns a string of the items properties
+	 * @return String of the items properties
+	 */
 	public String toString() {
+		if(temperature == null) {
+			String outPutString = amount+", "+ name+", "+ costPrice+", "+ salePrice+", "
+					+ ", "+ reorderPoint+", "+ reorderAmount+"\n";
+			return outPutString;
+		}
 		
-		String outPutString = this.name+", "+ this.costPrice+", "+ this.salePrice+", "
-				+ ", "+ this.reorderPoint+", "+ this.reorderAmount+", "+this.temperature+"\n";
+		String outPutString = amount+", "+name+", "+ costPrice+", "+ salePrice+", "
+				+ ", "+ reorderPoint+", "+ reorderAmount+", "+temperature+"\n";
 		return outPutString;
+	}
+
+	/**
+	 * Gets the number of items in stock
+	 * @return int- quantity of this item in stock
+	 */
+	public int getAmount() {
+		return this.amount;
+	}
+
+	/**
+	 * The method sets the quantity of the items in stock
+	 * @param int amount -the quantity of the items in stock
+	 */
+	public void setAmount(int amount)throws StockException{
+		
+		if(amount < 0){
+			throw new StockException("Can't Set Negative Amount");
+		}
+		this.amount = amount;
+	}
+
+	
+	public boolean isBelowReorderPoint() {
+		if(this.amount < this.reorderAmount) {
+			return true;
+		}
+		return false;
 	}
 	
 	

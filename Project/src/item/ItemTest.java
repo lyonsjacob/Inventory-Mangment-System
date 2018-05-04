@@ -113,7 +113,7 @@ public class ItemTest {
 	//Test 12: Get Temperature.
 	@Test
 	public void getTemperature() {
-		int expectedTemperature = -20;
+		Integer expectedTemperature = -20;
 		assertEquals(expectedTemperature, item.getTemperature());
 	}
 	
