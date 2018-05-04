@@ -56,7 +56,7 @@ public class ItemTest {
 	
 	//Test 4: Set Amount
 	@Test
-	public void setAmount() {
+	public void setAmount() throws StockException {
 		int newAmount = 400;
 		item.setAmount(400);
 		
@@ -65,7 +65,7 @@ public class ItemTest {
 	
 	//Test 5: Can't Set Negative Amount
 	@Test (expected = StockException.class) 
-	public void setNegativeAmount() {
+	public void setNegativeAmount() throws StockException {
 		item.setAmount(-5);
 	}
 	
@@ -86,14 +86,14 @@ public class ItemTest {
 	@Test
 	public void getCostPrice() {
 		int expectedCostPrice = 3;
-		assertEquals(expectedCostPrice, item.getCostPrice());
+		assertEquals(expectedCostPrice, item.getCostPrice(), 1);
 	}
 	
 	//Test 9: Get Sell Price.
 	@Test
 	public void getSellPrice() {
 		int expectedSellPrice = 4;
-		assertEquals(expectedSellPrice, item.getSellPrice());
+		assertEquals(expectedSellPrice, item.getSellPrice(), 1);
 	}
 	
 	//Test 10: Get Reorder Point.
@@ -137,7 +137,7 @@ public class ItemTest {
 	//Test 14: Test To String with No Temperature.
 	@Test
 	public void testToStringNoTemperature() {
-		item = new Item(0, "Coffee", 2, 3, 200, 225, null);
+		item = new Item(0, "Coffee", 2, 3, 200, 225);
 		String expectedOutput = "0, Coffee, 2, 3, 200, 225\n";
 		
 		assertEquals(expectedOutput, item.toString());
