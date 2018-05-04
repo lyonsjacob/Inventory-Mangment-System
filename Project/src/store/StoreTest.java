@@ -84,7 +84,7 @@ public class StoreTest {
 		
 		//Create Test Item to Add to inventory.
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
-		inventory.addItem(testItem);
+		inventory.put(testItem);
 		
 		//Set This Back to the Store's Inventory.
 		store.setInventory(inventory);

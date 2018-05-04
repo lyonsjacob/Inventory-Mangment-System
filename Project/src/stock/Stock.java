@@ -21,8 +21,34 @@ public class Stock  {
 		storeStock = new ArrayList<Item>();
 	}
 	
-	
-	public void addItem(Item) {
-		
+	public int getStockQuantity() {
+		return storeStock.size();
 	}
+	
+	/**
+	 * Puts an item in the storeStock collection
+	 * @param item
+	 */
+	public void put(Item item) {
+		storeStock.add(item);	
+	}
+
+	/**
+	 * Gets item object using name as key.
+	 * @param string itemName - item name
+	 * @return Item 
+	 */
+	public Item get(String itemName) {
+		for(int i = 0; i < storeStock.size(); i++) {
+			if(storeStock.get(i).getName() == itemName) {
+				return storeStock.get(i);
+			}
+		}
+		return null;
+	}
+
+
+
+	
+
 }

@@ -15,8 +15,8 @@ public class Store {
 	
 	private static Store storeInstance;
 	private double capital;
-	private String name;
-	private Stock stock;
+	private String name = "Store";
+	private static Stock stock;
 	
 	private Store() {
 		capital = 100000.00;
@@ -29,6 +29,7 @@ public class Store {
     public static Store getInstance() {
         if (null == storeInstance) {
         	storeInstance = new Store();
+        	stock = new Stock();
         }
         return storeInstance;
     }
@@ -62,7 +63,7 @@ public class Store {
 	 * @return String- Store name
 	 */
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	/**
@@ -70,7 +71,7 @@ public class Store {
 	 * @return Stock- Store inventory
 	 */
 	public Stock getInventory() {
-		return this.stock;
+		return stock;
 	}
 
 	/**
@@ -78,9 +79,19 @@ public class Store {
 	 * @param Stock- Store inventory
 	 */
 	public void setInventory(Stock inventory) {
-		this.stock = inventory;
+		stock = inventory;
 		
 	}
+
+	/**
+	 * Gets the number of items in stock 
+	 * 
+	 * @return int -number of items in stock
+	 */
+	public int getAmount() {
+		return stock.getStockQuantity();
+	}
+	
     
     
 }

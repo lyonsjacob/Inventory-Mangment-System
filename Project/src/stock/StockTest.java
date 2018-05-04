@@ -36,7 +36,6 @@ public class StockTest {
 	public void addItem() {
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		stock.put(testItem);
-
 		assertEquals(0, stock.getQuantity(testItem));
 	}
 	
