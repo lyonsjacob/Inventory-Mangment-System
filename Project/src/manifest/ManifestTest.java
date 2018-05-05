@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import ordinaryTruck.OrdinaryTruck;
 import stock.Stock;
+import truck.Truck;
 
 /**
  * The following tests are for the basic functionality of

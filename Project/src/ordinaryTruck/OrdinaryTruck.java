@@ -1,5 +1,6 @@
 package ordinaryTruck;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import truck.Truck;
@@ -14,6 +15,11 @@ public class OrdinaryTruck extends Truck {
 	private Map<String, Integer> cargo;
 	private int cargoQuantity;
 	private double cost;
+	
+	public OrdinaryTruck() {
+		cargo = new HashMap<String, Integer>();
+		cargoQuantity = 0;
+	}
 	
 	@Override
 	public void addItem(String itemName, int amount) {
