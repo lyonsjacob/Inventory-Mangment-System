@@ -44,15 +44,17 @@ public class ordinaryTruckTest {
 		assertEquals(quantity, ordinaryTruck.getTotalQuantity());
 	}
 			
-	// Test 4: check if quantity is greater than 1000 
+	// Test 4: check if quantity is greater than 1000 or less than 0
 	@Test
 	public void getQuantityMaxTest() {
-		if(ordinaryTruck.getTotalQuantity() > 1000) {
+		int truckQuantity = ordinaryTruck.getTotalQuantity();
+		if( (truckQuantity > 1000)| (truckQuantity < 0)) {
 			fail("To many items in truck");
 		}
 	}
 	
 	// Test 5: get string 
+	@Test
 	public void toStringTest() {
 		
 		ordinaryTruck.addItem("milk", 100);

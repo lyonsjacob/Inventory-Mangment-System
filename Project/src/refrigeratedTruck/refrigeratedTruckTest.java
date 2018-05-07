@@ -20,7 +20,7 @@ public class refrigeratedTruckTest {
 	public void addItemToOrdinaryTruckTest() {
 		refrigeratedTruck = new RefrigeratedTruck(); 
 			
-		String itemName = "iceream";
+		String itemName = "icecream";
 		int quantity = 300;
 		int temperature = -20;	
 		refrigeratedTruck.addItem(itemName, quantity, temperature);
@@ -60,7 +60,7 @@ public class refrigeratedTruckTest {
 		int quantity = 300;
 		itemQuantityMap = refrigeratedTruck.GetHashMap();
 			
-		assertEquals(quantity, itemQuantityMap.get("iceream"));	
+		assertEquals(quantity, itemQuantityMap.get("icecream"));	
 	}
 		
 	// Test 6: get the quantity of items held in the truck 
@@ -77,7 +77,9 @@ public class refrigeratedTruckTest {
 			fail("To many items in truck");
 		}
 	}
-		
+	
+	// Test 8: print item list string
+	@Test
 	public void toStringTest() {
 			
 		refrigeratedTruck.addItem("milk", 100);
@@ -85,11 +87,13 @@ public class refrigeratedTruckTest {
 		assertEquals(itemString, refrigeratedTruck.toString());
 	}
 		
-	// Test 8: get truck cost
+	// Test 9: get truck cost
 	@Test
 	public void getcostTest() {
 		double cost = 900 + 200.00*Math.pow(0.70,-20.00/5.00);	
 		assertEquals(cost, refrigeratedTruck.getcost(),0.01);
 	}
+	
+	
 
-	}
+}
