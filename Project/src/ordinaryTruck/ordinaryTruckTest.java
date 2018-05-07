@@ -12,22 +12,16 @@ import manifest.ManifestTest;
 
 
 public class ordinaryTruckTest {
-	// im expecting this to be a bit buggy let me know how you go.
 	// Test 0: Declaring Item objects.
 	OrdinaryTruck ordinaryTruck;
-	
-	//Test 0: Constructing an empty ordinary truck object.
-	@Before @Test
-	public void Manifest() {
-		ordinaryTruck = new OrdinaryTruck();
-	}
+
 	
 	// Test 1: add item to truck, item and quantity in hash map.
 	//cost price
 	@Before @Test
 	public void addItemTest() {
+		ordinaryTruck = new OrdinaryTruck();
 		String itemName = "Coffee";
-		int costPrice = 3;
 		int quantity = 300;
 		
 		ordinaryTruck.addItem(itemName, quantity);
@@ -70,7 +64,7 @@ public class ordinaryTruckTest {
 	@Test
 	public void getCostTest() {
 	 double cost = 750 + 0.25*300;
-	 assertEquals(cost, ordinaryTruck.getCost());
+	 assertEquals(cost, ordinaryTruck.getCost(),0.01);
 	}
 	
 

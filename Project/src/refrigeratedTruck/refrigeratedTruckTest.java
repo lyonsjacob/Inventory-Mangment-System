@@ -11,96 +11,85 @@ import ordinaryTruck.OrdinaryTruck;
 
 public class refrigeratedTruckTest {
 
-	// im expecting this to be a bit buggy let me know how you go.
-		// Test 0: Declaring Item objects.
-		RefrigeratedTruck refrigeratedTruck;
 
-		//Test 1: Constructing an empty refrigerated truck object.
-		@Before @Test
-		public void refrigeratedTruck() {
-			refrigeratedTruck = new RefrigeratedTruck();
-		}
+	// Test 0: Declaring Item objects.
+	RefrigeratedTruck refrigeratedTruck;
 		
-		// Test 2: add item to truck, item and quantity in hash map.
-		@Before @Test
-		public void addItemToOrdinaryTruckTest() {
-			//Had to add this sorry or would be getting null exceptions. Junit tests aren't actually
-			//run in any particular order, so this would actually run before Test1 and cause a null
-			//exception as refrigeratedTruck wasn't initialized.
-			refrigeratedTruck = new RefrigeratedTruck(); 
+	// Test 1: add item to truck, item and quantity in hash map.
+	@Before @Test
+	public void addItemToOrdinaryTruckTest() {
+		refrigeratedTruck = new RefrigeratedTruck(); 
 			
-			String itemName = "iceream";
-			int quantity = 300;
-			int temperature = -20;
-			
-			refrigeratedTruck.addItem(itemName, quantity, temperature);
-		}
+		String itemName = "iceream";
+		int quantity = 300;
+		int temperature = -20;	
+		refrigeratedTruck.addItem(itemName, quantity, temperature);
+	}
 		
-		// Test 2: add warm item to truck, item and quantity in hash map.
-	    @Test
-		public void addWarmItemToRefrigeratedTruckTest() {
-			String itemName = "bread";
-			int quantity = 300;
-			int temperature = -20;	
-			refrigeratedTruck.addItem(itemName, quantity);
-				}
+	// Test 2: add warm item to truck, item and quantity in hash map.
+	@Test
+	public void addWarmItemToRefrigeratedTruckTest() {
+		String itemName = "bread";
+		int quantity = 300;
+		refrigeratedTruck.addItem(itemName, quantity);
+	}
 	    
 		
-		// Test 3: get truck temperature
-		@Test
-		public void getTemperatureTest() {
-			int temperature = -20;
-			assertEquals(temperature, refrigeratedTruck.getTemperature());
-		}
+	// Test 3: get truck temperature
+	@Test
+	public void getTemperatureTest() {
+		int temperature = -20;
+		assertEquals(temperature, refrigeratedTruck.getTemperature());
+	}
 		
-		//Test 4: check temperature range
-		@Test
-		public void tempRangeTest() {
-			int temperature = refrigeratedTruck.getTemperature();
+	//Test 4: check temperature range
+	@Test
+	public void tempRangeTest() {
+		int temperature = refrigeratedTruck.getTemperature();
 			
-			if((temperature <-20) | (temperature > 10)) {
-				fail("temperature not in range");
-			}
+		if((temperature <-20) | (temperature > 10)) {
+			fail("temperature not in range");
 		}
+	}
 		
 		
-		// Test 5: get hash map where item and cost are stored
-		@Test
-		public void GetHashMapTest() {	
-			Map<String, Integer> itemQuantityMap;// = new HashMap<String, Integer>();
-			int quantity = 300;
-			itemQuantityMap = refrigeratedTruck.GetHashMap();
+	// Test 5: get hash map where item and cost are stored
+	@Test
+	public void GetHashMapTest() {	
+		Map<String, Integer> itemQuantityMap;// = new HashMap<String, Integer>();
+		int quantity = 300;
+		itemQuantityMap = refrigeratedTruck.GetHashMap();
 			
-			assertEquals(quantity, itemQuantityMap.get("iceream"));	
-		}
+		assertEquals(quantity, itemQuantityMap.get("iceream"));	
+	}
 		
-		// Test 6: get the quantity of items held in the truck 
-		@Test
-		public void getTotalQuantityTest() {
-			int quantity = 300;
-			assertEquals(quantity, refrigeratedTruck.getTotalQuantity());
-		}
+	// Test 6: get the quantity of items held in the truck 
+	@Test
+	public void getTotalQuantityTest() {
+		int quantity = 300;
+		assertEquals(quantity, refrigeratedTruck.getTotalQuantity());
+	}
 				
-		// Test 7: check if quantity is greater than 800 
-		@Test
-		public void getQuantityMaxTest() {
-			if( refrigeratedTruck.getTotalQuantity() > 800) {
-				fail("To many items in truck");
-			}
+	// Test 7: check if quantity is greater than 800 
+	@Test
+	public void getQuantityMaxTest() {
+		if( refrigeratedTruck.getTotalQuantity() > 800) {
+			fail("To many items in truck");
 		}
+	}
 		
-		public void toStringTest() {
+	public void toStringTest() {
 			
-			refrigeratedTruck.addItem("milk", 100);
-			String itemString = ">Ordinary Truck \n icecream, 300 \n milk, 100";
-			assertEquals(itemString, refrigeratedTruck.toString());
-		}
+		refrigeratedTruck.addItem("milk", 100);
+		String itemString = ">Ordinary Truck \n icecream, 300 \n milk, 100";
+		assertEquals(itemString, refrigeratedTruck.toString());
+	}
 		
-		// Test 3: get truck cost
-		@Test
-		public void getcostTest() {
-			double cost = 900 + 200.00*Math.pow(0.70,-20.00/5.00);	
-			assertEquals(cost, refrigeratedTruck.getcost());
-		}
+	// Test 8: get truck cost
+	@Test
+	public void getcostTest() {
+		double cost = 900 + 200.00*Math.pow(0.70,-20.00/5.00);	
+		assertEquals(cost, refrigeratedTruck.getcost(),0.01);
+	}
 
 	}
