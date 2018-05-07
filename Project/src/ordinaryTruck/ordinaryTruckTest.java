@@ -62,7 +62,7 @@ public class ordinaryTruckTest {
 		assertEquals(itemString, ordinaryTruck.toString());
 	}
 	
-	// Test 4: check if quantity is greater than 1000 
+	// Test 4: get cost of truck
 	@Test
 	public void getCostTest() {
 	 double cost = 750 + 0.25*300;

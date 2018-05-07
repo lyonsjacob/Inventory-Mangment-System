@@ -70,10 +70,11 @@ public class refrigeratedTruckTest {
 		assertEquals(quantity, refrigeratedTruck.getTotalQuantity());
 	}
 				
-	// Test 7: check if quantity is greater than 800 
+	// Test 7: check if quantity is greater than 800 or less than 0
 	@Test
 	public void getQuantityMaxTest() {
-		if( refrigeratedTruck.getTotalQuantity() > 800) {
+		int truckQuantity = refrigeratedTruck.getTotalQuantity();
+		if((truckQuantity > 800)|(truckQuantity < 0)) {
 			fail("To many items in truck");
 		}
 	}
