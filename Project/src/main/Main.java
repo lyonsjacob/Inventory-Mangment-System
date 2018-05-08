@@ -4,7 +4,8 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * 
+ * The main class containing the code to create, setup and display the GUI and 
+ * begin the main loop. 
  * @author Mitchell Willemse & Jacob Lyons.
  *
  */
@@ -19,36 +20,42 @@ public class Main extends JFrame {
         super("CAB302 Inventory Manager");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
      
-        //Add Panel
+        //Add Panel.
         JPanel panel = new JPanel();
         
-        //Add Label
+        //Add Label.
         JLabel lblCapital = new JLabel("Capital: $100,000.00");
         
-        //Add Buttons
+        //Add Buttons.
         JButton btnLoadItem = new JButton("Load Items");
         JButton btnExportManifest = new JButton("Export Manifest");
         JButton btnLoadManifest = new JButton("Load Manifest");
         JButton btnLoadSales = new JButton("Load Sales Log");
         
-        //Add Table
+        //Add Action Listeners.
+        btnLoadItem.addActionListener(new LoadListener());
+        btnExportManifest.addActionListener(new ExportManifestListener());
+        btnLoadManifest.addActionListener(new LoadManifestListener());
+        btnLoadSales.addActionListener(new LoadSalesListener());
+        
+        //Add Table.
         String[] columnNames = {"Amount",
                 "Item",
                 "Cost Price",
                 "Sell Price",
                 "Reorder Point",
                 "Reorder Amount",
-                "Temperature"};
+                "Temperature"}; //Columns.
         
         Object[][] data = 
-        	{{"100","Milk","3.0","4.0","300","400","4"}};
+        	{{"100","Milk","3.0","4.0","300","400","4"}}; //Sample Data.
         
         JTable tblInventory = new JTable(data, columnNames);
         JScrollPane scrlPane = new JScrollPane();
         scrlPane.add(tblInventory);
         scrlPane.setViewportView(tblInventory);
         
-        //Add To Panel
+        //Add Components To Panel.
         panel.add(lblCapital);
         panel.add(btnLoadItem);
         panel.add(btnExportManifest);
@@ -56,7 +63,7 @@ public class Main extends JFrame {
         panel.add(btnLoadSales);
         panel.add(scrlPane).setPreferredSize(new Dimension(680,400));
         
-        //Add Panel to Window
+        //Add Panel to Window.
         getContentPane().add(panel);
         
         //Display the window. 
@@ -67,6 +74,8 @@ public class Main extends JFrame {
         setVisible(true); 
 	}
 
+	
+	
 	/**
 	 * The entry point of the program, where the program control starts and ends.
 	 * @param args The command-line arguments.
@@ -75,5 +84,5 @@ public class Main extends JFrame {
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		new Main();
 	}
-
+	
 }
