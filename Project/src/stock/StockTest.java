@@ -1,4 +1,4 @@
-package stock;
+ package stock;
 
 import item.Item;
 import exceptions.StockException;
@@ -67,7 +67,7 @@ public class StockTest {
 		stock.put(testItem);
 		
 		int newQuantity = 700;
-		stock.setQuantity("Ice Cream" newQuantity);
+		stock.setQuantity("Ice Cream", newQuantity);
 		
 		assertEquals(newQuantity, stock.getQuantity("Ice Cream"));
 	}

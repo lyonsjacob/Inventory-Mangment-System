@@ -1,7 +1,9 @@
 package stock;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
+import exceptions.StockException;
 import item.Item;
 
 /**
@@ -10,7 +12,7 @@ import item.Item;
  * @author Jacob Lyons N9507175
  *
  */
-public class Stock  {
+public class Stock implements Iterable<Item>  {
 	
 	private ArrayList<Item> storeStock;
 
@@ -28,8 +30,12 @@ public class Stock  {
 	/**
 	 * Puts an item in the storeStock collection
 	 * @param item
+	 * @exception throws exception if the same item is added twice.
 	 */
-	public void put(Item item) {
+	public void put(Item item)throws StockException {
+		if(storeStock.contains(item)) {
+			throw new StockException("Cannot add the same item twice");
+		}
 		storeStock.add(item);	
 	}
 
@@ -37,18 +43,64 @@ public class Stock  {
 	 * Gets item object using name as key.
 	 * @param string itemName - item name
 	 * @return Item 
+	 * @throws StockException when item is not in list.
 	 */
-	public Item get(String itemName) {
+	public Item get(String itemName)throws StockException {
 		for(int i = 0; i < storeStock.size(); i++) {
 			if(storeStock.get(i).getName() == itemName) {
 				return storeStock.get(i);
 			}
 		}
-		return null;
+		
+		throw new StockException("Item is not in list");
+	}
+	
+	
+	/**
+	 * This class sets the quantity of the item
+	 * 
+	 * @param itemName
+	 * @param quantity
+	 * @throws StockException
+	 */
+	public void setQuantity(String itemName, int quantity) throws StockException {
+		get(itemName).setAmount(quantity);
+	}
+	
+	/**
+	 * This class gets the quantity of the item.
+	 * 
+	 * @param itemName
+	 * @param quantity
+	 * @throws StockException
+	 */
+	public int getQuantity(String itemName) throws StockException{
+		return get(itemName).getAmount();
 	}
 
 
+	/**
+	 * This is an iterator for the stock collection.
+	 */
+	@Override
+	public Iterator<Item> iterator() {
+	    Iterator<Item> stockIterator = new Iterator<Item>() {
+	        private int currentIndex = 0;
 
+	        @Override
+	        public boolean hasNext() {
+	            return currentIndex < storeStock.size();
+	        }
+
+	        @Override
+	        public Item next() {
+	            return storeStock.get(currentIndex++);
+	        }
+
+	    };
+	    
+	    return stockIterator;
+	}
 	
 
 }
