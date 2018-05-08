@@ -2,9 +2,12 @@ package manifest;
 
 import static org.junit.Assert.*;
 
+import java.util.Iterator;
+
 import org.junit.Before;
 import org.junit.Test;
 
+import exceptions.DeliveryException;
 import ordinaryTruck.OrdinaryTruck;
 import stock.Stock;
 import truck.Truck;
@@ -24,32 +27,38 @@ public class ManifestTest {
 		//Declaring Manifest object.
 		Manifest manifest;
 
-		//Test 1: Constructing an empty Manifest object.
-		@Before @Test
-		public void ManifestTest() {
-			manifest = new Manifest();
-		}
 		
-		//Test 2: Adding a truck to Manifest.
-		@Before @Test
-		public void addTruckTest() {
-			
+		
+		//Adding a truck to Manifest.
+		@Before
+		public void addTruck() throws DeliveryException {
+			manifest = new Manifest();
 			String itemName = "Coffee";
-			int costPrice = 3;
 			int quantity = 300;
 			OrdinaryTruck ordinaryTruck = new OrdinaryTruck();
-			ordinaryTruck.addItem(itemName, costPrice, quantity);
-			addTruck(ordinaryTruck);
-			
-			// will update the getTruck to iterator method in future.
-			assertEquals(ordinaryTruck, getTruck());
+			ordinaryTruck.addItem(itemName, quantity);
+			manifest.addTruck(ordinaryTruck);
 		}
 		
-		//Test 3: Adding cost of truck to Manifest.
+		
+		
+		
+		/*Test: Iterator and if truck has been added to manifest.
+		 * by using the trucks convertToString method to get 
+		 * the details of the truck.
+		 */
 		@Test
-		public void getManifestCostTest() {
-			double cost = ordinaryTruck.getCost();
-			assertEquals(cost, getManifestCost()); 	
+		public void addTruckTest() throws DeliveryException {
+			Iterator<Truck> manifestIterator = manifest.iterator();
+			 
+			String truckDetails ="";
+		    while(manifestIterator.hasNext()) {
+		      truckDetails = manifestIterator.getTruckString();
+		      manifestIterator.next();  
+		    }
+		    
+		    String itemString = ">Ordinary Truck \n Coffee, 300";
+			assertEquals(itemString, truckDetails);
 		}
 		
 }
