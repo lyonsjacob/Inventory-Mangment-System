@@ -122,12 +122,12 @@ public class Item {
 	 */
 	public String toString() {
 		if(temperature == null) {
-			String outPutString = amount+", "+ name+", "+ costPrice+", "+ salePrice+", "
+			String outPutString = amount+", "+ name+", "+ costPrice+", "+ salePrice
 					+ ", "+ reorderPoint+", "+ reorderAmount+"\n";
 			return outPutString;
 		}
 		
-		String outPutString = amount+", "+name+", "+ costPrice+", "+ salePrice+", "
+		String outPutString = amount+", "+name+", "+ costPrice+", "+ salePrice
 				+ ", "+ reorderPoint+", "+ reorderAmount+", "+temperature+"\n";
 		return outPutString;
 	}
