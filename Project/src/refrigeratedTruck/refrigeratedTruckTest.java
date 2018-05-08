@@ -7,17 +7,21 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
+import exceptions.DeliveryException;
 import ordinaryTruck.OrdinaryTruck;
 
 public class refrigeratedTruckTest {
 
 
-	// Test 0: Declaring Item objects.
+	// Test: Declaring Item objects.
 	RefrigeratedTruck refrigeratedTruck;
 		
-	// Test 1: add item to truck, item and quantity in hash map.
+	
+	
+	
+	// Test: add item to truck, item and quantity in hash map.
 	@Before @Test
-	public void addItemToOrdinaryTruckTest() {
+	public void addItemToOrdinaryTruckTest() throws DeliveryException {
 		refrigeratedTruck = new RefrigeratedTruck(); 
 			
 		String itemName = "icecream";
@@ -26,74 +30,122 @@ public class refrigeratedTruckTest {
 		refrigeratedTruck.addItem(itemName, quantity, temperature);
 	}
 		
-	// Test 2: add warm item to truck, item and quantity in hash map.
+	
+	
+	
+	// Test: add warm item to truck, item and quantity in hash map.
 	@Test
-	public void addWarmItemToRefrigeratedTruckTest() {
+	public void addWarmItemToRefrigeratedTruckTest() throws DeliveryException {
 		String itemName = "bread";
 		int quantity = 300;
 		refrigeratedTruck.addItem(itemName, quantity);
 	}
 	    
-		
-	// Test 3: get truck temperature
+	
+	
+	
+	// Test: get truck temperature
 	@Test
 	public void getTemperatureTest() {
 		int temperature = -20;
 		assertEquals(temperature, refrigeratedTruck.getTemperature());
 	}
 		
-	//Test 4: check temperature range
-	@Test
-	public void tempRangeTest() {
-		int temperature = refrigeratedTruck.getTemperature();
-			
-		if((temperature <-20) | (temperature > 10)) {
-			fail("temperature not in range");
-		}
+	
+	
+	
+	// Test: check out of bound truck temperature
+	@Test (expected = DeliveryException.class)
+	public void temperatureToLowTest() throws DeliveryException {
+		String itemName = "ice";
+		int quantity = 300;
+		int temperature = -21;	
+		refrigeratedTruck.addItem(itemName, quantity, temperature);
 	}
 		
+	
+	
+	
+	// Test: check to see if truck temperature is replaced with a warmer temperature
+	@Test 
+	public void incorectTempAddedTest() throws DeliveryException {
+		String itemName = "tomatos";
+		int quantity = 300;
+		int temperature = 10;	
+		refrigeratedTruck.addItem(itemName, quantity, temperature);
+		assertEquals(-20, refrigeratedTruck.getTemperature());
 		
-	// Test 5: get hash map where item and cost are stored
+	}
+
+		
+		
+	
+	// Test: get hash map where item and cost are stored
 	@Test
 	public void GetHashMapTest() {	
-		Map<String, Integer> itemQuantityMap;// = new HashMap<String, Integer>();
+		Map<String, Integer> itemQuantityMap;
 		int quantity = 300;
-		itemQuantityMap = refrigeratedTruck.GetHashMap();
-			
-		assertEquals(quantity, itemQuantityMap.get("icecream"));	
+		itemQuantityMap = refrigeratedTruck.GetMap();
+		int expectedQuantity = itemQuantityMap.get("icecream");
+		assertEquals(quantity, expectedQuantity);	
 	}
 		
-	// Test 6: get the quantity of items held in the truck 
+	
+	
+	
+	// Test: get the quantity of items held in the truck 
 	@Test
 	public void getTotalQuantityTest() {
 		int quantity = 300;
 		assertEquals(quantity, refrigeratedTruck.getTotalQuantity());
 	}
-				
-	// Test 7: check if quantity is greater than 800 or less than 0
+		
+	
+	
+	
+	// Test: check if quantity is equal 800
 	@Test
-	public void getQuantityMaxTest() {
-		int truckQuantity = refrigeratedTruck.getTotalQuantity();
-		if((truckQuantity > 800)|(truckQuantity < 0)) {
-			fail("To many items in truck");
-		}
+	public void getQuantityMaxTest() throws DeliveryException {
+		String itemName = "beans";
+		int quantity = 500;
+		refrigeratedTruck.addItem(itemName, quantity);
+		
+		assertEquals(800, refrigeratedTruck.getTotalQuantity());
 	}
 	
-	// Test 8: print item list string
+	
+	
+	// Test: check if quantity is larger than 800
+	@Test (expected = DeliveryException.class)
+	public void overLoadTest() throws DeliveryException {
+		String itemName = "beans";
+		int quantity = 501;
+		refrigeratedTruck.addItem(itemName, quantity);
+	}
+	
+	
+	
+	
+	// Test: print item list string
 	@Test
-	public void toStringTest() {
+	public void toStringTest() throws DeliveryException {
 			
 		refrigeratedTruck.addItem("milk", 100);
 		String itemString = ">Ordinary Truck \n icecream, 300 \n milk, 100";
-		assertEquals(itemString, refrigeratedTruck.toString());
+		assertEquals(itemString, refrigeratedTruck.convertToString());
 	}
 		
-	// Test 9: get truck cost
+	
+	
+	
+	// Test: get truck cost
 	@Test
 	public void getcostTest() {
 		double cost = 900 + 200.00*Math.pow(0.70,-20.00/5.00);	
-		assertEquals(cost, refrigeratedTruck.getcost(),0.01);
+		assertEquals(cost, refrigeratedTruck.getCost(),0.01);
 	}
+	
+	
 	
 	
 

@@ -8,18 +8,21 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
+import exceptions.DeliveryException;
+import exceptions.StockException;
 import manifest.ManifestTest;
 
 
 public class ordinaryTruckTest {
-	// Test 0: Declaring Item objects.
+	// Test: Declaring Item objects.
 	OrdinaryTruck ordinaryTruck;
 
 	
-	// Test 1: add item to truck, item and quantity in hash map.
+	
+	// Test: add item to truck, item and quantity in hash map.
 	//cost price
 	@Before @Test
-	public void addItemTest() {
+	public void addItemTest() throws DeliveryException {
 		ordinaryTruck = new OrdinaryTruck();
 		String itemName = "Coffee";
 		int quantity = 300;
@@ -27,50 +30,83 @@ public class ordinaryTruckTest {
 		ordinaryTruck.addItem(itemName, quantity);
 	}
 	
-	// Test 2: get hash map where item and cost are stored
+	
+	
+	// Test: get hash map where item and cost are stored
 	@Test
 	public void GetHashMapTest() {	
-		Map<String, Integer> itemQuantityMap;// = new HashMap<String, Integer>();
+		Map<String, Integer> itemQuantityMap;;
 		int quantity = 300;
-		itemQuantityMap = ordinaryTruck.GetHashMap();
+		itemQuantityMap = ordinaryTruck.GetMap();
+		int expectedQuantity = itemQuantityMap.get("Coffee");
 		
-		assertEquals(quantity, itemQuantityMap.get("Coffee"));	
+		assertEquals(quantity, expectedQuantity);	
 	}
 	
-	// Test 3: get the quantity of items held in the truck 
+	
+	
+	// Test: get the quantity of items held in the truck 
 	@Test
 	public void getTotalQuantityTest() {
 		int quantity = 300;
 		assertEquals(quantity, ordinaryTruck.getTotalQuantity());
 	}
-			
-	// Test 4: check if quantity is greater than 1000 or less than 0
+		
+	
+	
+	// Test: check if quantity is equal 1000
 	@Test
-	public void getQuantityMaxTest() {
-		int truckQuantity = ordinaryTruck.getTotalQuantity();
-		if( (truckQuantity > 1000)| (truckQuantity < 0)) {
-			fail("To many items in truck");
-		}
+	public void getQuantityMaxTest() throws DeliveryException {
+		String itemName = "beans";
+		int quantity = 700;
+		ordinaryTruck.addItem(itemName, quantity);
+		
+		assertEquals(1000, ordinaryTruck.getTotalQuantity());
 	}
 	
-	// Test 5: get string 
+	
+	
+	// Test: check if quantity is larger than 1000
+	@Test (expected = DeliveryException.class)
+	public void overLoadTest() throws DeliveryException {
+		String itemName = "beans";
+		int quantity = 701;
+		ordinaryTruck.addItem(itemName, quantity);
+	}
+	
+	
+	
+	
+	
+	// Test: get string 
 	@Test
-	public void toStringTest() {
-		
+	public void toStringTest() throws DeliveryException {
 		ordinaryTruck.addItem("milk", 100);
 		String itemString = ">Ordinary Truck \n Coffee, 300 \n milk, 100";
-		assertEquals(itemString, ordinaryTruck.toString());
+		assertEquals(itemString, ordinaryTruck.convertToString());
 	}
 	
-	// Test 6: get cost of truck
+	
+	
+	
+	// Test: get cost of truck
 	@Test
 	public void getCostTest() {
 	 double cost = 750 + 0.25*300;
 	 assertEquals(cost, ordinaryTruck.getCost(),0.01);
 	}
 	
-
+	// Test: get cost of truck with more than one item
+	@Test
+	public void getCostMultipleItemTest() throws DeliveryException {
+		String itemName = "bread";
+		int quantity = 300;
+		ordinaryTruck.addItem(itemName, quantity);
+		
+	 double cost = 750 + 0.25*600;
+	 assertEquals(cost, ordinaryTruck.getCost(),0.01);
+	}
 	
-	// Need arraylist to be implemented to check if item requires refrigeration
+
 
 }
