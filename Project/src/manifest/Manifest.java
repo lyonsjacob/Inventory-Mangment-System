@@ -3,11 +3,10 @@ package manifest;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import item.Item;
 import truck.Truck;
 
 /**
- * A class that holds a number of Trucks.
+ * A collection of trucks.
  * @author Mitchell Willemse
  *
  */
@@ -20,7 +19,7 @@ public class Manifest implements Iterable<Truck> {
 	
 	
 	/**
-	 * 
+	 * Constructor that initializes the variables.
 	 */
 	public Manifest() {
 		trucks = new ArrayList<Truck>();
@@ -31,8 +30,8 @@ public class Manifest implements Iterable<Truck> {
 	
 	
 	/**
-	 * 
-	 * @param truck
+	 * Adds a truck to the manifest.
+	 * @param truck The truck to be added to the manifest.
 	 */
 	public void addTruck(Truck truck) {
 		trucks.add(truck);
@@ -42,9 +41,9 @@ public class Manifest implements Iterable<Truck> {
 	
 	
 	/**
-	 * 
-	 * @param index
-	 * @return
+	 * Gets a truck at a certain index, starting at 0.
+	 * @param index The index at which to get the truck.
+	 * @return The truck at that index.
 	 */
 	public Truck getTruck(int index) {
 		return trucks.get(index);
@@ -53,14 +52,14 @@ public class Manifest implements Iterable<Truck> {
 	
 	
 	/**
-	 * 
-	 * @return
+	 * Sums the cost of all the trucks within the manifest.
+	 * @return The total cost of all the trucks in dollars.
 	 */
 	public double getManifestCost() {
 		cost = 0;
 		
 	    for (Truck i : trucks) {
-	        cost = cost + i.getcost();
+	        cost = cost + i.getCost();
 	    }
 
 		return cost;
@@ -69,17 +68,17 @@ public class Manifest implements Iterable<Truck> {
 	
 	
 	/**
-	 * 
-	 * @return
+	 * Get the number of trucks within the manifest.
+	 * @return The number of trucks.
 	 */
 	public int getNumOfTrucks() {
 		return numOfTrucks;
 	}
+	
+	
 
-	
-	
 	/**
-	 * 
+	 * Returns an iterator over elements of type Truck.
 	 */
 	@Override
 	public Iterator<Truck> iterator() {
