@@ -1,6 +1,8 @@
 package stock;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 
 import exceptions.StockException;
@@ -102,5 +104,35 @@ public class Stock implements Iterable<Item>  {
 	    return stockIterator;
 	}
 	
+	
+	
+	/**
+	 * Sort the Stock by temperature. 
+	 * @author Mitchell Willemse
+	 */
+	public void sort() {
+		Comparator<Item> stockCompare = new Comparator<Item>() {
 
+			@Override
+			public int compare(Item o1, Item o2) {
+				Integer item1 = o1.getTemperature();
+				Integer item2 = o2.getTemperature();
+				
+				//N.B. If the temperature is null, the order of these items don't matter
+				//as long as they are at the bottom. 1000 is outside the temperature range and
+				//ensures the comparator puts these items last.
+				if (item1 == null) {
+					item1 = 1000;
+				}
+				if(item2 == null) {
+					item2 = 1000;
+				}
+				
+				return item1.compareTo(item2);
+			}
+			
+		};
+		
+		storeStock.sort(stockCompare);
+	}
 }
