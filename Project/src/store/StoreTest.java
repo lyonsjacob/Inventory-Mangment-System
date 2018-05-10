@@ -5,6 +5,9 @@ import stock.Stock;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import exceptions.StockException;
+
 import static org.junit.Assert.*;
 
 /**
@@ -78,7 +81,7 @@ public class StoreTest {
 	
 	//Test 7: Get and Set Inventory.
 	@Test
-	public void setInventory() {
+	public void setInventory() throws StockException {
 		//Get Empty Inventory (a Stock object) from Store.
 		Stock inventory = store.getInventory();
 		
