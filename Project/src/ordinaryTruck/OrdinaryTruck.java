@@ -88,4 +88,19 @@ public class OrdinaryTruck extends Truck {
 		return cost;
 	}
 
+
+	/**
+	 * Adds an item to the refrigerated truck and sets the trucks temperature to that of
+	 * the item being added.
+	 * @param itemName The item to be added.
+	 * @param amount The quantity of such item.
+	 * @param temperature The temperature of the item.
+	 * @throws DeliveryException 
+	 */
+	@Override
+	public void addItem(String itemName, int amount, int temperature) throws DeliveryException {
+		// TODO Auto-generated method stub
+		throw new DeliveryException();
+	}
+
 }

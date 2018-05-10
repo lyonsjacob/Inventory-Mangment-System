@@ -37,4 +37,14 @@ public abstract class Truck {
 	 */
 	public abstract double getCost();
 	
+	/**
+	 * Adds an item to the refrigerated truck and sets the trucks temperature to that of
+	 * the item being added.
+	 * @param itemName The item to be added.
+	 * @param amount The quantity of such item.
+	 * @param temperature The temperature of the item.
+	 * @throws DeliveryException If the cargo limit is exceeded.
+	 */
+	public abstract void addItem(String itemName, int amount, int temperature) throws DeliveryException;
+	
 }

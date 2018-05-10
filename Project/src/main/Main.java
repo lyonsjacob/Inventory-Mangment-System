@@ -2,6 +2,12 @@ package main;
 
 import java.awt.*;
 import javax.swing.*;
+import exceptions.*;
+import item.Item;
+import manifest.Manifest;
+import store.Store;
+import stock.Stock;
+import manifestCreator.ManifestCreator;
 
 /**
  * The main class containing the code to create, setup and display the GUI and 
@@ -83,6 +89,32 @@ public class Main extends JFrame {
 	public static void main(String[] args) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		new Main();
+		
+		Stock stock = new Stock();
+		
+		Item testItem1 = new Item(1000, "Ice Cream", 3, 4, 300, 400, -20);
+		Item testItem2 = new Item(0, "Coffee", 2, 3, 200, 225);
+		Item testItem3 = new Item(0, "Milk", 3, 4, 100, 150, 3);
+		
+		try {
+			stock.put(testItem1);
+			stock.put(testItem2);
+			stock.put(testItem3);
+		} catch (StockException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Manifest manifest = new Manifest();
+
+		try {
+			manifest = ManifestCreator.CreateManifest(stock);
+		} catch (StockException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 }
