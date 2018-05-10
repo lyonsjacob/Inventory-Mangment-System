@@ -42,9 +42,10 @@ public class StockTest {
 	/**
 	 * Test 2: Add Item. Adds Item to the Stock object and uses the get() method
 	 * to ensure the Item was added correctly. 
+	 * @throws StockException 
 	 */
 	@Test
-	public void addItem() {
+	public void addItem() throws StockException {
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		stock.put(testItem);
 		
@@ -60,9 +61,10 @@ public class StockTest {
 	 * I'm keeping setQuantity and getQuantity because although these methods exist
 	 * in the Item class and we could just use the Stock.Get method to change them, it
 	 * seems a lot more neater to encapsulate them within the stock class.
+	 * @throws StockException 
 	 */
 	@Test
-	public void setQuantity() {
+	public void setQuantity() throws StockException {
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		stock.put(testItem);
 		
@@ -117,7 +119,7 @@ public class StockTest {
 	 * in the Stock object.
 	 */
 	@Test
-	public void getStockQuantity() {
+	public void getStockQuantity() throws StockException {
 		Item testItem1 = new Item(3, "Ice Cream", 3, 4, 300, 400, -20);
 		Item testItem2 = new Item(4, "Tofu", 3, 4, 300, 400, 3);
 		Item testItem3 = new Item(7, "Chips", 3, 4, 300, 400);
@@ -139,7 +141,7 @@ public class StockTest {
 	 * through each Item in the Stock object. Ensures each Item is properly iterated through.
 	 */
 	@Test
-	public void testIterator() {
+	public void testIterator() throws StockException {
 		Item testItem1 = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		Item testItem2 = new Item(0, "Coffee", 2, 3, 200, 225);
 		Item testItem3 = new Item(0, "Milk", 3, 4, 100, 150, 3);
