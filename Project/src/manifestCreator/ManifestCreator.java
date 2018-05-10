@@ -51,8 +51,9 @@ public class ManifestCreator {
 		//Keep looping and creating trucks until toOrder is empty.
 		while(!toOrder.isEmpty()) {
 			
-			Truck truck;
+			Truck truck = new OrdinaryTruck();
 			Boolean isFirst = true;
+			int quantity = 0;
 			
 			//Create an Iterator to iterate through toOrder.
 			Iterator<Item> iter =  toOrder.iterator();
@@ -68,24 +69,38 @@ public class ManifestCreator {
 					if (entry.getTemperature() != null) {
 						//If item has a temperature, create Refrigerated Truck 
 						truck = new RefrigeratedTruck();
-						truck.addItem(entry.getName(), entry.getAmount(), entry.getTemperature());
+						truck.addItem(entry.getName(), entry.getReorderAmount(), entry.getTemperature());
+						quantity += entry.getReorderAmount();
+						
 					} else {
 						//No temperature, create Ordinary Truck.
 						truck = new OrdinaryTruck();
-						truck.addItem(entry.getName(), entry.getAmount());
+						truck.addItem(entry.getName(), entry.getReorderAmount());
+						quantity += entry.getReorderAmount();
+						
 					}
 					isFirst = false;
+				} else {
+					//truck.addItem(entry.getName(), entry.getReorderAmount());
+					quantity += entry.getReorderAmount();
 				}
 
-				
-				System.out.println(entry.getName());
+				if (quantity > 800 || (iter.hasNext() == false)) {
+					manifest.addTruck(truck);
+					isFirst = true;
+					quantity = 0;
+					truck = null;
+				}
 				
 				//Been placed on Truck, remove from toOrder
 				iter.remove();
 			}
 			
+		
+			
 			
 		}
+		
 		
 
 			

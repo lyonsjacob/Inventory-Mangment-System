@@ -85,6 +85,8 @@ public class Main extends JFrame {
 	/**
 	 * The entry point of the program, where the program control starts and ends.
 	 * @param args The command-line arguments.
+	 * @throws StockException 
+	 * @throws DeliveryException 
 	 */
 	public static void main(String[] args) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
@@ -92,9 +94,9 @@ public class Main extends JFrame {
 		
 		Stock stock = new Stock();
 		
-		Item testItem1 = new Item(1000, "Ice Cream", 3, 4, 300, 400, -20);
-		Item testItem2 = new Item(0, "Coffee", 2, 3, 200, 225);
-		Item testItem3 = new Item(0, "Milk", 3, 4, 100, 150, 3);
+		Item testItem1 = new Item(0, "Ice Cream", 3, 4, 200, 800, -20);
+		Item testItem2 = new Item(0, "Coffee", 2, 3, 100, 225);
+		Item testItem3 = new Item(0, "Milk", 3, 4, 100, 150);
 		
 		try {
 			stock.put(testItem1);
@@ -109,10 +111,13 @@ public class Main extends JFrame {
 
 		try {
 			manifest = ManifestCreator.CreateManifest(stock);
-		} catch (StockException e) {
+			System.out.println(manifest.getTruckString());
+		} catch (StockException | DeliveryException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
 		
 		
 	}

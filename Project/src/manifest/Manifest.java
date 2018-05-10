@@ -3,6 +3,7 @@ package manifest;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import item.Item;
 import truck.Truck;
 
 /**
@@ -73,6 +74,24 @@ public class Manifest implements Iterable<Truck> {
 	 */
 	public int getNumOfTrucks() {
 		return numOfTrucks;
+	}
+	
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getTruckString() {
+		String output = "";
+		
+	    for (Truck i : trucks) {
+	        
+	    		output += i.getCost() + "\n";
+	   
+	    }
+		
+		return output;
 	}
 	
 	
