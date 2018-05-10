@@ -135,6 +135,33 @@ public class StockTest {
 	}
 	
 	
+	// Test if items in stock are sorted by temp
+	@Test
+	public void sortTest() throws StockException {
+		Item testItem0 = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
+		Item testItem1 = new Item(0, "bread", 3, 4, 300, 400, 10);
+		Item testItem2 = new Item(0, "milk", 3, 4, 300, 400, 4);
+		Item testItem3  = new Item(0, "weat", 3, 4, 300, 400);
+		stock.put(testItem0);
+		stock.put(testItem1);
+		stock.put(testItem2);
+		stock.put(testItem3);
+		
+		int lastTemp = -100;
+		 for (Item i : stock) {
+			 
+		       if( i.getTemperature() > lastTemp) {
+		    	  fail("array not sorted");
+		       }
+		       lastTemp = i.getTemperature();
+		    }
+		
+		
+		
+	}
+	
+	
+	
 	
 	/*
 	 * Test 8: Test Iterator. Tests to make sure the Stock class can be used to iterate
