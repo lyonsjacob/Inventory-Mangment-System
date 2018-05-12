@@ -1,6 +1,8 @@
 package manifest;
 
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Iterator;
 
 import item.Item;
@@ -84,19 +86,30 @@ public class Manifest implements Iterable<Truck> {
 	
 	
 	/**
-	 * 
-	 * @return
+	 * Prints the Manifest of trucks and their items in a CSV format.
+	 * @return The list of items and the truck holding them, separated by commas.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	public String getTruckString() {
+		//String to return.
 		String output = "";
 		
+		//Iterate through each truck.
 	    for (Truck i : trucks) {
-	        
-	    		output += i.getCost() + "\n";
-	   
+	    		//Add the truck type to the output.
+	    		output += ">" + i.getTruckType() + ",\n";
+	    		
+	    		//Get the HashMap of items from the truck.
+	    		Map<String, Integer> items = i.GetHashMap();
+	    		
+	    		//Iterate through the HashMap, adding the list of items and
+	    		//their amount seperated by a comma, ready for exporting as CSV.
+            for (Entry<String, Integer> entry : items.entrySet()){
+                output += entry.getKey() + "," + entry.getValue() + "\n";
+            }
 	    }
-		
+	    
+	    //Return this string.
 		return output;
 	}
 	

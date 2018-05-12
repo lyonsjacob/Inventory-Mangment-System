@@ -113,12 +113,24 @@ public class OrdinaryTruck extends Truck {
 
 	/**
 	 * Get the maximum number of cargo that the truck can contain.
-	 * @return The max cargo amount.
+	 * @return The max cargo amount, in this case 1000.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public int getMaxCargo() {
 		return MAX_CARGO;
+	}
+
+
+
+	/**
+	 * Get the truck type as string.
+	 * @return The truck type, in this case "Ordinary".
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	@Override
+	public String getTruckType() {
+		return "Ordinary";
 	}
 
 }

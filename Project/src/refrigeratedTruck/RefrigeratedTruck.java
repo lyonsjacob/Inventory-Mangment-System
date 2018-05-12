@@ -135,13 +135,25 @@ public class RefrigeratedTruck extends Truck {
 
 	/**
 	 * Get the maximum number of cargo that the truck can contain.
-	 * @return The max cargo amount.
+	 * @return The max cargo amount, in this case 800.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public int getMaxCargo() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	
+
+	/**
+	 * Get the truck type as string.
+	 * @return The truck type, in this case "Refrigerated".
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	@Override
+	public String getTruckType() {
+		return "Refrigerated";
 	}
 
 }
