@@ -92,36 +92,7 @@ public class Main extends JFrame {
 	 */
 	public static void main(String[] args) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
-		new Main();
-		
-		Stock stock = new Stock();
-		
-		Item testItem1 = new Item(0, "Ice Cream", 3, 4, 200, 800, -20);
-		Item testItem2 = new Item(0, "Coffee", 2, 3, 100, 225);
-		Item testItem3 = new Item(0, "Milk", 3, 4, 100, 150);
-		
-		try {
-			stock.put(testItem1);
-			stock.put(testItem2);
-			stock.put(testItem3);
-		} catch (StockException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		Manifest manifest = new Manifest();
-
-		try {
-			manifest = ManifestCreator.CreateManifest(stock);
-			System.out.println(manifest.getTruckString());
-		} catch (StockException | DeliveryException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		
-		
+		new Main();	
 	}
 	
 }
