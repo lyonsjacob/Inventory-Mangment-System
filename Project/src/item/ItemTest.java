@@ -11,15 +11,20 @@ import static org.junit.Assert.*;
  * The following tests are for the basic functionality of
  * the item class.
  * 
- * @author Mitchell Willemse
+ * @author Mitchell Willemse (n9470620).
  *
  */
 public class ItemTest {
 
-	// Test 0: Declaring Item objects.
+	/**
+	 * Test 0: Declaring Item objects.
+	 */
 	Item item;
 	
-	//Test 1: Constructing an Item object. 
+	/**
+	 * Test 1: Constructing an Item object. 
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Before @Test
 	public void setUpItem() {
 		int amount = 0;
@@ -34,7 +39,10 @@ public class ItemTest {
 		item = new Item(amount, name, costPrice, sellPrice, reorderPoint, reorderAmount, temperature);
 	}
 	
-	//Test 2: Constructing an Item Object without Temperature
+	/**
+	 * Test 2: Constructing an Item Object without Temperature
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void setUpItemWithoutTemp() {
 		int amount = 0;
@@ -48,13 +56,20 @@ public class ItemTest {
 		item = new Item(amount, name, costPrice, sellPrice, reorderPoint, reorderAmount);
 	}
 	
-	//Test 3: Get Amount.
+	/**
+	 * Test 3: Get Amount.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void getAmount() {
 		assertEquals(0, item.getAmount());
 	}
 	
-	//Test 4: Set Amount
+	/**
+	 * Test 4: Set Amount
+	 * @throws StockException
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void setAmount() throws StockException {
 		int newAmount = 400;
@@ -63,69 +78,99 @@ public class ItemTest {
 		assertEquals(newAmount, item.getAmount());
 	}
 	
-	//Test 5: Can't Set Negative Amount
+	/**
+	 * Test 5: Can't Set Negative Amount
+	 * @throws StockException
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test (expected = StockException.class) 
 	public void setNegativeAmount() throws StockException {
 		item.setAmount(-5);
 	}
 	
-	//Test 6: Needs Reorder
+	/**
+	 * Test 6: Needs Reorder
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void needsReorder() {
 		assertEquals(true, item.isBelowReorderPoint());
 	}
 	
-	//Test 7: Get Name.
+	/**
+	 * Test 7: Get Name.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void getName() {
 		String expectedName = "Ice Cream";
 		assertEquals(expectedName, item.getName());
 	}
 	
-	//Test 8: Get Cost Price.
+	/**
+	 * Test 8: Get Cost Price.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void getCostPrice() {
 		int expectedCostPrice = 3;
 		assertEquals(expectedCostPrice, item.getCostPrice(), 1);
 	}
 	
-	//Test 9: Get Sell Price.
+	/**
+	 * Test 9: Get Sell Price.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void getSellPrice() {
 		int expectedSellPrice = 4;
 		assertEquals(expectedSellPrice, item.getSellPrice(), 1);
 	}
 	
-	//Test 10: Get Reorder Point.
+	/**
+	 * Test 10: Get Reorder Point.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void getReorderPoint() {
 		int expectedReorderPoint = 300;
 		assertEquals(expectedReorderPoint, item.getReorderPoint());
 	}
 	
-	//Test 11: Get Reorder Amount.
+	/**
+	 * Test 11: Get Reorder Amount.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void getReorderAmount() {
 		int expectedReorderAmount = 400;
 		assertEquals(expectedReorderAmount, item.getReorderAmount());
 	}
 	
-	//Test 12: Get Temperature.
+	/**
+	 * Test 12: Get Temperature.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void getTemperature() {
 		Integer expectedTemperature = -20;
 		assertEquals(expectedTemperature, item.getTemperature());
 	}
 	
-	//Test 13: Get Temperature for Item With No Temperature.
+	/**
+	 * Test 13: Get Temperature for Item With No Temperature.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void testItemNoTemperature() {
 		item = new Item(0, "Coffee", 2, 3, 200, 225);
 		assertNull(item.getTemperature());
 	}
 	
-	//Test 13: Test To String.
-	//This might be useful for when outputting the item for CSV
+	/**
+	 * Test 13: Test To String.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void testToString() {
 		item = new Item(0, "Milk", 3, 4, 100, 150, 3);
@@ -134,7 +179,10 @@ public class ItemTest {
 		assertEquals(expectedOutput, item.toString());
 	}
 	
-	//Test 14: Test To String with No Temperature.
+	/**
+	 * Test 14: Test To String with No Temperature.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void testToStringNoTemperature() {
 		item = new Item(0, "Coffee", 2, 3, 200, 225);

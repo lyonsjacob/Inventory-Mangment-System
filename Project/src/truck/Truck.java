@@ -5,7 +5,7 @@ import exceptions.DeliveryException;
 
 /**
  * An abstract class for the two truck types.
- * @author Mitchell Willemse
+ * @author Mitchell Willemse (n9470620).
  *
  */
 public abstract class Truck {
@@ -15,25 +15,29 @@ public abstract class Truck {
 	 * @param itemName The name of the item.
 	 * @param amount The quantity of item.
 	 * @throws DeliveryException If cargo limit is exceeded.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public abstract void addItem(String itemName, int amount) throws DeliveryException;
 	
 	/**
 	 * Gets the total quantity of cargo currently in the truck.
 	 * @return The amount of cargo.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public abstract int getTotalQuantity();
 	
 	/**
 	 * Returns the HashMap collection of the trucks items and quantity.
 	 * @return The HashMap.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public abstract Map<String, Integer> GetHashMap();
 	
 	/**
 	 * Returns the cost of the truck, calculated differently depending whether it is
 	 * refrigerated or not.
-	 * @return The cost in dollars.
+	 * @return The cost in dollars
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public abstract double getCost();
 	
@@ -44,7 +48,14 @@ public abstract class Truck {
 	 * @param amount The quantity of such item.
 	 * @param temperature The temperature of the item.
 	 * @throws DeliveryException If the cargo limit is exceeded.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public abstract void addItem(String itemName, int amount, int temperature) throws DeliveryException;
 	
+	/**
+	 * Get the maximum number of cargo that the truck can contain.
+	 * @return The max cargo amount.
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	public abstract int getMaxCargo();
 }

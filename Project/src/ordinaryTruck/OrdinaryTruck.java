@@ -13,7 +13,7 @@ import truck.Truck;
  * – Cargo capacity of 1000 items.
  * – Cargo. Temperature controlled items cannot be stored in an ordinary
  * truck’s cargo, only dry goods.
- * @author Mitchell Willemse
+ * @author Mitchell Willemse (n9470620).
  */
 public class OrdinaryTruck extends Truck {
 	
@@ -24,6 +24,7 @@ public class OrdinaryTruck extends Truck {
 	
 	/**
 	 * A constructor that initializes the variables.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public OrdinaryTruck() {
 		cargo = new HashMap<String, Integer>();
@@ -38,6 +39,7 @@ public class OrdinaryTruck extends Truck {
 	 * @param itemName The name of the item.
 	 * @param amount The quantity of item.
 	 * @throws DeliveryException If cargo limit is exceeded.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public void addItem(String itemName, int amount) throws DeliveryException {
@@ -56,6 +58,7 @@ public class OrdinaryTruck extends Truck {
 	/**
 	 * Gets the total quantity of cargo currently in the truck.
 	 * @return The amount of cargo.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public int getTotalQuantity() {
@@ -68,6 +71,7 @@ public class OrdinaryTruck extends Truck {
 	/**
 	 * Returns the HashMap collection of the trucks items and quantity.
 	 * @return The HashMap.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public Map<String, Integer> GetHashMap() {
@@ -81,6 +85,7 @@ public class OrdinaryTruck extends Truck {
 	 * Returns the cost of the truck, calculated as 750 + 0.25q 
 	 * where q is the quantity of items in the cargo.
 	 * @return The cost in dollars.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public double getCost() {
@@ -96,11 +101,24 @@ public class OrdinaryTruck extends Truck {
 	 * @param amount The quantity of such item.
 	 * @param temperature The temperature of the item.
 	 * @throws DeliveryException 
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public void addItem(String itemName, int amount, int temperature) throws DeliveryException {
 		// TODO Auto-generated method stub
 		throw new DeliveryException();
+	}
+
+
+
+	/**
+	 * Get the maximum number of cargo that the truck can contain.
+	 * @return The max cargo amount.
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	@Override
+	public int getMaxCargo() {
+		return MAX_CARGO;
 	}
 
 }

@@ -12,6 +12,7 @@ public class LoadListener implements ActionListener {
 
 	/**
 	 * Invoked when an action occurs.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

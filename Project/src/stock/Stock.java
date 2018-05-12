@@ -11,7 +11,7 @@ import item.Item;
 /**
  * A collection of items. Is be used to hold store inventory information.
  * 
- * @author Jacob Lyons N9507175
+ * @author Jacob Lyons N9507175 & Mitchell Willemse (n9470620),
  *
  */
 public class Stock implements Iterable<Item>  {
@@ -108,7 +108,7 @@ public class Stock implements Iterable<Item>  {
 	
 	/**
 	 * Sort the Stock by temperature. 
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620)
 	 */
 	public void sort() {
 		Comparator<Item> stockCompare = new Comparator<Item>() {

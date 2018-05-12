@@ -16,24 +16,32 @@ import static org.junit.Assert.*;
  * The following tests are designed for the Store class, which will
  * be based on the Singleton pattern.
  * 
- * @author Mitchell Willemse
+ * @author Mitchell Willemse (n9470620).
  */
 
 public class StoreTest {
 	
 	
-	// Test 0: Declaring Store object.
+	/**
+	 *  Test 0: Declaring Store object.
+	 */
 	Store store;
 	
-	//Test 1: Test Store Instance. Constructor should be protected 
-	//instead of public to suppress unauthorized calls to it. getInstance()
-	//is used to provide access to the object.
+	/**
+	 * Test 1: Test Store Instance. Constructor should be protected 
+	 * instead of public to suppress unauthorized calls to it. getInstance()
+	 * is used to provide access to the object.
+	 * @author Mitchell Willemse (n9470620).
+	*/
 	@Before @Test
 	public void storeInstance() {
 		store = Store.getInstance();
 	}
 	
-	//Test 2: Test Only One Instance of Store Can Exist.
+	/*
+	 * Test 2: Test Only One Instance of Store Can Exist.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void storeSingleInstance() {
 		Store s1 = Store.getInstance();
@@ -43,7 +51,10 @@ public class StoreTest {
 		assertEquals("Both Store Objects are Same", s1, s2);
 	}
 	
-	//Test 3: Test Initial Capital.
+	/*
+	 * Test 3: Test Initial Capital.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void initialCaptial() {
 		//Initial Capital is $100,000 as per spec sheet.
@@ -53,7 +64,10 @@ public class StoreTest {
 		assertEquals(expectedinitialCapital, store.getCapital(), 1);
 	}
 	
-	//Test 4: Set Capital.
+	/*
+	 * Test 4: Set Capital.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void setCapital() {
 		double capital = store.getCapital();
@@ -64,14 +78,20 @@ public class StoreTest {
 		assertEquals(expectedCapital, store.getCapital(), 1);
 	}
 	
-	//Test 5: Test Empty Name.
+	/**
+	 * Test 5: Test Empty Name.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void emptyName() {
 		String expectedName = "Store";
 		assertEquals("No store name has been set yet.", expectedName, store.getName());
 	}
 	
-	//Test 6: Set Store Name.
+	/*
+	 * Test 6: Set Store Name.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void setName() {
 		String name = "CAB302 Store!";
@@ -79,7 +99,11 @@ public class StoreTest {
 		assertEquals(name, store.getName());
 	}
 	
-	//Test 7: Get and Set Inventory.
+	/**
+	 * Test 7: Get and Set Inventory.
+	 * @throws StockException
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Test
 	public void setInventory() throws StockException {
 		//Get Empty Inventory (a Stock object) from Store.

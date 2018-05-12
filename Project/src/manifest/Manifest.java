@@ -8,7 +8,7 @@ import truck.Truck;
 
 /**
  * A collection of trucks.
- * @author Mitchell Willemse
+ * @author Mitchell Willemse (n9470620).
  *
  */
 public class Manifest implements Iterable<Truck> {
@@ -21,6 +21,7 @@ public class Manifest implements Iterable<Truck> {
 	
 	/**
 	 * Constructor that initializes the variables.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public Manifest() {
 		trucks = new ArrayList<Truck>();
@@ -33,6 +34,7 @@ public class Manifest implements Iterable<Truck> {
 	/**
 	 * Adds a truck to the manifest.
 	 * @param truck The truck to be added to the manifest.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public void addTruck(Truck truck) {
 		trucks.add(truck);
@@ -45,6 +47,7 @@ public class Manifest implements Iterable<Truck> {
 	 * Gets a truck at a certain index, starting at 0.
 	 * @param index The index at which to get the truck.
 	 * @return The truck at that index.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public Truck getTruck(int index) {
 		return trucks.get(index);
@@ -55,6 +58,7 @@ public class Manifest implements Iterable<Truck> {
 	/**
 	 * Sums the cost of all the trucks within the manifest.
 	 * @return The total cost of all the trucks in dollars.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public double getManifestCost() {
 		cost = 0;
@@ -71,6 +75,7 @@ public class Manifest implements Iterable<Truck> {
 	/**
 	 * Get the number of trucks within the manifest.
 	 * @return The number of trucks.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public int getNumOfTrucks() {
 		return numOfTrucks;
@@ -81,6 +86,7 @@ public class Manifest implements Iterable<Truck> {
 	/**
 	 * 
 	 * @return
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public String getTruckString() {
 		String output = "";
@@ -98,6 +104,7 @@ public class Manifest implements Iterable<Truck> {
 
 	/**
 	 * Returns an iterator over elements of type Truck.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public Iterator<Truck> iterator() {

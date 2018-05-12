@@ -17,35 +17,31 @@ import java.util.Map;
  *  A collection of items. Can be used for representing store inventory,
  *  stock orders, sales logs, and truck cargo.
  * 
- * @author Mitchell Willemse
+ * @author Mitchell Willemse (n9470620) & Jacob Lyons
  *
  */
 public class StockTest {
 	
 	/**
 	 * Test 0: Declaring Stock object.
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	Stock stock;
 
-	
-	
 	/**
 	 * Test 1: Constructing an empty Stock object.
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Before @Test
 	public void setUpStock() {
 		stock = new Stock();
 	}
 	
-	
-	
 	/**
 	 * Test 2: Add Item. Adds Item to the Stock object and uses the get() method
 	 * to ensure the Item was added correctly. 
 	 * @throws StockException 
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void addItem() throws StockException {
@@ -55,8 +51,6 @@ public class StockTest {
 		assertEquals(testItem, stock.get("Ice Cream"));
 	}
 	
-	
-	
 	/**
 	 * Test 3: Set Quantity. Uses the setQuantity() method to change the 'Amount' in the
 	 * Item object.
@@ -65,7 +59,7 @@ public class StockTest {
 	 * in the Item class and we could just use the Stock.Get method to change them, it
 	 * seems a lot more neater to encapsulate them within the stock class.
 	 * @throws StockException 
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void setQuantity() throws StockException {
@@ -77,13 +71,11 @@ public class StockTest {
 		
 		assertEquals(newQuantity, stock.getQuantity("Ice Cream"));
 	}
-	
-	
-	
+		
 	/**
 	 * Test 4: Can't Add Same Item Twice. Tries to add the same Item twice and receives
 	 * StockException.
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test (expected = StockException.class)
 	public void duplicateItem() throws StockException {
@@ -92,12 +84,10 @@ public class StockTest {
 		stock.put(testItem);
 	}
 	
-	
-	
 	/*
 	 * Test 5: Can't Have Negative Quantity. Tries to use setQuantity() to set a negative
 	 * 'Amount' Receives StockException.
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test (expected = StockException.class)
 	public void negativeQuantity() throws StockException {
@@ -106,25 +96,21 @@ public class StockTest {
 		
 		stock.setQuantity("Ice Cream", -5);
 	}
-	
-	
-	
+		
 	/*
 	 * Test 6: Can't Set Quantity for Non-Existent Item. Tries to use setQuantity() for an
 	 * Item that has not been added to Stock. StockException() is thrown.
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test (expected = StockException.class) 
 	public void unkmownItem() throws StockException {
 		stock.setQuantity("Cookies", 5);
 	}
 	
-	
-	
 	/*
 	 * Test 7: Get Stock Quantity. use getStockQuantity() to get the number of Items stored
 	 * in the Stock object.
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void getStockQuantity() throws StockException {
@@ -141,8 +127,6 @@ public class StockTest {
 		
 		assertEquals(expectedOutput, actualOutput);
 	}
-	
-	
 	
 	/*
 	 *  Test 8: if items in stock are sorted by temperature.
@@ -179,12 +163,10 @@ public class StockTest {
 		
 	}
 	
-	
-	
 	/*
 	 * Test 9: Test Iterator. Tests to make sure the Stock class can be used to iterate
 	 * through each Item in the Stock object. Ensures each Item is properly iterated through.
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void testIterator() throws StockException {

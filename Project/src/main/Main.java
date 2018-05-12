@@ -21,6 +21,7 @@ public class Main extends JFrame {
 	/**
 	 * Setup the GUI components and display the window. Creates the panel, 
 	 * four buttons, a label and the table. 
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public Main() {
         super("CAB302 Inventory Manager");
@@ -87,6 +88,7 @@ public class Main extends JFrame {
 	 * @param args The command-line arguments.
 	 * @throws StockException 
 	 * @throws DeliveryException 
+	 * @author Mitchell Willemse & Jacob Lyons
 	 */
 	public static void main(String[] args) {
 		JFrame.setDefaultLookAndFeelDecorated(true);

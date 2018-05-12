@@ -3,7 +3,7 @@ package exceptions;
 /**
  * A trivial exception class for stock issues.
  * 
- * @author Mitchell Willemse
+ * @author Mitchell Willemse (n9470620).
  *
  */
 

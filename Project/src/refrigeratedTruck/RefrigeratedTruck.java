@@ -17,7 +17,7 @@ import truck.Truck;
  * cargo. This is equal to the temperature of the item in the cargo with
  * the coldest safe temperature. The allowed temperature range is from
  * 20°C inclusive to 10°C inclusive.
- * @author Mitchell Willemse
+ * @author Mitchell Willemse (n9470620).
  */
 public class RefrigeratedTruck extends Truck {
 	
@@ -29,6 +29,7 @@ public class RefrigeratedTruck extends Truck {
 	
 	/**
 	 * A constructor that initializes the variables.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public RefrigeratedTruck() {
 		cargoQuantity = 0;
@@ -44,6 +45,7 @@ public class RefrigeratedTruck extends Truck {
 	 * @param amount The quantity of such item.
 	 * @param temperature The temperature of the item.
 	 * @throws DeliveryException If the cargo limit is exceeded.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public void addItem(String itemName, int amount, int temperature) throws DeliveryException {
 		//Set the temperature for the truck
@@ -65,6 +67,7 @@ public class RefrigeratedTruck extends Truck {
 	 * @param itemName The name of the item.
 	 * @param amount The quantity of item.
 	 * @throws DeliveryException If cargo limit is exceeded.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public void addItem(String itemName, int amount) throws DeliveryException {
@@ -82,6 +85,7 @@ public class RefrigeratedTruck extends Truck {
 	/**
 	 * Get the current temperature of the truck.
 	 * @return The temperature in °C.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public int getTemperature() {
 		return temperature;
@@ -92,6 +96,7 @@ public class RefrigeratedTruck extends Truck {
 	/**
 	 * Gets the total quantity of cargo currently in the truck.
 	 * @return The amount of cargo.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public int getTotalQuantity() {
@@ -104,6 +109,7 @@ public class RefrigeratedTruck extends Truck {
 	/**
 	 * Returns the HashMap collection of the trucks items and quantity.
 	 * @return The HashMap.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public Map<String, Integer> GetHashMap() {
@@ -117,11 +123,25 @@ public class RefrigeratedTruck extends Truck {
 	 * Returns the cost of the truck, calculated as 900 + 200 × 0.7^(T/5)
 	 * where T is temperature of the truck in °C. 
 	 * @return The cost in dollars.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public double getCost() {
 		cost = 900 + 200.00*Math.pow(0.70, temperature/5.00);
 		return cost;	
+	}
+
+
+
+	/**
+	 * Get the maximum number of cargo that the truck can contain.
+	 * @return The max cargo amount.
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	@Override
+	public int getMaxCargo() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
