@@ -1,13 +1,17 @@
 package main;
 
 import java.awt.*;
+
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
 import exceptions.*;
 import item.Item;
 import manifest.Manifest;
 import store.Store;
 import stock.Stock;
 import manifestCreator.ManifestCreator;
+import readInCSV.ReadItemCSV;
 
 /**
  * The main class containing the code to create, setup and display the GUI and 
@@ -26,6 +30,8 @@ public class Main extends JFrame {
 	public Main() {
         super("CAB302 Inventory Manager");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        // get instance of store
+		  Store store = Store.getInstance();
      
         //Add Panel.
         JPanel panel = new JPanel();
@@ -45,19 +51,34 @@ public class Main extends JFrame {
         btnLoadManifest.addActionListener(new LoadManifestListener());
         btnLoadSales.addActionListener(new LoadSalesListener());
         
-        //Add Table.
-        String[] columnNames = {"Amount",
-                "Item",
-                "Cost Price",
-                "Sell Price",
-                "Reorder Point",
-                "Reorder Amount",
-                "Temperature"}; //Columns.
+        //Add Table.        
+        // create object of table and table model
+        JTable tblInventory = new JTable();
+        DefaultTableModel dtm = new DefaultTableModel(0, 0);
+
+        // add header of the table
+        String header[] = new String[] {"Amount",
+               "Item",
+               "Cost Price",
+               "Sell Price",
+               "Reorder Point",
+               "Reorder Amount",
+               "Temperature"}; //Columns.
+
+        // add header in table model     
+        dtm.setColumnIdentifiers(header);
+        //set model into the table object
+        tblInventory.setModel(dtm);
+
+        // add row dynamically into the table      
+        for (Item i : store.getInventory()) {
+        	
+        	dtm.addRow(new Object[] { i.getAmount(), i.getName(), i.getCostPrice(), i.getSellPrice(),
+                    i.getReorderPoint(), i.getReorderAmount(), i.getTemperature() });
+        }
         
-        Object[][] data = 
-        	{{"100","Milk","3.0","4.0","300","400","4"}}; //Sample Data.
         
-        JTable tblInventory = new JTable(data, columnNames);
+        
         JScrollPane scrlPane = new JScrollPane();
         scrlPane.add(tblInventory);
         scrlPane.setViewportView(tblInventory);
@@ -93,6 +114,7 @@ public class Main extends JFrame {
 	public static void main(String[] args) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		new Main();	
+		
 	}
 	
 }

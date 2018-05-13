@@ -1,7 +1,13 @@
 package main;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import exceptions.CSVFormatException;
+import exceptions.StockException;
+import readInCSV.ReadItemCSV;
 
 /**
  * A listener for the Load Items button.
@@ -17,7 +23,21 @@ public class LoadListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		
 		System.out.println("Load Items");
+		try {
+			ReadItemCSV readitemCSV = new ReadItemCSV("/home/jake/Desktop/manifest.csv");
+		} catch (CSVFormatException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (StockException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 	}
 
 }
