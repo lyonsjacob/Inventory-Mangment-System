@@ -26,11 +26,13 @@ public class LoadListener implements ActionListener {
 		
 		System.out.println("Load Items");
 		CSVFormatCheck CSVcheck = new CSVFormatCheck();
+		FileSelector fileSelector  = new FileSelector();
 		
+		String fileNamePath = fileSelector.getFile();
 		// TODO: Handle Exceptions
 		try {
-			if(CSVcheck.checkCSVFormat("/home/jake/Desktop/item_properties.csv")) {
-			ReadItemCSV readitemCSV = new ReadItemCSV("/home/jake/Desktop/item_properties.csv");
+			if(CSVcheck.checkCSVFormat(fileNamePath)) {
+			ReadItemCSV readitemCSV = new ReadItemCSV(fileNamePath);
 			}
 		} catch (CSVFormatException e1) {
 			// TODO Auto-generated catch block

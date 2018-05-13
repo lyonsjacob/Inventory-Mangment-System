@@ -21,6 +21,8 @@ import readInCSV.ReadItemCSV;
  */
 @SuppressWarnings("serial")
 public class Main extends JFrame {
+    // get instance of store
+	  Store store = Store.getInstance();
 	
 	/**
 	 * Setup the GUI components and display the window. Creates the panel, 
@@ -30,8 +32,7 @@ public class Main extends JFrame {
 	public Main() {
         super("CAB302 Inventory Manager");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-        // get instance of store
-		  Store store = Store.getInstance();
+
      
         //Add Panel.
         JPanel panel = new JPanel();

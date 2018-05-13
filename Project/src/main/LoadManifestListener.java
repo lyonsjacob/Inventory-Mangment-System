@@ -26,10 +26,13 @@ public class LoadManifestListener implements ActionListener {
 		// TODO 
 		System.out.println("Load Manifest");
 		CSVFormatCheck CSVcheck = new CSVFormatCheck();
+		FileSelector fileSelector  = new FileSelector();
+		
+		String fileNamePath = fileSelector.getFile();
 		
 		try {
-			if(CSVcheck.checkCSVFormat("/home/jake/Downloads/manifest.csv")) {
-				ReadManifestCSV readManifestCSV = new ReadManifestCSV("/home/jake/Downloads/manifest.csv");
+			if(CSVcheck.checkCSVFormat(fileNamePath)) {
+				ReadManifestCSV readManifestCSV = new ReadManifestCSV(fileNamePath);
 			}
 		} catch (CSVFormatException e1) {
 			// TODO Auto-generated catch block
