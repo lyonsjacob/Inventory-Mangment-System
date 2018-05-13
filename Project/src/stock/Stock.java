@@ -49,7 +49,8 @@ public class Stock implements Iterable<Item>  {
 	 */
 	public Item get(String itemName)throws StockException {
 		for(int i = 0; i < storeStock.size(); i++) {
-			if(storeStock.get(i).getName() == itemName) {
+			
+			if(storeStock.get(i).getName().equals(itemName)) {
 				return storeStock.get(i);
 			}
 		}

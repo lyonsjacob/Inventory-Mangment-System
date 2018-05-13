@@ -59,8 +59,11 @@ public class ReadSalesLogCSV {
 	public void updateInventory() throws StockException {
 		
 		Item currentItem;
+		
 		for(int i=0; i < soldItems.size(); i++) {
 			// Check it item exist and undo all changes if item does not exist
+			System.out.println(soldItems.get(i));
+			System.out.println(quantitySold.get(i));
 			
 		    try {
 				currentItem = store.getInventory().get(soldItems.get(i));
