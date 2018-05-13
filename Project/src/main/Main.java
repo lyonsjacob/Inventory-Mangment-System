@@ -25,7 +25,7 @@ public class Main extends JFrame {
 	/**
 	 * Setup the GUI components and display the window. Creates the panel, 
 	 * four buttons, a label and the table. 
-	 * @author Mitchell Willemse (n9470620).
+	 * @author Mitchell Willemse (n9470620)& Jacob Lyons (N9507175).
 	 */
 	public Main() {
         super("CAB302 Inventory Manager");
