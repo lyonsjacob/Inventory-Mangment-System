@@ -34,10 +34,9 @@ public class ReadItemCSV {
 	 * @throws StockException
 	 * @author Jacob Lyons
 	 */
-	public void readItemCSV(String fileNameAndPath) throws CSVFormatException, IOException, StockException {
+	public ReadItemCSV(String fileNameAndPath) throws CSVFormatException, IOException, StockException {
 		
-		  FileReader fileReader = new FileReader("/home/jake/Desktop/item_properties.csv" + 
-		  		"");
+		  FileReader fileReader = new FileReader(fileNameAndPath);
 		  BufferedReader buffer =new BufferedReader(fileReader); 
 		  String line = buffer.readLine();
 		  

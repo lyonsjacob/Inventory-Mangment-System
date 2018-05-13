@@ -19,7 +19,7 @@ public class CSVFormatCheck {
 	 * @throws StockException
 	 * @author Jacob Lyons
 	 */
-	public boolean CheckCSVFormat(String fileNameAndPath) throws CSVFormatException, IOException, StockException{
+	public boolean checkCSVFormat(String fileNameAndPath) throws CSVFormatException, IOException, StockException{
 		File readFile = new File(fileNameAndPath);
 		
 		// check it file exists.

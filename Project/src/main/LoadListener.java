@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import exceptions.CSVFormatException;
 import exceptions.StockException;
+import readInCSV.CSVFormatCheck;
 import readInCSV.ReadItemCSV;
 
 /**
@@ -25,8 +26,12 @@ public class LoadListener implements ActionListener {
 		// TODO Auto-generated method stub
 		
 		System.out.println("Load Items");
+		CSVFormatCheck CSVcheck = new CSVFormatCheck();
+		
 		try {
+			if(CSVcheck.checkCSVFormat("/home/jake/Desktop/manifest.csv")) {
 			ReadItemCSV readitemCSV = new ReadItemCSV("/home/jake/Desktop/manifest.csv");
+			}
 		} catch (CSVFormatException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

@@ -114,7 +114,6 @@ public class Main extends JFrame {
 	public static void main(String[] args) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		new Main();	
-		
 	}
 	
 }
