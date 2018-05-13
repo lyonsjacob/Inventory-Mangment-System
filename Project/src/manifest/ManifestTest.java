@@ -65,7 +65,7 @@ public class ManifestTest {
 		// clear manifest and check if manifest is empty.
 		@Test
 		public void clearManifestTest() {
-			clearManifest();
+			manifest.clearManifest();
 			Iterator<Truck> manifestIterator = manifest.iterator();
 			assertEquals(false, manifestIterator.hasNext());
 		}
