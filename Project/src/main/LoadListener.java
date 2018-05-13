@@ -19,18 +19,18 @@ public class LoadListener implements ActionListener {
 
 	/**
 	 * Invoked when an action occurs.
-	 * @author Mitchell Willemse (n9470620).
+	 * @author Mitchell Willemse (n9470620) & Jacob Lyons (n9507175).
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		
 		System.out.println("Load Items");
 		CSVFormatCheck CSVcheck = new CSVFormatCheck();
 		
+		// TODO: Handle Exceptions
 		try {
-			if(CSVcheck.checkCSVFormat("/home/jake/Desktop/manifest.csv")) {
-			ReadItemCSV readitemCSV = new ReadItemCSV("/home/jake/Desktop/manifest.csv");
+			if(CSVcheck.checkCSVFormat("/home/jake/Desktop/item_properties.csv")) {
+			ReadItemCSV readitemCSV = new ReadItemCSV("/home/jake/Desktop/item_properties.csv");
 			}
 		} catch (CSVFormatException e1) {
 			// TODO Auto-generated catch block

@@ -51,7 +51,11 @@ public class Main extends JFrame {
         btnLoadManifest.addActionListener(new LoadManifestListener());
         btnLoadSales.addActionListener(new LoadSalesListener());
         
-        //Add Table.        
+        //Add Table.  
+        // TODO: added this to the main method because we will need it 
+        // in the final version, not sure how to make the gui up date 
+        // when the inventory has been changed.
+        
         // create object of table and table model
         JTable tblInventory = new JTable();
         DefaultTableModel dtm = new DefaultTableModel(0, 0);
