@@ -36,11 +36,10 @@ public class ReadManifestCSV {
 		// read Sales CSV line by line 
 		while(line != null) {
 			String[] parts = line.split(",");
-			  
 			// check if CSV is correctly formatted
 			if((parts.length > 2)|(parts.length < 1)) {
 				buffer.close();
-				throw new CSVFormatException("Incorect number of feilds in Sales Log CSV");
+				throw new CSVFormatException("Incorect number of feilds in manifest Log CSV");
 			}
 			  
 			if(parts.length == 2) {
@@ -51,7 +50,7 @@ public class ReadManifestCSV {
 				manifestItems.add(itemName);
 				this.quantityBrought.add(quantityBrought);
 				
-			}else if((parts[0].equals("ordinary Truck"))|(parts[0].equals("refrigerated Truck"))){
+			}else if((parts[0].equals(">Refrigerated"))|(parts[0].equals(">Ordinary"))){
 				manifestItems.add(parts[0]);
 				quantityBrought.add(-1);
 				
@@ -91,12 +90,15 @@ public class ReadManifestCSV {
 						temperatureLevel = currentItem.getTemperature();
 						
 					// calculate cost of trucks
-					}else if(manifestItems.get(i).equals("Ordinary Truck")) {
+					}else if(manifestItems.get(i).equals(">Ordinary")) {
 						totalManifestCost += 750 + 0.25*quantityCount;
 						temperatureLevel = 30;
 						quantityCount = 0;
 						
-					}else if(manifestItems.get(i).equals("Refrigerated Truck")) {
+					}else if(manifestItems.get(i).equals(">Refrigerated")) {
+						if((temperatureLevel < -20)|(temperatureLevel > 10)) {
+							throw new StockException("Item is outside trucks Temperature range");
+						}
 						totalManifestCost += 900 + 200.00*Math.pow(0.70, temperatureLevel/5.00);
 						temperatureLevel = 30;
 						quantityCount = 0;
