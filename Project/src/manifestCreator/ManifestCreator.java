@@ -48,64 +48,73 @@ public class ManifestCreator {
 			
 		}
 		
-		//Keep looping and creating trucks until toOrder is empty.
-		while(!toOrder.isEmpty()) {
-			
-			Truck truck = new OrdinaryTruck();
-			Boolean isFirst = true;
-			int quantity = 0;
-			
-			//Create an Iterator to iterate through toOrder.
-			Iterator<Item> iter =  toOrder.iterator();
-			
-			//Iterate through toOrder
-			while (iter.hasNext()) {
-				
-				//Get current item.
-				Item entry = iter.next();
-				
-				//First item for a new truck
-				if (isFirst) {
-					if (entry.getTemperature() != null) {
-						//If item has a temperature, create Refrigerated Truck 
-						truck = new RefrigeratedTruck();
-						truck.addItem(entry.getName(), entry.getReorderAmount(), entry.getTemperature());
-						quantity += entry.getReorderAmount();
-						
-					} else {
-						//No temperature, create Ordinary Truck.
-						truck = new OrdinaryTruck();
-						truck.addItem(entry.getName(), entry.getReorderAmount());
-						quantity += entry.getReorderAmount();
-						
-					}
-					isFirst = false;
-				} else {
-					//truck.addItem(entry.getName(), entry.getReorderAmount());
-					quantity += entry.getReorderAmount();
-				}
+		Truck truck = null;
+		Boolean isFirst = true;
+		int quantity = 0;
 
-				if (quantity > 800 || (iter.hasNext() == false)) {
-					manifest.addTruck(truck);
+		//Create an Iterator to iterate through toOrder.
+		Iterator<Item> iter =  toOrder.iterator();
+		
+		
+		
+		//Iterate through to order.
+		while (iter.hasNext()) {
+			
+			//Get Current Item.
+			Item entry = iter.next();
+			
+			//If it is first item, have to initialize truck. 
+			if (isFirst) {
+				
+				//No temperature, create Ordinary Truck.
+				if (entry.getTemperature() == null) {	
+					truck = new OrdinaryTruck();
+					truck.addItem(entry.getName(), entry.getReorderAmount());
+					quantity = entry.getReorderAmount();
+							
+				//Has a temperature, create Refrigerated Truck.
+				} else {
+					truck = new RefrigeratedTruck();
+					truck.addItem(entry.getName(), entry.getReorderAmount(), entry.getTemperature());
+					quantity = entry.getReorderAmount();
+					
+				}
+				
+				//First item added.
+				isFirst = false;
+				iter.remove();
+				
+
+			//Not first item, add to truck already initialized.
+			} else {
+
+				//Make sure we don't breach limit.
+				if (quantity + entry.getReorderAmount() > truck.getMaxCargo() || iter.hasNext() == false) {
 					isFirst = true;
 					quantity = 0;
+					manifest.addTruck(truck);
 					truck = null;
+					
+					//Reset Iterator
+					iter = toOrder.iterator();
+					
+					
+				//We can add the item.
+				} else {
+					truck.addItem(entry.getName(), entry.getReorderAmount());
+					quantity += entry.getReorderAmount();
+					
+					//Remove from list.
+					iter.remove();
 				}
 				
-				//Been placed on Truck, remove from toOrder
-				iter.remove();
 			}
 			
-		
 			
-			
+
 		}
 		
-		
 
-			
-			
-		
 		return manifest;
 	}
 

@@ -140,8 +140,7 @@ public class RefrigeratedTruck extends Truck {
 	 */
 	@Override
 	public int getMaxCargo() {
-		// TODO Auto-generated method stub
-		return 0;
+		return MAX_CARGO;
 	}
 
 	
@@ -155,5 +154,4 @@ public class RefrigeratedTruck extends Truck {
 	public String getTruckType() {
 		return "Refrigerated";
 	}
-
 }
