@@ -2,6 +2,7 @@ package ordinaryTruck;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import exceptions.DeliveryException;
 import truck.Truck;
@@ -74,7 +75,7 @@ public class OrdinaryTruck extends Truck {
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
-	public Map<String, Integer> GetHashMap() {
+	public Map<String, Integer> GetMap() {
 		return cargo;
 	}
 
@@ -133,4 +134,20 @@ public class OrdinaryTruck extends Truck {
 		return "Ordinary";
 	}
 
+	
+	
+	@Override
+	public String convertToString() {
+		//String to return.
+		String output = "";
+		
+		output += ">Ordinary Truck \n";
+		
+        for (Entry<String, Integer> entry : cargo.entrySet()){
+            output += entry.getKey() + "," + entry.getValue() + "\n";
+        }
+    
+	    //Return this string.
+		return output;
+	}
 }

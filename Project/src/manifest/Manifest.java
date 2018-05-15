@@ -96,17 +96,7 @@ public class Manifest implements Iterable<Truck> {
 		
 		//Iterate through each truck.
 	    for (Truck i : trucks) {
-	    		//Add the truck type to the output.
-	    		output += ">" + i.getTruckType() + ",\n";
-	    		
-	    		//Get the HashMap of items from the truck.
-	    		Map<String, Integer> items = i.GetHashMap();
-	    		
-	    		//Iterate through the HashMap, adding the list of items and
-	    		//their amount seperated by a comma, ready for exporting as CSV.
-            for (Entry<String, Integer> entry : items.entrySet()){
-                output += entry.getKey() + "," + entry.getValue() + "\n";
-            }
+	    		output += i.convertToString();
 	    }
 	    
 	    //Return this string.

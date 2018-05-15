@@ -31,7 +31,7 @@ public abstract class Truck {
 	 * @return The HashMap.
 	 * @author Mitchell Willemse (n9470620).
 	 */
-	public abstract Map<String, Integer> GetHashMap();
+	public abstract Map<String, Integer> GetMap();
 	
 	/**
 	 * Returns the cost of the truck, calculated differently depending whether it is
@@ -65,4 +65,10 @@ public abstract class Truck {
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	public abstract String getTruckType();
+	
+	/**
+	 * Get the truck as a string.
+	 * @return The truck and it's contents.
+	 */
+	public abstract String convertToString();
 }

@@ -2,6 +2,7 @@ package refrigeratedTruck;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import exceptions.DeliveryException;
 import truck.Truck;
@@ -50,7 +51,9 @@ public class RefrigeratedTruck extends Truck {
 	public void addItem(String itemName, int amount, int temperature) throws DeliveryException {
 		//Set the temperature for the truck
 		
-		if (temperature <= 10 && temperature >= -20) {
+
+		
+		if (temperature <= 10 && temperature >= -20) {	
 			this.temperature = temperature;
 			this.addItem(itemName, amount);
 		} else {
@@ -112,7 +115,7 @@ public class RefrigeratedTruck extends Truck {
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
-	public Map<String, Integer> GetHashMap() {
+	public Map<String, Integer> GetMap() {
 		return cargo;
 	}
 
@@ -153,5 +156,22 @@ public class RefrigeratedTruck extends Truck {
 	@Override
 	public String getTruckType() {
 		return "Refrigerated";
+	}
+
+
+
+	@Override
+	public String convertToString() {
+		//String to return.
+		String output = "";
+		
+		output += ">Refrigerated Truck \n";
+		
+        for (Entry<String, Integer> entry : cargo.entrySet()){
+            output += entry.getKey() + "," + entry.getValue() + "\n";
+        }
+    
+	    //Return this string.
+		return output;
 	}
 }
