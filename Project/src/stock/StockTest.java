@@ -73,15 +73,21 @@ public class StockTest {
 	}
 		
 	/**
-	 * Test 4: Can't Add Same Item Twice. Tries to add the same Item twice and receives
-	 * StockException.
+	 * Test 4: Clear inventory.
+	 * @throws StockException 
 	 * @author Mitchell Willemse (n9470620).
 	 */
-	@Test (expected = StockException.class)
-	public void duplicateItem() throws StockException {
-		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
-		stock.put(testItem);
-		stock.put(testItem);
+	@Test 
+	public void clearInventory() throws StockException {
+		Item testItem1= new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
+		Item testItem2 = new Item(7, "Chips", 3, 4, 300, 400);
+		
+		stock.put(testItem1);
+		stock.put(testItem2);
+		
+		stock.clear();
+		
+		assertEquals(0, stock.getStockQuantity());
 	}
 	
 	/*
