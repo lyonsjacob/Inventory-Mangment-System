@@ -35,10 +35,24 @@ public class Stock implements Iterable<Item>  {
 	 * @exception throws exception if the same item is added twice.
 	 */
 	public void put(Item item)throws StockException {
+		String itemName = item.getName();
+		//checks the item name
+		for(int i =0; i < storeStock.size(); i++) {
+			if(storeStock.get(i).getName().equals(itemName)) {
+				throw new StockException("Cannot add the same item twice");
+			}
+		}
 		if(storeStock.contains(item)) {
 			throw new StockException("Cannot add the same item twice");
 		}
 		storeStock.add(item);	
+	}
+	
+	/**
+	 * This method clears all items in the stores inventory.
+	 */
+	public void clear() {
+		storeStock.clear();
 	}
 
 	/**
@@ -47,7 +61,8 @@ public class Stock implements Iterable<Item>  {
 	 * @return Item 
 	 * @throws StockException when item is not in list.
 	 */
-	public Item get(String itemName)throws StockException {
+	// note must change method name because it over rides list.get();
+	public Item getItemName(String itemName)throws StockException {
 		for(int i = 0; i < storeStock.size(); i++) {
 			
 			if(storeStock.get(i).getName().equals(itemName)) {
@@ -67,7 +82,7 @@ public class Stock implements Iterable<Item>  {
 	 * @throws StockException
 	 */
 	public void setQuantity(String itemName, int quantity) throws StockException {
-		get(itemName).setAmount(quantity);
+		getItemName(itemName).setAmount(quantity);
 	}
 	
 	/**
@@ -78,7 +93,7 @@ public class Stock implements Iterable<Item>  {
 	 * @throws StockException
 	 */
 	public int getQuantity(String itemName) throws StockException{
-		return get(itemName).getAmount();
+		return getItemName(itemName).getAmount();
 	}
 
 

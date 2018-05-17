@@ -19,9 +19,6 @@ import store.Store;
  *
  */
 public class ReadItemCSV {
-	 
-	
-	//TODO put this in a class of it own for generally checking file format
 
 	
 	/**
