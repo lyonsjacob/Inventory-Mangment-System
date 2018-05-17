@@ -10,7 +10,13 @@ import exceptions.StockException;
 import item.Item;
 import store.Store;
 
-
+/**
+ * This class reads in a manifest CSV and updates the items quantity in stock and reduces the capital.
+ * If an exception occurs during the item update process the changes to the stores stock
+ *  will be undone before it throws a message to the user.
+ * @author Jacob Lyons (N9507175)
+ *
+ */
 public class ReadManifestCSV {
 	 // get instance of store
 	  Store store = Store.getInstance();
@@ -18,6 +24,18 @@ public class ReadManifestCSV {
 	  private ArrayList<Integer> quantityBrought;
 	  private double totalManifestCost;
 	
+	  /**
+	   * This method reads the manifest CSV and writes the item name and 
+	   * quantity brought to separate array lists. The method also checks if the 
+	   * CSV has the correct number of fields and contains the correct information.
+	   * 
+	   * @param fileNameAndPath		-file name and path of the manifest CSV
+	   * @throws CSVFormatException	
+	   * @throws IOException
+	   * @throws StockException
+	   * 
+	   * @author Jacob Lyons (N9507175)
+	   */
 	public ReadManifestCSV(String fileNameAndPath) throws CSVFormatException, IOException, StockException {
 		
 		manifestItems = new ArrayList<String>();
@@ -68,6 +86,14 @@ public class ReadManifestCSV {
 	}
 	
 
+	
+	/**
+	 * This method updates brought items quantity and the stores capital, using the data 
+	 * read into the array lists.
+	 * 
+	 * @throws StockException
+	 * @author Jacob Lyons (N9507175)
+	 */
 	public void updateInventory() throws StockException {
 		
 	int quantityCount;
@@ -113,6 +139,15 @@ public class ReadManifestCSV {
 		}		
 	}
 	
+	/**
+	 * This method undoes the changes made to the stores stock if an exception
+	 * occurs in the updateInventory method.
+	 * 
+	 * @param index	-the index of the array list witch exception occurred
+	 * @throws StockException
+	 * 
+	 * @author Jacob Lyons
+	 */
 	public void undoItemQuantityChanges(int index) throws StockException {
 		Item currentItem;
 		for(int i = manifestItems.size()-1; i >= index+1 ; i--) {
