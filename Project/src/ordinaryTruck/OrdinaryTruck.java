@@ -1,6 +1,7 @@
 package ordinaryTruck;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -28,7 +29,7 @@ public class OrdinaryTruck extends Truck {
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	public OrdinaryTruck() {
-		cargo = new HashMap<String, Integer>();
+		cargo = new LinkedHashMap<String, Integer>();
 		cargoQuantity = 0;
 	}
 	
@@ -141,7 +142,7 @@ public class OrdinaryTruck extends Truck {
 		//String to return.
 		String output = "";
 		
-		output += ">Ordinary Truck \n";
+		output += ">Ordinary\n";
 		
         for (Entry<String, Integer> entry : cargo.entrySet()){
             output += entry.getKey() + "," + entry.getValue() + "\n";

@@ -1,6 +1,7 @@
 package refrigeratedTruck;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -34,7 +35,7 @@ public class RefrigeratedTruck extends Truck {
 	 */
 	public RefrigeratedTruck() {
 		cargoQuantity = 0;
-		cargo = new HashMap<String, Integer>();
+		cargo = new LinkedHashMap<String, Integer>();
 	}
 	
 	
@@ -162,12 +163,14 @@ public class RefrigeratedTruck extends Truck {
 
 	@Override
 	public String convertToString() {
+		
+		
 		//String to return.
 		String output = "";
 		
-		output += ">Refrigerated Truck \n";
+		output += ">Refrigerated\n";
 		
-        for (Entry<String, Integer> entry : cargo.entrySet()){
+        for (Entry<String, Integer> entry : cargo.entrySet()){ 
             output += entry.getKey() + "," + entry.getValue() + "\n";
         }
     
