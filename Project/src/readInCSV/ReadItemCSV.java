@@ -23,7 +23,7 @@ public class ReadItemCSV {
 	
 	/**
 	 * This method takes a file path and opens an item properties csv at that location. Item 
-	 * properties are then used to create item objects on the system.
+	 * properties are then used to create item objects in the store inventory.
 	 * 
 	 * @param fileNameAndPath
 	 * @throws CSVFormatException

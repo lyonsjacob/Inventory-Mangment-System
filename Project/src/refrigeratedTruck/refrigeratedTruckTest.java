@@ -131,7 +131,7 @@ public class refrigeratedTruckTest {
 	public void toStringTest() throws DeliveryException {
 			
 		refrigeratedTruck.addItem("milk", 100);
-		String itemString = ">Ordinary Truck \n icecream, 300 \n milk, 100";
+		String itemString = ">Refrigerated \n icecream,300 \n milk,100";
 		assertEquals(itemString, refrigeratedTruck.convertToString());
 	}
 		

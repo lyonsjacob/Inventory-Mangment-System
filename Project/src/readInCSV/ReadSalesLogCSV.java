@@ -9,12 +9,31 @@ import exceptions.StockException;
 import item.Item;
 import store.Store;
 
+/**
+ * This class reads in a sales log csv. The condense of the csv are stored in memory.
+ * The items quantity and the stores capital are then updated. if an exception occurs 
+ * during this process the changes are reversed and a message is sent to the user.
+ * 
+ * @author Jacob Lyons (N9507175)
+ */
 public class ReadSalesLogCSV {
 	  // get instance of store
 	  Store store = Store.getInstance();
 	  private ArrayList<String> soldItems;
 	  private ArrayList<Integer> quantitySold;
 	
+	/**
+	 * This method reads the sales log CSV and writes the item name and 
+	 * quantity sold to separate array lists. The method also checks if the 
+	 * CSV has the correct number of fields and contains the correct information.
+	 * 
+	 * @param fileNameAndPath		-file name and path of sales log CSV
+	 * @throws CSVFormatException
+	 * @throws IOException
+	 * @throws StockException
+	 * 
+	 * @author Jacob Lyons (N9507175)
+	 */
 	public ReadSalesLogCSV(String fileNameAndPath) throws CSVFormatException, IOException, StockException {
 		
 		soldItems = new ArrayList<String>();
@@ -55,7 +74,14 @@ public class ReadSalesLogCSV {
 	}
 	
 	
-	
+	/**
+	 * This method updates the sold items quantity in inventory and the stores capital, 
+	 * using the data read into the array lists.
+	 * 
+	 * @throws StockException
+	 * 
+	 * @author Jacob Lyons
+	 */
 	public void updateInventory() throws StockException {
 		
 		Item currentItem;
@@ -80,6 +106,13 @@ public class ReadSalesLogCSV {
 	}
 	
 	
+	/**
+	 * This method undoes the changes made to the stores stock and capital if an exception
+	 * occurs in the updateInventory method.
+	 * 
+	 * @param index -the index of the array list witch exception occurred
+	 * @throws StockException
+	 */
 	public void undoChanges(int index) throws StockException {
 		Item currentItem;
 		for(int i=0; i < index; i++) {
