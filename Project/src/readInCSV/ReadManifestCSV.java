@@ -77,7 +77,7 @@ public class ReadManifestCSV {
 			
 			try {
 				if(quantityBrought.get(i) !=-1) {
-					currentItem = store.getInventory().get(manifestItems.get(i));
+					currentItem = store.getInventory().getItemName(manifestItems.get(i));
 					// update item quantity 
 					currentItem.setAmount(currentItem.getAmount()+quantityBrought.get(i));
 					//update total cost

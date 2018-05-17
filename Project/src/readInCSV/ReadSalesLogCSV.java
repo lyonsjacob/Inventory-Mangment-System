@@ -66,7 +66,7 @@ public class ReadSalesLogCSV {
 			System.out.println(quantitySold.get(i));
 			
 		    try {
-				currentItem = store.getInventory().get(soldItems.get(i));
+				currentItem = store.getInventory().getItemName(soldItems.get(i));
 				// update item quantity 
 				currentItem.setAmount(currentItem.getAmount()-quantitySold.get(i));	
 				// update capital
@@ -85,7 +85,7 @@ public class ReadSalesLogCSV {
 		for(int i=0; i < index; i++) {
 			
 			//get item
-			currentItem = store.getInventory().get(soldItems.get(i));
+			currentItem = store.getInventory().getItemName(soldItems.get(i));
 			
 			// update item quantity 
 			currentItem.setAmount(currentItem.getAmount()-quantitySold.get(i));

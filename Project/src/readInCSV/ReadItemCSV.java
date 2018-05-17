@@ -45,7 +45,7 @@ public class ReadItemCSV {
 		  // get instance of store
 		  Store store = Store.getInstance();
 		  // clear store inventory 
-		  // TODO make clear inventory method.
+		  store.getInventory().clear();
 		  
 		  // read CSV line by line 
 		  while(line != null) {
