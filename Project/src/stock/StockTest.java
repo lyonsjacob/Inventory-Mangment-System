@@ -48,7 +48,7 @@ public class StockTest {
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		stock.put(testItem);
 		
-		assertEquals(testItem, stock.get("Ice Cream"));
+		assertEquals(testItem, stock.getItemName("Ice Cream"));
 	}
 	
 	/**
