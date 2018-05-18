@@ -30,20 +30,15 @@ public class LoadListener implements ActionListener {
 		FileSelector fileSelector  = new FileSelector();
 		
 		String fileNamePath = fileSelector.getFile();
-		try {
-			if(CSVcheck.checkCSVFormat(fileNamePath)) {
-			ReadItemCSV readitemCSV = new ReadItemCSV(fileNamePath);
+		
+			try {
+				if(CSVcheck.checkCSVFormat(fileNamePath)) {
+				ReadItemCSV readitemCSV = new ReadItemCSV(fileNamePath);
+				}
+			} catch (CSVFormatException | IOException | StockException e1) {
+				e1.printStackTrace();
+				popUpBox.ErrorMessage(e1.getMessage());
 			}
-		} catch (CSVFormatException e1) {
-			e1.printStackTrace();
-			popUpBox.ErrorMessage(e1.getMessage());
-		} catch (IOException e1) {
-			e1.printStackTrace();
-			popUpBox.ErrorMessage(e1.getMessage());
-		} catch (StockException e1) {
-			popUpBox.ErrorMessage(e1.getMessage());
-			e1.printStackTrace();
-		}
 		
 	}
 

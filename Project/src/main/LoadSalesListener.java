@@ -23,27 +23,22 @@ public class LoadSalesListener implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("Load Sales Log");
 		
+		ErrorMessageBox popUpBox = new ErrorMessageBox();
 		CSVFormatCheck CSVcheck = new CSVFormatCheck();
 		FileSelector fileSelector  = new FileSelector();
 		
 		String fileNamePath = fileSelector.getFile();
 		
-		try {
-			if(CSVcheck.checkCSVFormat(fileNamePath)) {
-				ReadSalesLogCSV readSalesLogCSV = new ReadSalesLogCSV(fileNamePath);
+			try {
+				if(CSVcheck.checkCSVFormat(fileNamePath)) {
+					ReadSalesLogCSV readSalesLogCSV = new ReadSalesLogCSV(fileNamePath);
+				}
+			} catch (CSVFormatException | IOException | StockException e1) {
+				e1.printStackTrace();
+				popUpBox.ErrorMessage(e1.getMessage());
 			}
-		} catch (CSVFormatException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (StockException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+
 		
 	}
 

@@ -23,27 +23,23 @@ public class LoadManifestListener implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO 
-		System.out.println("Load Manifest");
+		
+		ErrorMessageBox popUpBox = new ErrorMessageBox();
 		CSVFormatCheck CSVcheck = new CSVFormatCheck();
 		FileSelector fileSelector  = new FileSelector();
 		
 		String fileNamePath = fileSelector.getFile();
 		
-		try {
-			if(CSVcheck.checkCSVFormat(fileNamePath)) {
-				ReadManifestCSV readManifestCSV = new ReadManifestCSV(fileNamePath);
+
+			try {
+				if(CSVcheck.checkCSVFormat(fileNamePath)) {
+					ReadManifestCSV readManifestCSV = new ReadManifestCSV(fileNamePath);
+				}
+			} catch (CSVFormatException | IOException | StockException e1) {
+				popUpBox.ErrorMessage(e1.getMessage());
+				e1.printStackTrace();
 			}
-		} catch (CSVFormatException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (StockException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+
 	}
 
 }
