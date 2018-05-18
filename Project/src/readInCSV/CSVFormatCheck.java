@@ -9,7 +9,7 @@ import exceptions.StockException;
 public class CSVFormatCheck {
 	
 	/**
-	 * This class checks if the file and file path exists in the local environment.
+	 * This method checks if the file and file path exists in the local environment.
 	 * Then it check if the file format if not it throws a CSVFormatException.
 	 * Finally it returns true if file has the correct format.
 	 * 

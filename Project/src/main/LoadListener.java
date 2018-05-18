@@ -24,24 +24,24 @@ public class LoadListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		System.out.println("Load Items");
+
+		ErrorMessageBox popUpBox = new ErrorMessageBox();
 		CSVFormatCheck CSVcheck = new CSVFormatCheck();
 		FileSelector fileSelector  = new FileSelector();
 		
 		String fileNamePath = fileSelector.getFile();
-		// TODO: Handle Exceptions
 		try {
 			if(CSVcheck.checkCSVFormat(fileNamePath)) {
 			ReadItemCSV readitemCSV = new ReadItemCSV(fileNamePath);
 			}
 		} catch (CSVFormatException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
+			popUpBox.ErrorMessage(e1.getMessage());
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
+			popUpBox.ErrorMessage(e1.getMessage());
 		} catch (StockException e1) {
-			// TODO Auto-generated catch block
+			popUpBox.ErrorMessage(e1.getMessage());
 			e1.printStackTrace();
 		}
 		
