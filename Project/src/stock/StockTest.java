@@ -48,7 +48,7 @@ public class StockTest {
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		stock.put(testItem);
 		
-		assertEquals(testItem, stock.get("Ice Cream"));
+		assertEquals(testItem, stock.getItemName("Ice Cream"));
 	}
 	
 	/**
@@ -135,42 +135,7 @@ public class StockTest {
 	}
 	
 	/*
-	 *  Test 8: if items in stock are sorted by temperature.
-	 *  @author Jacob Lyons
-	 */
-	@Test
-	public void sortTest() throws StockException {
-		Item testItem0 = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
-		Item testItem1 = new Item(0, "Bread", 3, 4, 300, 400, 10);
-		Item testItem2 = new Item(0, "Milk", 3, 4, 300, 400, 4);
-		Item testItem3  = new Item(0, "Wheat", 3, 4, 300, 400);
-		Item testItem4  = new Item(0, "Water", 3, 4, 300, 400, 0);
-		
-		stock.put(testItem0);
-		stock.put(testItem1);
-		stock.put(testItem2);
-		stock.put(testItem3);
-		stock.put(testItem4);
-		
-		
-		//Change test because was getting errors with i.getTemperature() when the
-		//items temp was null.
-		stock.sort();
-		
-		String expectedOutput = "Ice CreamWaterMilkBreadWheat";
-		String actualOutput = "";
-		
-	    for (Item i : stock) {
-	        actualOutput += i.getName();
-	    }
-		
-		assertEquals(expectedOutput, actualOutput);
-		
-		
-	}
-	
-	/*
-	 * Test 9: Test Iterator. Tests to make sure the Stock class can be used to iterate
+	 * Test 8: Test Iterator. Tests to make sure the Stock class can be used to iterate
 	 * through each Item in the Stock object. Ensures each Item is properly iterated through.
 	 * @author Mitchell Willemse (n9470620).
 	 */
