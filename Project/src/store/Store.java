@@ -5,7 +5,7 @@ import stock.Stock;
 /**
  * An object that represents the store itself. 
  * This object employs the singleton pattern 
- * and stores the stores Capital Inventory and 
+ * and holds the stores Capital Inventory and 
  * Name.
  * 
  * @author Jacob Lyons
@@ -25,6 +25,7 @@ public class Store {
 	/**
 	 * Gets an instance of the store 
 	 * @return storeInstance
+	 * @author JacobLyons
 	 */
     public static Store getInstance() {
         if (null == storeInstance) {
@@ -37,6 +38,7 @@ public class Store {
     /**
      * Gets the stores capital.
      * @return double- Store capital
+     * @author Jacob Lyons
      */
     public double getCapital() {
     	return this.capital;
@@ -45,6 +47,7 @@ public class Store {
     /**
      * Sets the stores capital.
      * @param double- Store capital
+     * @author Jacob Lyons
      */
 	public void setCapital(double capital) {
 		this.capital = capital;
@@ -53,6 +56,7 @@ public class Store {
 	/**
 	 * Sets the stores name
 	 * @param String- Store name
+	 * @author Jacob Lyons
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -61,6 +65,7 @@ public class Store {
 	/**
 	 * Gets the stores name.
 	 * @return String- Store name
+	 * @author Jacob Lyons
 	 */
 	public String getName() {
 		return name;
@@ -69,6 +74,7 @@ public class Store {
 	/**
 	 * Gets the stores inventory
 	 * @return Stock- Store inventory
+	 * @author Jacob Lyons
 	 */
 	public Stock getInventory() {
 		return stock;
@@ -77,6 +83,7 @@ public class Store {
 	/**
 	 * Sets the stores inventory
 	 * @param Stock- Store inventory
+	 * @author Jacob Lyons
 	 */
 	public void setInventory(Stock inventory) {
 		stock = inventory;
@@ -85,8 +92,8 @@ public class Store {
 
 	/**
 	 * Gets the number of items in stock 
-	 * 
 	 * @return int -number of items in stock
+	 * @author Jacob Lyons
 	 */
 	public int getAmount() {
 		return stock.getStockQuantity();

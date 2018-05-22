@@ -77,9 +77,6 @@ public class ReadManifestCSV {
 				buffer.close();
 				throw new CSVFormatException("Incorect data in CSV truck fiels");
 			}
-				
-			
-			
 			// load next line
 			line = buffer.readLine();
 		}
@@ -97,24 +94,21 @@ public class ReadManifestCSV {
 	 * @author Jacob Lyons (N9507175)
 	 */
 	public void updateInventory() throws StockException {
-		
 	int quantityCount;
 	Integer temperatureLevel = 30;
 	Item currentItem;
-		for(int i = manifestItems.size()-1; i >= 1 ; i--) {
-			  // DE-BUG  
-	    	System.out.println(manifestItems.get(i)+quantityBrought.get(i));
-			
+	
+		for(int i = manifestItems.size()-1; i >= 1 ; i--) {			
 			try {
 				if(quantityBrought.get(i) !=-1) {
+					// get reference to item 
 					currentItem = store.getInventory().getItemName(manifestItems.get(i));
 					// update item quantity 
 					currentItem.setAmount(currentItem.getAmount()+quantityBrought.get(i));
-					//update total cost
+					// update total cost
 					totalManifestCost =+ (double)quantityBrought.get(i)*currentItem.getSellPrice();
-					//update counters
+					// update counters
 					quantityCount =+ quantityBrought.get(i);
-					
 					
 					// update truck temperature
 					Integer itemTemperature = currentItem.getTemperature();
@@ -123,7 +117,6 @@ public class ReadManifestCSV {
 					}
 					if(temperatureLevel > itemTemperature) {
 						temperatureLevel = itemTemperature;
-					
 						
 					// calculate cost of trucks
 					}else if(manifestItems.get(i).equals(">Ordinary")) {
@@ -144,6 +137,7 @@ public class ReadManifestCSV {
 				}
 				
 			}catch (StockException e) {
+				// undo changes
 				undoItemQuantityChanges(i);
 			}	
 			// update stores capital
@@ -167,7 +161,8 @@ public class ReadManifestCSV {
 			// update item quantity 
 			currentItem.setAmount(currentItem.getAmount()-quantityBrought.get(i));
 		}
-		throw new StockException(manifestItems.get(index)+"is not in store inventory, unable to update manifest");
+		throw new StockException(manifestItems.get(index)+"is not in store inventory, unable to update manifest.\n"
+				+ "No change has been made to the stores inventory");
 	}
 
 	

@@ -39,7 +39,7 @@ public class ReadItemCSV {
 		  
 		  if(line == null) {
 			  buffer.close();
-			  throw new CSVFormatException("file is empty");
+			  throw new CSVFormatException("File is empty");
 		  }
 		  
 		  // get instance of store
@@ -72,16 +72,9 @@ public class ReadItemCSV {
 			  }
 			  
 			  // load next line
-			  line = buffer.readLine();
-			  
+			  line = buffer.readLine(); 
 		  }
-		  buffer.close();
-		  
-		  // DE-BUG  
-	      for (Item i : store.getInventory()) {
-	    	System.out.println(i.toString());
-	      }
-	        
+		  buffer.close();	        
 	}
 
 }

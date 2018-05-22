@@ -45,7 +45,7 @@ public class ReadSalesLogCSV {
 		  
 		if(line == null) {
 			buffer.close();
-			throw new CSVFormatException("file is empty");
+			throw new CSVFormatException("File is empty.");
 		}
 		  
 		// read Sales CSV line by line 
@@ -60,12 +60,10 @@ public class ReadSalesLogCSV {
 			  
 			// convert to correct types
 			String itemName = parts[0];
-			int quantitySold = Integer.parseInt(parts[1]);
-			  
+			int quantitySold = Integer.parseInt(parts[1]); 
 			// add to arrays
 			soldItems.add(itemName);
 			this.quantitySold.add(quantitySold);
-			
 			// load next line
 			line = buffer.readLine();
 		}
@@ -83,14 +81,10 @@ public class ReadSalesLogCSV {
 	 * @author Jacob Lyons
 	 */
 	public void updateInventory() throws StockException {
-		
 		Item currentItem;
 		
 		for(int i=0; i < soldItems.size(); i++) {
-			// Check it item exist and undo all changes if item does not exist
-			System.out.println(soldItems.get(i));
-			System.out.println(quantitySold.get(i));
-			
+			// Check it item exist and undo all changes if item does not exist			
 		    try {
 				currentItem = store.getInventory().getItemName(soldItems.get(i));
 				// update item quantity 
@@ -115,21 +109,19 @@ public class ReadSalesLogCSV {
 	 */
 	public void undoChanges(int index) throws StockException {
 		Item currentItem;
+		
 		for(int i=0; i < index; i++) {
-			
 			//get item
 			currentItem = store.getInventory().getItemName(soldItems.get(i));
-			
 			// update item quantity 
-			currentItem.setAmount(currentItem.getAmount()-quantitySold.get(i));
-						
+			currentItem.setAmount(currentItem.getAmount()-quantitySold.get(i));			
 			// update capital
 			double grossProfit = (double)quantitySold.get(i)*currentItem.getSellPrice();
-			store.setCapital(store.getCapital()+grossProfit);			
-			
+			store.setCapital(store.getCapital()+grossProfit);				
 		}
 		
-		throw new StockException("Item is not in store inventory or the amount sold is larger than the amount in stock");
+		throw new StockException(soldItems.get(index)+"is not in store inventory or the amount sold is larger than the amount in stock.\n"
+				+ "No change has been made to the stores inventory");
 	}
 
 }

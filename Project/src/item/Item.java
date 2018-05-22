@@ -22,7 +22,7 @@ public class Item {
 	
 	
 	/**
-	 * This is a constructor of the item class
+	 *Constructs an item class
 	 * 
 	 * @param amount
 	 * @param name			-name of item
@@ -30,6 +30,7 @@ public class Item {
 	 * @param salePrice		-sale price of item
 	 * @param reorderPoint	-quantity when item requires re-stocking 
 	 * @param reorderAmount	-order quantity
+	 * @author Jacob lyons
 	 */
 	public Item(int amount, String name, double costPrice, double salePrice, int reorderPoint, int reorderAmount, int temperature) {
 		this.name = name;
@@ -42,15 +43,16 @@ public class Item {
 	}
 	
 	/**
-	 * This is a second constructor witch does not include temperature 
+	 * Constructs an item class witch does not include temperature 
 	 * 
 	 * @param amount
 	 * @param name			-Name of item
-	 * @param costPrice2		-Cost price of item
+	 * @param costPrice2	-Cost price of item
 	 * @param sellPrice		-Sale price of item
 	 * @param reorderPoint	-Quantity when item requires re-stocking 
 	 * @param reorderAmount	-Order quantity
 	 * @param temperature 	-Item temperature
+	 * @author Jacob Lyons
 	 */
 	public Item(int amount, String name, double costPrice2, double sellPrice, int reorderPoint, int reorderAmount) {
 		this.name = name;
@@ -65,16 +67,18 @@ public class Item {
 	
 	
 	/**
-	 * This method returns the name of the item
-	 * @return Name of the item.
+	 * This method returns the name of the item.
+	 * @return Name of the item in string format.
+	 * @author Jacob Lyons
 	 */
 	public String getName() {
 		return this.name;
 	}
 	
 	/**
-	 * This method gets the cost of the item
+	 * This method gets the cost of the item.
 	 * @return Cost of item in dollars.
+	 * @author Jacob Lyons
 	 */
 	public double getCostPrice() {
 		return this.costPrice;
@@ -83,6 +87,7 @@ public class Item {
 	/**
 	 * Gets the sale price of item
 	 * @return Sale price of item in dollars.
+	 * @author Jacob Lyons
 	 */
 	public double getSellPrice() {
 		return this.salePrice;
@@ -91,6 +96,7 @@ public class Item {
 	/**
 	 * Gets reorder point
 	 * @return Reorder point
+	 * @author Jacob Lyons
 	 */
 	public int getReorderPoint() {
 		return this.reorderPoint;
@@ -99,6 +105,7 @@ public class Item {
 	/**
 	 * Gets the item reorder amount.
 	 * @return Item reorder amount
+	 * Jacob Lyons
 	 */
 	public int getReorderAmount() {
 		return this.reorderAmount;
@@ -107,6 +114,7 @@ public class Item {
 	/**
 	 * Gets the temperature the item needs to be stored at.
 	 * @return Item temperature or null if the item does not need to be refrigerated.
+	 * @author jacob Lyons
 	 */
 	public Integer getTemperature() {
 		if(temperature == null) {
@@ -117,8 +125,9 @@ public class Item {
 	
 	
 	/**
-	 * Returns a string of the items properties
+	 * Returns a string of the items properties.
 	 * @return String of the items properties
+	 * @author Jacob lyons
 	 */
 	public String toString() {
 		if(temperature == null) {
@@ -133,16 +142,18 @@ public class Item {
 	}
 
 	/**
-	 * Gets the number of items in stock
+	 * Gets the number of items in stock.
 	 * @return int- quantity of this item in stock
+	 * @author Jacob Lyons
 	 */
 	public int getAmount() {
 		return this.amount;
 	}
 
 	/**
-	 * The method sets the quantity of the items in stock
+	 * The method sets the quantity of the items in stock.
 	 * @param int amount -the quantity of the items in stock
+	 * @author Jacob Lyons
 	 */
 	public void setAmount(int amount)throws StockException{
 		
@@ -153,6 +164,10 @@ public class Item {
 	}
 
 	
+	/**
+	 * Checks if the item needs to be reordered.
+	 * @return boolean true if need reordering.
+	 */
 	public boolean isBelowReorderPoint() {
 		if(this.amount < this.reorderAmount) {
 			return true;
