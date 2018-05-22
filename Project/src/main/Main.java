@@ -54,37 +54,7 @@ public class Main extends JFrame {
         btnLoadManifest.addActionListener(new LoadManifestListener());
         btnLoadSales.addActionListener(new LoadSalesListener());
         
-        //Add Table.  
-        // TODO: added this to the main method because we will need it 
-        // in the final version, not sure how to make the gui up date 
-        // when the inventory has been changed.
-        /*
-        // create object of table and table model
-        JTable tblInventory = new JTable();
-        DefaultTableModel dtm = new DefaultTableModel(0, 0);
-
-        // add header of the table
-        String header[] = new String[] {"Amount",
-               "Item",
-               "Cost Price",
-               "Sell Price",
-               "Reorder Point",
-               "Reorder Amount",
-               "Temperature"}; //Columns.
-
-        // add header in table model     
-        dtm.setColumnIdentifiers(header);
-        //set model into the table object
-        tblInventory.setModel(dtm);
-
-        // add row dynamically into the table      
-        for (Item i : store.getInventory()) {
-        	
-        	dtm.addRow(new Object[] { i.getAmount(), i.getName(), i.getCostPrice(), i.getSellPrice(),
-                    i.getReorderPoint(), i.getReorderAmount(), i.getTemperature() });
-        }
-        
-        */
+        //Create Jtable.
         JScrollPane scrlPane = new JScrollPane();
         scrlPane.add(table.getTable());
         scrlPane.setViewportView(table.getTable());

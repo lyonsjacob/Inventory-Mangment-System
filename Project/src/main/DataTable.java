@@ -8,7 +8,12 @@ import item.Item;
 import store.Store;
 
 
-
+/**
+ * This class uses a singleton pattern to create a Jtable 
+ * witch holds the items details for the GUI.
+ * @author Jacob lyons 
+ *
+ */
 public class DataTable{
 	// get instance of store
 	Store store = Store.getInstance();
@@ -17,22 +22,20 @@ public class DataTable{
 	static JTable tblInventory = new JTable();
 	static DefaultTableModel dtm = new DefaultTableModel(0, 0);
 	
-	
-	
-	
-	
 	private DataTable() {
+		
+		
 	}
 	
 	
 	/**
-	 * Gets an instance of the store 
-	 * @return storeInstance
+	 * Gets an instance of the datatable 
+	 * @return DataTable Instance
+	 * @author Jacob lyons
 	 */
     public static DataTable getInstance() {
         if (null == tableInstance) {
         	tableInstance = new DataTable();
-
     	    // add header of the table
     	    String header[] = new String[] {"Amount",
     	           "Item",
@@ -49,12 +52,20 @@ public class DataTable{
         }
         return tableInstance;
     }
-	  
-	  
+	  	  
+    /**
+     * Gets the Jtable.
+     * @return the Jtable
+     * @author Jacob Lyons
+     */
 	public JTable getTable() {
 		return tblInventory;
 	}
 	
+	/**
+	 * This method clears the Jtable and refills the table with the items updated properties. 
+	 * @author Jacob Lyons
+	 */
 	public void updateTable(){
 		// remove elements from table 
 		dtm.getDataVector().removeAllElements();
