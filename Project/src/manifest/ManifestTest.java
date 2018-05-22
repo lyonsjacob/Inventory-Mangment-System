@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import exceptions.DeliveryException;
 import ordinaryTruck.OrdinaryTruck;
+import refrigeratedTruck.RefrigeratedTruck;
 import stock.Stock;
 import truck.Truck;
 
@@ -29,7 +30,7 @@ public class ManifestTest {
 
 		
 		
-		//Adding a truck to Manifest.
+		//Adding an truck to Manifest.
 		@Before
 		public void addTruck() throws DeliveryException {
 			manifest = new Manifest();
@@ -38,10 +39,35 @@ public class ManifestTest {
 			OrdinaryTruck ordinaryTruck = new OrdinaryTruck();
 			ordinaryTruck.addItem(itemName, quantity);
 			manifest.addTruck(ordinaryTruck);
+			
+			String itemName2 = "milk";
+			int quantity2 = 400;
+			int temp = 2;
+			RefrigeratedTruck ReffTruck = new RefrigeratedTruck();
+			ReffTruck.addItem(itemName2, quantity2, temp);
+			manifest.addTruck(ReffTruck);		
 		}
 		
 		
 		
+		// gets truck at specified index.
+		@Test 
+		public void truckAtIndexTest() {
+			Truck testTruck = manifest.getTruck(0);
+			
+			assertEquals(testTruck.convertToString(), ">Ordinary\nCoffee,300\n");
+			
+		}
+		
+		
+		// get number of trucks 
+		@Test 
+		public void getNumberOfTrucksTest() {
+			int numTrucks = manifest.getNumOfTrucks();
+			assertEquals(numTrucks, 2);
+		}
+		
+
 		
 		/*Test: Iterator and if truck has been added to manifest.
 		 * by using the trucks convertToString method to get 
@@ -49,15 +75,13 @@ public class ManifestTest {
 		 */
 		@Test
 		public void addTruckTest() throws DeliveryException {
-			Iterator<Truck> manifestIterator = manifest.iterator();
-			 
+			
 			String truckDetails ="";
-		    while(manifestIterator.hasNext()) {
-		      truckDetails = manifestIterator.getTruckString();
-		      manifestIterator.next();  
+		    for(Truck i : manifest) {
+		      truckDetails = i.convertToString(); 
 		    }
 		    
-		    String itemString = ">Ordinary Truck \n Coffee, 300";
+		    String itemString = ">Ordinary\nCoffee,300\n>Refrigerated\nmilk,400\n";
 			assertEquals(itemString, truckDetails);
 		}
 		
