@@ -23,6 +23,8 @@ import readInCSV.ReadItemCSV;
 public class Main extends JFrame {
     // get instance of store
 	  Store store = Store.getInstance();
+	  DataTable table = DataTable.getInstance();
+	  
 	
 	/**
 	 * Setup the GUI components and display the window. Creates the panel, 
@@ -56,7 +58,7 @@ public class Main extends JFrame {
         // TODO: added this to the main method because we will need it 
         // in the final version, not sure how to make the gui up date 
         // when the inventory has been changed.
-        
+        /*
         // create object of table and table model
         JTable tblInventory = new JTable();
         DefaultTableModel dtm = new DefaultTableModel(0, 0);
@@ -82,11 +84,10 @@ public class Main extends JFrame {
                     i.getReorderPoint(), i.getReorderAmount(), i.getTemperature() });
         }
         
-        
-        
+        */
         JScrollPane scrlPane = new JScrollPane();
-        scrlPane.add(tblInventory);
-        scrlPane.setViewportView(tblInventory);
+        scrlPane.add(table.getTable());
+        scrlPane.setViewportView(table.getTable());
         
         //Add Components To Panel.
         panel.add(lblCapital);

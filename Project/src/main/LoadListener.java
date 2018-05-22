@@ -39,6 +39,9 @@ public class LoadListener implements ActionListener {
 				e1.printStackTrace();
 				popUpBox.ErrorMessage(e1.getMessage());
 			}
+			
+	DataTable table = DataTable.getInstance();
+	table.updateTable();
 		
 	}
 
