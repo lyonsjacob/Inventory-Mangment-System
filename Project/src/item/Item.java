@@ -97,7 +97,7 @@ public class Item {
 	}
 	
 	/**
-	 * Gets item reorder amount
+	 * Gets the item reorder amount.
 	 * @return Item reorder amount
 	 */
 	public int getReorderAmount() {
@@ -105,8 +105,8 @@ public class Item {
 	}
 	
 	/**
-	 * Gets item temperature 
-	 * @return Item temperature.
+	 * Gets the temperature the item needs to be stored at.
+	 * @return Item temperature or null if the item does not need to be refrigerated.
 	 */
 	public Integer getTemperature() {
 		if(temperature == null) {

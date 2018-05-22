@@ -51,7 +51,7 @@ public class ReadManifestCSV {
 			throw new CSVFormatException("file is empty");
 		}
 		  
-		// read Sales CSV line by line 
+		// read Manifest CSV line by line 
 		while(line != null) {
 			String[] parts = line.split(",");
 			// check if CSV is correctly formatted
@@ -64,6 +64,7 @@ public class ReadManifestCSV {
 				// convert to correct types
 				String itemName = parts[0];
 				int quantityBrought = Integer.parseInt(parts[1]);  
+				
 				// add to arrays
 				manifestItems.add(itemName);
 				this.quantityBrought.add(quantityBrought);
@@ -82,7 +83,8 @@ public class ReadManifestCSV {
 			// load next line
 			line = buffer.readLine();
 		}
-		buffer.close(); 
+		buffer.close();    
+		updateInventory();
 	}
 	
 
@@ -97,9 +99,11 @@ public class ReadManifestCSV {
 	public void updateInventory() throws StockException {
 		
 	int quantityCount;
-	int temperatureLevel = 30;
+	Integer temperatureLevel = 30;
 	Item currentItem;
-		for(int i = manifestItems.size()-1; i >= 0 ; i--) {
+		for(int i = manifestItems.size()-1; i >= 1 ; i--) {
+			  // DE-BUG  
+	    	System.out.println(manifestItems.get(i)+quantityBrought.get(i));
 			
 			try {
 				if(quantityBrought.get(i) !=-1) {
@@ -111,9 +115,15 @@ public class ReadManifestCSV {
 					//update counters
 					quantityCount =+ quantityBrought.get(i);
 					
+					
 					// update truck temperature
-					if(temperatureLevel > currentItem.getTemperature()) {
-						temperatureLevel = currentItem.getTemperature();
+					Integer itemTemperature = currentItem.getTemperature();
+					if(itemTemperature == null) {
+						itemTemperature = 1000;
+					}
+					if(temperatureLevel > itemTemperature) {
+						temperatureLevel = itemTemperature;
+					
 						
 					// calculate cost of trucks
 					}else if(manifestItems.get(i).equals(">Ordinary")) {
@@ -128,7 +138,9 @@ public class ReadManifestCSV {
 						totalManifestCost += 900 + 200.00*Math.pow(0.70, temperatureLevel/5.00);
 						temperatureLevel = 30;
 						quantityCount = 0;
+					
 					}
+					
 				}
 				
 			}catch (StockException e) {

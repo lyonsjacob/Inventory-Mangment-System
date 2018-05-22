@@ -39,6 +39,7 @@ public class LoadManifestListener implements ActionListener {
 				popUpBox.ErrorMessage(e1.getMessage());
 				e1.printStackTrace();
 			}
+			
 		DataTable table = DataTable.getInstance();
 		table.updateTable();
 

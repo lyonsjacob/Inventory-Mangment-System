@@ -56,7 +56,9 @@ public class DataTable{
 	}
 	
 	public void updateTable(){
-		 // add row dynamically into the table      
+		// remove elements from table 
+		dtm.getDataVector().removeAllElements();
+		// add new elements to table      
 	    for (Item i : store.getInventory()) {
 	    	
 	    	dtm.addRow(new Object[] { i.getAmount(), i.getName(), i.getCostPrice(), i.getSellPrice(),
