@@ -47,39 +47,26 @@ public class StoreTest {
 		Store s1 = Store.getInstance();
 		Store s2 = Store.getInstance();
 		
-		
 		assertEquals("Both Store Objects are Same", s1, s2);
 	}
 	
 	/*
-	 * Test 3: Test Initial Capital.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Test
-	public void initialCaptial() {
-		//Initial Capital is $100,000 as per spec sheet.
-		double expectedinitialCapital = 100000.0;
-		store.setCapital(100000);
-		
-		assertEquals(expectedinitialCapital, store.getCapital(), 1);
-	}
-	
-	/*
-	 * Test 4: Set Capital.
+	 * Test 3: Set Capital.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void setCapital() {
-		double capital = store.getCapital();
-		capital = capital - 299.99;
+		double capital = 99700.01;
 		store.setCapital(capital);
-		double expectedCapital = 99700.01;
 		
-		assertEquals(expectedCapital, store.getCapital(), 1);
+		double expectedCapital = 99700.01;
+		double actualCapital = store.getCapital();
+		
+		assertEquals(expectedCapital, actualCapital, 0.01);
 	}
 	
 	/**
-	 * Test 5: Test Empty Name.
+	 * Test 4: Test Empty Name.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
@@ -89,7 +76,7 @@ public class StoreTest {
 	}
 	
 	/*
-	 * Test 6: Set Store Name.
+	 * Test 5: Set Store Name.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
@@ -100,7 +87,7 @@ public class StoreTest {
 	}
 	
 	/**
-	 * Test 7: Get and Set Inventory.
+	 * Test 6: Get and Set Inventory.
 	 * @throws StockException
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -116,8 +103,27 @@ public class StoreTest {
 		//Set This Back to the Store's Inventory.
 		store.setInventory(inventory);
 		
+		//Get Values
 		int expectedAmount = 1;
+		int actualAmount = store.getAmount();
 		
-		assertEquals("Should be one item in the inventory now.", expectedAmount, store.getAmount());
+		assertEquals("Should be one item in the inventory now.", expectedAmount, actualAmount);
+	}
+	
+	/**
+	 * Test 7: Get Capital in Dollar Format.
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	@Test
+	public void getCapitalDollars() {
+		//Set store capital
+		store.setCapital(12345.67);
+		
+		//Get Values
+		String expectedOutput = "$12,345.67";
+		String actualOutput = store.getCapitalDolarFormat();
+		
+		//Assert
+		assertEquals(expectedOutput, actualOutput);
 	}
 }
