@@ -104,10 +104,16 @@ public class Store {
 		return stock.getStockQuantity();
 	}
 	
+	
+	/**
+	 * Gets the stores capital and converts it to string 
+	 * in dollar format.
+	 * @return string of store capital in dollar.
+	 * @author Jacob Lyons
+	 */
 	public String getCapitalDolarFormat() {
 		
 	NumberFormat formatter = NumberFormat.getCurrencyInstance();
-	
 	return formatter.format(capital);
 		
 	}
