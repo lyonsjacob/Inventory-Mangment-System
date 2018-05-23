@@ -1,6 +1,7 @@
 package main;
 
 
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,10 +23,16 @@ public class DataTable{
 	static JTable tblInventory = new JTable();
 	static DefaultTableModel dtm = new DefaultTableModel(0, 0);
 	
-	private DataTable() {
-		
+	// Capital Label
+	private static JLabel capitalLabel;
+	
+	
+	
+	
+	private DataTable() {	
 		
 	}
+	
 	
 	
 	/**
@@ -49,10 +56,15 @@ public class DataTable{
     	    dtm.setColumnIdentifiers(header);
     	    //set model into the table object
     	    tblInventory.setModel(dtm);
+    	    
+    	    //initialize Capital label
+        	capitalLabel = new JLabel("Store Capital: $100,000");
         }
         return tableInstance;
     }
-	  	  
+	 
+    
+    
     /**
      * Gets the Jtable.
      * @return the Jtable
@@ -61,6 +73,8 @@ public class DataTable{
 	public JTable getTable() {
 		return tblInventory;
 	}
+	
+	
 	
 	/**
 	 * This method clears the Jtable and refills the table with the items updated properties. 
@@ -76,6 +90,14 @@ public class DataTable{
 	                i.getReorderPoint(), i.getReorderAmount(), i.getTemperature() });
 	    }
 	}
+	
+	
+	
+	public JLabel getCaptalLabel() {
+		return capitalLabel;
+	}
    
-    
+    public void updateLable() {
+    	capitalLabel.setText(Double.toString(store.getCapital()));
+    }
 }

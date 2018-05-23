@@ -40,6 +40,7 @@ public class LoadSalesListener implements ActionListener {
 			}
 		DataTable table = DataTable.getInstance();
 		table.updateTable();
+		table.updateLable();
 	}
 
 }

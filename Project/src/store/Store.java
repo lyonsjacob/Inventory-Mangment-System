@@ -1,5 +1,7 @@
 package store;
 
+import javax.swing.JLabel;
+
 import stock.Stock;
 
 /**
@@ -52,6 +54,7 @@ public class Store {
 	public void setCapital(double capital) {
 		this.capital = capital;
 	}
+	
 
 	/**
 	 * Sets the stores name

@@ -42,6 +42,7 @@ public class LoadManifestListener implements ActionListener {
 			
 		DataTable table = DataTable.getInstance();
 		table.updateTable();
+		table.updateLable();
 
 	}
 

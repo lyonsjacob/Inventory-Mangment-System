@@ -16,7 +16,7 @@ import readInCSV.ReadItemCSV;
 /**
  * The main class containing the code to create, setup and display the GUI and 
  * begin the main loop. 
- * @author Mitchell Willemse & Jacob Lyons.
+ * @author Mitchell Willemse (n9470620)
  *
  */
 @SuppressWarnings("serial")
@@ -29,7 +29,7 @@ public class Main extends JFrame {
 	/**
 	 * Setup the GUI components and display the window. Creates the panel, 
 	 * four buttons, a label and the table. 
-	 * @author Mitchell Willemse (n9470620)& Jacob Lyons (N9507175).
+	 * @author Mitchell Willemse (n9470620)
 	 */
 	public Main() {
         super("CAB302 Inventory Manager");
@@ -40,7 +40,7 @@ public class Main extends JFrame {
         JPanel panel = new JPanel();
         
         //Add Label.
-        JLabel lblCapital = new JLabel("Capital: $100,000.00");
+        JLabel lblCapital = table.getCaptalLabel();
         
         //Add Buttons.
         JButton btnLoadItem = new JButton("Load Items");
@@ -85,7 +85,7 @@ public class Main extends JFrame {
 	 * @param args The command-line arguments.
 	 * @throws StockException 
 	 * @throws DeliveryException 
-	 * @author Mitchell Willemse & Jacob Lyons
+	 * @author Mitchell Willemse (n9470620)
 	 */
 	public static void main(String[] args) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
