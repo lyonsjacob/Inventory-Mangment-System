@@ -132,7 +132,7 @@ public class OrdinaryTruck extends Truck {
 		//String to return.
 		String output = "";
 		
-		//Add trucl\k type.
+		//Add truck type.
 		output += ">Ordinary\n";
 		
 		//Add items from truck.
