@@ -29,6 +29,9 @@ public class ExportManifestListener implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		//Create ErrorMessageBox
+		ErrorMessageBox popUpBox = new ErrorMessageBox();
+		
 		//Create new Manifest.
 		Manifest manifest = new Manifest();
 
@@ -36,9 +39,17 @@ public class ExportManifestListener implements ActionListener {
 			//Use manifest creator to generate manifest from the stores inventory.
 			manifest = ManifestCreator.CreateManifest(Store.getInstance().getInventory());
 			
-		} catch (StockException | DeliveryException a) {
-			// TODO Auto-generated catch block
-			a.printStackTrace();
+		} catch (StockException e1) {
+			//Show user error message.
+			popUpBox.ErrorMessage(e1.getMessage());
+		} catch (DeliveryException e2) {
+			//Show user error message.
+			popUpBox.ErrorMessage(e2.getMessage());
+		}
+		
+		if (manifest == null) {
+			popUpBox.ErrorMessage("No Manifest to Create!");
+			return;
 		}
 		
 		//Create new save file dialog.
@@ -56,14 +67,15 @@ public class ExportManifestListener implements ActionListener {
 				//Append CSV
 				file = new File(file.toString() + ".csv"); 
 				
+				//Write the file out.
 				WriteOutCSV.writeToCSV(file, manifest.getTruckString());
 				
 			} catch (CSVFormatException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				//Show user error message.
+				popUpBox.ErrorMessage(e1.getMessage());
+			} catch (IOException e2) {
+				//Show user error message.
+				popUpBox.ErrorMessage(e2.getMessage());
 			}
 		  
 		}

@@ -13,22 +13,34 @@ import exceptions.CSVFormatException;
 public class WriteOutCSV {
 	
 	/**
-	 * Opens a dialog box for the user to choose a location on the file system. Takes in
-	 * a string and exports this to a CSV file in the selected location.
+	 * Takes in a string and exports this to a CSV file in the selected location.
+	 * Checks to ensure correct formmating for CSV.
 	 * @param fileNameAndPath The file name and location on the file system.
 	 * @param message The string to export to CSV.
-	 * @return Whether the operation succeeded.
 	 * @throws CSVFormatException
 	 * @throws IOException 
 	 * @author Mitchell Willemse (n9470620);
 	 */
-	public static Boolean writeToCSV(File fileNameAndPath, String message) throws CSVFormatException, IOException {
+	public static void writeToCSV(File fileNameAndPath, String message) throws CSVFormatException, IOException {
+		//Regex of how Manifest should be output
+		String regex = "(>Ordinary)|(>Refrigerated)|((?s)(.*),(\\d)*)\\R$";
+		
+		//Check message isn't empty.
+		if(message == null) {
+			throw new CSVFormatException("No Manifest to Create!");	
+		}
+		
+		//Check String matches Regex
+		if (!message.matches(regex)) {
+			throw new CSVFormatException("Error formatting Manifest!");	
+		}
+		
+		//Create FileWriter
 		FileWriter writer = new FileWriter(fileNameAndPath);
 		
+		//Write message.
 		writer.write(message);
 		writer.close();
-		
-		return false;
 	}
 
 }

@@ -48,6 +48,11 @@ public class ManifestCreator {
 			
 		}
 		
+		//If there are no items to order, no manifest is needed.
+		if (toOrder.isEmpty()) {
+			return null;
+		}
+		
 		Truck truck = null;
 		Boolean isFirst = true;
 		int quantity = 0;
