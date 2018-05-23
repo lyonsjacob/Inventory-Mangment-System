@@ -1,10 +1,8 @@
 package ordinaryTruck;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
 import exceptions.DeliveryException;
 import truck.Truck;
 
@@ -49,7 +47,7 @@ public class OrdinaryTruck extends Truck {
 			cargo.put(itemName, amount);
 			cargoQuantity += amount;
 		} else {
-			throw new DeliveryException();
+			throw new DeliveryException("Cargo limit is exceeded!");
 		}
 
 	}
@@ -102,13 +100,12 @@ public class OrdinaryTruck extends Truck {
 	 * @param itemName The item to be added.
 	 * @param amount The quantity of such item.
 	 * @param temperature The temperature of the item.
-	 * @throws DeliveryException 
+	 * @throws DeliveryException If item has temperature and is added to ordinary truck.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public void addItem(String itemName, int amount, int temperature) throws DeliveryException {
-		// TODO Auto-generated method stub
-		throw new DeliveryException();
+		throw new DeliveryException("Can't add item with temperature to ordinary truck!");
 	}
 
 

@@ -1,10 +1,8 @@
 package refrigeratedTruck;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
 import exceptions.DeliveryException;
 import truck.Truck;
 
@@ -51,14 +49,11 @@ public class RefrigeratedTruck extends Truck {
 	 */
 	public void addItem(String itemName, int amount, int temperature) throws DeliveryException {
 		//Set the temperature for the truck
-		
-
-		
 		if (temperature <= 10 && temperature >= -20) {	
 			this.temperature = temperature;
 			this.addItem(itemName, amount);
 		} else {
-			throw new DeliveryException();
+			throw new DeliveryException("Temperature out of range!");
 		}
 
 	}
@@ -75,12 +70,11 @@ public class RefrigeratedTruck extends Truck {
 	 */
 	@Override
 	public void addItem(String itemName, int amount) throws DeliveryException {
-		
 		if ((cargoQuantity + amount) <= 800) {
 			cargo.put(itemName, amount);
 			cargoQuantity += amount;
 		} else {
-			throw new DeliveryException();
+			throw new DeliveryException("Cargo limit is exceeded!");
 		}
 	}
 	
@@ -151,8 +145,6 @@ public class RefrigeratedTruck extends Truck {
 
 	@Override
 	public String convertToString() {
-		
-		
 		//String to return.
 		String output = "";
 		

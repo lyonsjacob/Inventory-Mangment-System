@@ -1,11 +1,7 @@
 package manifest;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Iterator;
-
-import item.Item;
 import truck.Truck;
 
 /**

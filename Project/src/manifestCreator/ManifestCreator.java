@@ -5,12 +5,8 @@ import ordinaryTruck.OrdinaryTruck;
 import refrigeratedTruck.RefrigeratedTruck;
 import stock.Stock;
 import truck.Truck;
-
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Iterator;
-import java.util.ListIterator;
-
 import exceptions.DeliveryException;
 import exceptions.StockException;
 import item.Item;

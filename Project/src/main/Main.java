@@ -1,17 +1,9 @@
 package main;
 
 import java.awt.*;
-
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-
 import exceptions.*;
-import item.Item;
-import manifest.Manifest;
 import store.Store;
-import stock.Stock;
-import manifestCreator.ManifestCreator;
-import readInCSV.ReadItemCSV;
 
 /**
  * The main class containing the code to create, setup and display the GUI and 
