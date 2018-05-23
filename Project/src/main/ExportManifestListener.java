@@ -65,7 +65,7 @@ public class ExportManifestListener implements ActionListener {
 		}
 		
 		//Update table.
-		DataTable table = DataTable.getInstance();
+		UpdateGUIElements table = UpdateGUIElements.getInstance();
 		table.updateTable();
 		table.updateLable();
 	}

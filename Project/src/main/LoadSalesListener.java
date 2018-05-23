@@ -38,7 +38,7 @@ public class LoadSalesListener implements ActionListener {
 				e1.printStackTrace();
 				popUpBox.ErrorMessage(e1.getMessage());
 			}
-		DataTable table = DataTable.getInstance();
+		UpdateGUIElements table = UpdateGUIElements.getInstance();
 		table.updateTable();
 		table.updateLable();
 	}

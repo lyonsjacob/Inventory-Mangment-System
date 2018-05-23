@@ -40,7 +40,7 @@ public class LoadManifestListener implements ActionListener {
 				e1.printStackTrace();
 			}
 			
-		DataTable table = DataTable.getInstance();
+		UpdateGUIElements table = UpdateGUIElements.getInstance();
 		table.updateTable();
 		table.updateLable();
 

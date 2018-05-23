@@ -23,7 +23,7 @@ import readInCSV.ReadItemCSV;
 public class Main extends JFrame {
     // get instance of store
 	  Store store = Store.getInstance();
-	  DataTable table = DataTable.getInstance();
+	  UpdateGUIElements table = UpdateGUIElements.getInstance();
 	  
 	
 	/**

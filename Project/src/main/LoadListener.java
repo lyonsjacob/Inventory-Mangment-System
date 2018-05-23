@@ -40,7 +40,7 @@ public class LoadListener implements ActionListener {
 				popUpBox.ErrorMessage(e1.getMessage());
 			}
 			
-	DataTable table = DataTable.getInstance();
+	UpdateGUIElements table = UpdateGUIElements.getInstance();
 	table.updateTable();
 	table.updateLable();
 		

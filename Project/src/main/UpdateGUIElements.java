@@ -10,15 +10,16 @@ import store.Store;
 
 
 /**
- * This class uses a singleton pattern to create a Jtable 
- * witch holds the items details for the GUI.
+ * This class uses a singleton pattern to create a JTable and 
+ * a JLable witch holds the items details for the GUI. The class
+ * also allows the table and label to be dynamically updated.
  * @author Jacob lyons 
  *
  */
-public class DataTable{
+public class UpdateGUIElements{
 	// get instance of store
 	Store store = Store.getInstance();
-	private static DataTable tableInstance;
+	private static UpdateGUIElements tableInstance;
 	// create object of table and table model
 	static JTable tblInventory = new JTable();
 	static DefaultTableModel dtm = new DefaultTableModel(0, 0);
@@ -29,7 +30,7 @@ public class DataTable{
 	
 	
 	
-	private DataTable() {	
+	private UpdateGUIElements() {	
 		
 	}
 	
@@ -40,9 +41,9 @@ public class DataTable{
 	 * @return DataTable Instance
 	 * @author Jacob lyons
 	 */
-    public static DataTable getInstance() {
+    public static UpdateGUIElements getInstance() {
         if (null == tableInstance) {
-        	tableInstance = new DataTable();
+        	tableInstance = new UpdateGUIElements();
     	    // add header of the table
     	    String header[] = new String[] {"Amount",
     	           "Item",
@@ -93,10 +94,21 @@ public class DataTable{
 	
 	
 	
+	
+	/**
+	 * Gets the store capital JLable stored in UpdateGUIElements
+	 * @return JLable, displaying the stores capital. 
+	 * @author Jacob Lyons
+	 */
 	public JLabel getCaptalLabel() {
 		return capitalLabel;
 	}
    
+	
+	/**
+	 * Updates the Store capital label.
+	 * @author Jacob Lyons
+	 */
     public void updateLable() {
     	capitalLabel.setText(Double.toString(store.getCapital()));
     }
