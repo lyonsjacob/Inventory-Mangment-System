@@ -36,11 +36,14 @@ public class ManifestCreator {
 	 * @author Mitchell Willemse
 	 */
 	public static Manifest CreateManifest(Stock inventory) throws StockException, DeliveryException {
+		//Create Manifest
 		Manifest manifest = new Manifest();
+		
+		//Create Array to hold Items that need to be ordered.
 		ArrayList<Item> toOrder = new ArrayList<Item>();
 		
+		//Loop through store inventory.
 		for (Item i : inventory) {
-			
 			//Item needs to be reordered. 
 			if (i.getAmount() <= i.getReorderPoint()) {
 				toOrder.add(i);
@@ -53,14 +56,22 @@ public class ManifestCreator {
 			return null;
 		}
 		
+		//Create variables.
 		Truck truck = null;
 		Boolean isFirst = true;
 		int quantity = 0;
 
-		//Iterate through to order.
+		//Iterate through toOrder until it is empty.
 		while (!toOrder.isEmpty()) {
 			
-			//Sort toOrder
+			/*
+			 * Create a new comparator called stockCompare that compares the items based on 
+			 * their temperature. It sorts from coldest to hottest temperature. This is done 
+			 * so that when adding items to the trucks, the coldest items are always added first, 
+			 * setting the temperature of the truck to this temperature and then adding items after 
+			 * this. Since the items are sorted, items that are colder than this can not be added. 
+			 * Items with that have no temperature requirement can be added to whatever truck.
+			 */
 			Comparator<Item> stockCompare = new Comparator<Item>() {
 
 				@Override
@@ -83,12 +94,13 @@ public class ManifestCreator {
 				
 			};
 
+			//Sort toOrder by temperature with stockCompare.
 			toOrder.sort(stockCompare);
 			
 			//Get Current Item.
 			Item currentItem = toOrder.get(0);
 			
-			//If it is first item, have to initialize truck. 
+			//If it is first item, have to initialize the truck. 
 			if (isFirst) {
 				
 				//No temperature, create Ordinary Truck.
@@ -107,6 +119,8 @@ public class ManifestCreator {
 				
 				//First item added.
 				isFirst = false;
+				
+				//Remove it from toOrder.
 				toOrder.remove(currentItem);
 				
 
@@ -118,35 +132,44 @@ public class ManifestCreator {
 					
 					//First we must check if we can split the item.
 					if (truck.getMaxCargo() - quantity > 0 ) {
+						
+						//Get how much space is left on truck.
 						int leftOverSpace = truck.getMaxCargo() - quantity;
 						
+						//Add currentItem to fill this space.
 						truck.addItem(currentItem.getName(), leftOverSpace);
+						
+						//Now that item is removed and added again with a different reorder amount.
+						int newReorderAmount = currentItem.getReorderAmount() - 
+								(truck.getMaxCargo() - quantity);
+						
+						//Create new Item to be added.
+						Item newItem;
+						
+						//This new item has same variables as last, just with a new reorder amount.
+						if(currentItem.getTemperature() == null) {
+							newItem = new Item(currentItem.getAmount(), currentItem.getName(), currentItem.getCostPrice(), currentItem.getSellPrice(), currentItem.getReorderPoint(), newReorderAmount);
+						} else {
+							newItem = new Item(currentItem.getAmount(), currentItem.getName(), currentItem.getCostPrice(), currentItem.getSellPrice(), currentItem.getReorderPoint(), newReorderAmount, currentItem.getTemperature());
+						}
+						
+						//Remove the item and add this new one since it has been split.
+						toOrder.remove(currentItem);
+						toOrder.add(newItem);
 					}
 					
-					int newReorderAmount = currentItem.getReorderAmount() - (truck.getMaxCargo() - quantity);
+					//Reset Variables.
 					isFirst = true;
 					quantity = 0;
 					manifest.addTruck(truck);
 					truck = null;
 
-					Item newItem;
-					
-					if(currentItem.getTemperature() == null) {
-						newItem = new Item(currentItem.getAmount(), currentItem.getName(), currentItem.getCostPrice(), currentItem.getSellPrice(), currentItem.getReorderPoint(), newReorderAmount);
-					} else {
-						newItem = new Item(currentItem.getAmount(), currentItem.getName(), currentItem.getCostPrice(), currentItem.getSellPrice(), currentItem.getReorderPoint(), newReorderAmount, currentItem.getTemperature());
-					}
-					
-					toOrder.add(newItem);
-					
-					toOrder.remove(currentItem);
-					
-									
-
-					
 				//We can add the item.
 				} else {
+					//Add item.
 					truck.addItem(currentItem.getName(), currentItem.getReorderAmount());
+					
+					//Update quantity.
 					quantity += currentItem.getReorderAmount();
 					
 					//Remove from list.
@@ -157,15 +180,18 @@ public class ManifestCreator {
 
 		}
 		
-		//No more items
+		//No more items.
 		if (toOrder.isEmpty()) {
+			
+			//Reset Variables.
 			isFirst = true;
 			quantity = 0;
 			manifest.addTruck(truck);
 			truck = null;
+			
 		}
 		
-
+		//Return manifest.
 		return manifest;
 	}
 

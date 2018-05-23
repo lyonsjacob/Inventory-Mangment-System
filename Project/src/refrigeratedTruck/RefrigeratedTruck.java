@@ -147,18 +147,6 @@ public class RefrigeratedTruck extends Truck {
 		return MAX_CARGO;
 	}
 
-	
-
-	/**
-	 * Get the truck type as string.
-	 * @return The truck type, in this case "Refrigerated".
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Override
-	public String getTruckType() {
-		return "Refrigerated";
-	}
-
 
 
 	@Override

@@ -60,13 +60,6 @@ public abstract class Truck {
 	public abstract int getMaxCargo();
 	
 	/**
-	 * Get the truck type as string.
-	 * @return The truck type.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	public abstract String getTruckType();
-	
-	/**
 	 * Get the truck as a string.
 	 * @return The truck and it's contents.
 	 */
