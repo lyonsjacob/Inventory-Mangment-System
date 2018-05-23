@@ -19,7 +19,7 @@ import store.Store;
 public class UpdateGUIElements{
 	// get instance of store
 	Store store = Store.getInstance();
-	private static UpdateGUIElements tableInstance;
+	private static UpdateGUIElements updateGUIElements;
 	// create object of table and table model
 	static JTable tblInventory = new JTable();
 	static DefaultTableModel dtm = new DefaultTableModel(0, 0);
@@ -42,8 +42,8 @@ public class UpdateGUIElements{
 	 * @author Jacob lyons
 	 */
     public static UpdateGUIElements getInstance() {
-        if (null == tableInstance) {
-        	tableInstance = new UpdateGUIElements();
+        if (null == updateGUIElements) {
+        	updateGUIElements = new UpdateGUIElements();
     	    // add header of the table
     	    String header[] = new String[] {"Amount",
     	           "Item",
@@ -59,9 +59,9 @@ public class UpdateGUIElements{
     	    tblInventory.setModel(dtm);
     	    
     	    //initialize Capital label
-        	capitalLabel = new JLabel("Store Capital: $100,000");
+        	capitalLabel = new JLabel("Capital: $100,000.00");
         }
-        return tableInstance;
+        return updateGUIElements;
     }
 	 
     
@@ -110,6 +110,6 @@ public class UpdateGUIElements{
 	 * @author Jacob Lyons
 	 */
     public void updateLable() {
-    	capitalLabel.setText(Double.toString(store.getCapital()));
+    	capitalLabel.setText("Capital: " +store.getCapitalDolarFormat());
     }
 }

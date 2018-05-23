@@ -1,5 +1,7 @@
 package store;
 
+import java.text.NumberFormat;
+
 import javax.swing.JLabel;
 
 import stock.Stock;
@@ -102,6 +104,22 @@ public class Store {
 		return stock.getStockQuantity();
 	}
 	
-    
+	public String getCapitalDolarFormat() {
+		
+	NumberFormat formatter = NumberFormat.getCurrencyInstance();
+	
+	return formatter.format(capital);
+		
+	}
     
 }
+
+
+
+
+
+
+
+
+
+
