@@ -52,6 +52,10 @@ public class ExportManifestListener implements ActionListener {
 			try {
 				//use WriteOutCSV to output the file as a CSV in selected directory.
 				File file = fileChooser.getSelectedFile();
+				
+				//Append CSV
+				file = new File(file.toString() + ".csv"); 
+				
 				WriteOutCSV.writeToCSV(file, manifest.getTruckString());
 				
 			} catch (CSVFormatException e1) {
