@@ -63,6 +63,7 @@ public abstract class Truck {
 	/**
 	 * Get the truck as a string.
 	 * @return The truck and it's contents.
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public abstract String convertToString();
 }

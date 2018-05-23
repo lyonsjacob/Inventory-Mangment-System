@@ -15,7 +15,7 @@ import item.Item;
 /**
  * Creates trucks based on items needed to be ordered and puts them
  * in a manifest.
- * @author Mitchell Willemse 
+ * @author Mitchell Willemse (n9470620).
  */
 public class ManifestCreator {
 	
@@ -29,7 +29,7 @@ public class ManifestCreator {
 	 * @return The created manifest full of trucks.
 	 * @throws StockException 
 	 * @throws DeliveryException 
-	 * @author Mitchell Willemse
+	 * @author Mitchell Willemse (n9470620).
 	 */
 	public static Manifest CreateManifest(Stock inventory) throws StockException, DeliveryException {
 		//Create Manifest

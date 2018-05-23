@@ -143,13 +143,20 @@ public class RefrigeratedTruck extends Truck {
 
 
 
+	/**
+	 * Get the truck as a string.
+	 * @return The truck and it's contents.
+	 * @author Mitchell Willemse (n9470620).
+	 */
 	@Override
 	public String convertToString() {
 		//String to return.
 		String output = "";
 		
+		//Added truck type.
 		output += ">Refrigerated\n";
 		
+		//Add items from truck.
         for (Entry<String, Integer> entry : cargo.entrySet()){ 
             output += entry.getKey() + "," + entry.getValue() + "\n";
         }

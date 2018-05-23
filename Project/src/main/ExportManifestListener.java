@@ -1,6 +1,6 @@
 package main;
-import writeOutCSV.WriteOutCSV;
 
+import writeOutCSV.WriteOutCSV;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -16,7 +16,7 @@ import store.Store;
 
 /**
  * A listener for the Export Manifest button.
- * @author Mitchell Willemse & Jacob Lyons.
+ * @author Mitchell Willemse (n9470620) & Jacob Lyons.
  */
 public class ExportManifestListener implements ActionListener {
 
@@ -26,7 +26,7 @@ public class ExportManifestListener implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		//Create ErrorMessageBox
+		//Create ErrorMessageBox.
 		ErrorMessageBox popUpBox = new ErrorMessageBox();
 		
 		//Create new Manifest.

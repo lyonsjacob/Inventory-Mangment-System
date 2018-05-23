@@ -8,12 +8,17 @@ import store.Store;
 /**
  * The main class containing the code to create, setup and display the GUI and 
  * begin the main loop. 
- * @author Mitchell Willemse (n9470620)
+ * @author Mitchell Willemse (n9470620) & Jacob Lyons.
  *
  */
-@SuppressWarnings("serial")
 public class Main extends JFrame {
-    // get instance of store
+	
+    /**
+	 * Auto-generated serialVersionUID
+	 */
+	private static final long serialVersionUID = 2266700118391580006L;
+	
+	// get instance of store
 	  Store store = Store.getInstance();
 	  UpdateGUIElements table = UpdateGUIElements.getInstance();
 	  
@@ -27,7 +32,6 @@ public class Main extends JFrame {
         super("CAB302 Inventory Manager");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 
-     
         //Add Panel.
         JPanel panel = new JPanel();
         
@@ -77,7 +81,7 @@ public class Main extends JFrame {
 	 * @param args The command-line arguments.
 	 * @throws StockException 
 	 * @throws DeliveryException 
-	 * @author Mitchell Willemse (n9470620)
+	 * @author Mitchell Willemse (n9470620) & Jacob Lyons.
 	 */
 	public static void main(String[] args) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
