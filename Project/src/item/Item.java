@@ -122,24 +122,6 @@ public class Item {
 		}
 		return this.temperature;
 	}
-	
-	
-	/**
-	 * Returns a string of the items properties.
-	 * @return String of the items properties
-	 * @author Jacob lyons
-	 */
-	public String toString() {
-		if(temperature == null) {
-			String outPutString = amount+", "+ name+", "+ costPrice+", "+ salePrice
-					+ ", "+ reorderPoint+", "+ reorderAmount+"\n";
-			return outPutString;
-		}
-		
-		String outPutString = amount+", "+name+", "+ costPrice+", "+ salePrice
-				+ ", "+ reorderPoint+", "+ reorderAmount+", "+temperature+"\n";
-		return outPutString;
-	}
 
 	/**
 	 * Gets the number of items in stock.
@@ -162,21 +144,4 @@ public class Item {
 		}
 		this.amount = amount;
 	}
-
-	
-	/**
-	 * Checks if the item needs to be reordered.
-	 * @return boolean true if need reordering.
-	 */
-	public boolean isBelowReorderPoint() {
-		if(this.amount < this.reorderAmount) {
-			return true;
-		}
-		return false;
-	}
-	
-	
-	
-	
-
 }
