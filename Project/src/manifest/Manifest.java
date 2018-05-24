@@ -11,11 +11,7 @@ import truck.Truck;
  */
 public class Manifest implements Iterable<Truck> {
 	
-	private double cost;
-	private int numOfTrucks;
 	private ArrayList<Truck> trucks;
-	
-	
 	
 	/**
 	 * Constructor that initializes the variables.
@@ -23,8 +19,6 @@ public class Manifest implements Iterable<Truck> {
 	 */
 	public Manifest() {
 		trucks = new ArrayList<Truck>();
-		cost = 0;
-		numOfTrucks = 0;
 	}
 	
 	
@@ -36,47 +30,6 @@ public class Manifest implements Iterable<Truck> {
 	 */
 	public void addTruck(Truck truck) {
 		trucks.add(truck);
-		numOfTrucks++;
-	}
-	
-	
-	
-	/**
-	 * Gets a truck at a certain index, starting at 0.
-	 * @param index The index at which to get the truck.
-	 * @return The truck at that index.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	public Truck getTruck(int index) {
-		return trucks.get(index);
-	}
-	
-	
-	
-	/**
-	 * Sums the cost of all the trucks within the manifest.
-	 * @return The total cost of all the trucks in dollars.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	public double getManifestCost() {
-		cost = 0;
-		
-	    for (Truck i : trucks) {
-	        cost = cost + i.getCost();
-	    }
-
-		return cost;
-	}
-	
-	
-	
-	/**
-	 * Get the number of trucks within the manifest.
-	 * @return The number of trucks.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	public int getNumOfTrucks() {
-		return numOfTrucks;
 	}
 	
 	
