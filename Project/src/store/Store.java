@@ -85,24 +85,6 @@ public class Store {
 		return stock;
 	}
 
-	/**
-	 * Sets the stores inventory
-	 * @param Stock- Store inventory
-	 * @author Jacob Lyons
-	 */
-	public void setInventory(Stock inventory) {
-		stock = inventory;
-		
-	}
-
-	/**
-	 * Gets the number of items in stock 
-	 * @return int -number of items in stock
-	 * @author Jacob Lyons
-	 */
-	public int getAmount() {
-		return stock.getStockQuantity();
-	}
 	
 	
 	/**
