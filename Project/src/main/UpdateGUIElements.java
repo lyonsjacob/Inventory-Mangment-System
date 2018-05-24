@@ -11,24 +11,23 @@ import store.Store;
 
 /**
  * This class uses a singleton pattern to create a JTable and 
- * a JLable witch holds the items details for the GUI. The class
- * also allows the table and label to be dynamically updated.
+ * a JLable witch holds the items details and the stores 
+ * capital for the GUI. The class also allows the table and 
+ * label to be dynamically updated.
+ * 
  * @author Jacob lyons 
- *
  */
 public class UpdateGUIElements{
-	// get instance of store
+	// Get instance of store.
 	Store store = Store.getInstance();
 	private static UpdateGUIElements updateGUIElements;
-	// create object of table and table model
+	
+	// Create object for table and table model.
 	static JTable tblInventory = new JTable();
 	static DefaultTableModel dtm = new DefaultTableModel(0, 0);
 	
 	// Capital Label
 	private static JLabel capitalLabel;
-	
-	
-	
 	
 	private UpdateGUIElements() {	
 		
@@ -44,7 +43,7 @@ public class UpdateGUIElements{
     public static UpdateGUIElements getInstance() {
         if (null == updateGUIElements) {
         	updateGUIElements = new UpdateGUIElements();
-    	    // add header of the table
+    	    // Add header of the table
     	    String header[] = new String[] {"Amount",
     	           "Item",
     	           "Cost Price",
@@ -53,32 +52,27 @@ public class UpdateGUIElements{
     	           "Reorder Amount",
     	           "Temperature"}; //Columns.
 
-    	    // add header in table model     
+    	    //Add header in table model     
     	    dtm.setColumnIdentifiers(header);
     	    //set model into the table object
     	    tblInventory.setModel(dtm);
-    	    
-    	    //initialize Capital label
+    	    //Initialize Capital label
         	capitalLabel = new JLabel("Capital: $100,000.00");
         }
         return updateGUIElements;
     }
 	 
-    
-    
     /**
      * Gets the Jtable.
-     * @return the Jtable
+     * @return the Jtable holding item properties.
      * @author Jacob Lyons
      */
 	public JTable getTable() {
 		return tblInventory;
 	}
-	
-	
-	
+
 	/**
-	 * This method clears the Jtable and refills the table with the items updated properties. 
+	 * This method clears the Jtable and refills the table with the items properties. 
 	 * @author Jacob Lyons
 	 */
 	public void updateTable(){
@@ -92,11 +86,9 @@ public class UpdateGUIElements{
 	    }
 	}
 	
-	
-	
-	
 	/**
-	 * Gets the store capital JLable stored in UpdateGUIElements
+	 * Gets the store capital JLable stored in UpdateGUIElements.
+	 * 
 	 * @return JLable, displaying the stores capital. 
 	 * @author Jacob Lyons
 	 */
