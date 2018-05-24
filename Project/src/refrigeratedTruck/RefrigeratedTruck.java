@@ -102,20 +102,6 @@ public class RefrigeratedTruck extends Truck {
 	public int getTotalQuantity() {
 		return cargoQuantity;
 	}
-
-	
-	
-	
-	/**
-	 * Returns the HashMap collection of the trucks items and quantity.
-	 * @return The HashMap.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Override
-	public Map<String, Integer> GetMap() {
-		return cargo;
-	}
-
 	
 	
 	

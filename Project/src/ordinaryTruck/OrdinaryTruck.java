@@ -68,20 +68,6 @@ public class OrdinaryTruck extends Truck {
 
 	
 	
-	
-	/**
-	 * Returns the HashMap collection of the trucks items and quantity.
-	 * @return The HashMap.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Override
-	public Map<String, Integer> GetMap() {
-		return cargo;
-	}
-
-	
-	
-	
 	/**
 	 * Returns the cost of the truck, calculated as 750 + 0.25q 
 	 * where q is the quantity of items in the cargo.

@@ -1,7 +1,5 @@
 package truck;
 
-import java.util.Map;
-
 import exceptions.DeliveryException;
 
 /**
@@ -26,13 +24,6 @@ public abstract class Truck {
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	public abstract int getTotalQuantity();
-	
-	/**
-	 * Returns the HashMap collection of the trucks items and quantity.
-	 * @return The HashMap.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	public abstract Map<String, Integer> GetMap();
 	
 	/**
 	 * Returns the cost of the truck, calculated differently depending whether it is
