@@ -7,7 +7,6 @@ import java.io.IOException;
 import exceptions.CSVFormatException;
 import exceptions.StockException;
 import readInCSV.CSVFormatCheck;
-import readInCSV.ReadItemCSV;
 import readInCSV.ReadManifestCSV;
 
 /**

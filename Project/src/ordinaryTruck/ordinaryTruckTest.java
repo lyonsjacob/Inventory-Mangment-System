@@ -1,16 +1,10 @@
 package ordinaryTruck;
 
 import static org.junit.Assert.*;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import exceptions.DeliveryException;
-import exceptions.StockException;
-import manifest.ManifestTest;
+
 
 
 public class ordinaryTruckTest {
@@ -60,6 +54,7 @@ public class ordinaryTruckTest {
 		int quantity = 701;
 		ordinaryTruck.addItem(itemName, quantity);
 	}
+	
 	
 	
 	//Test: cannot add an item with negative quantity

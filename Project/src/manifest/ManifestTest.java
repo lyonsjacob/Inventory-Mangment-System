@@ -1,16 +1,11 @@
 package manifest;
 
 import static org.junit.Assert.*;
-
-import java.util.Iterator;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import exceptions.DeliveryException;
 import ordinaryTruck.OrdinaryTruck;
 import refrigeratedTruck.RefrigeratedTruck;
-import stock.Stock;
 import truck.Truck;
 
 /**
