@@ -113,7 +113,7 @@ public class ReadSalesLogCSV {
 		for(int i=0; i < index; i++) {
 			//get item
 			currentItem = store.getInventory().getItemName(soldItems.get(i));
-			// update item quantity 
+			// undo quantity update
 			currentItem.setAmount(currentItem.getAmount()-quantitySold.get(i));			
 			// update capital
 			double grossProfit = (double)quantitySold.get(i)*currentItem.getSellPrice();

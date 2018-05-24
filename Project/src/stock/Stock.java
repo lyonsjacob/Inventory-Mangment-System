@@ -43,11 +43,11 @@ public class Stock implements Iterable<Item> {
 		//checks the item name
 		for(int i =0; i < storeStock.size(); i++) {
 			if(storeStock.get(i).getName().equals(itemName)) {
-				throw new StockException("Cannot add the same item twice");
+				throw new StockException("Cannot add "+itemName+" twice.");
 			}
 		}
 		if(storeStock.contains(item)) {
-			throw new StockException("Cannot add the same item twice");
+			throw new StockException("Cannot add "+itemName+" twice.");
 		}
 		storeStock.add(item);	
 	}
@@ -77,7 +77,7 @@ public class Stock implements Iterable<Item> {
 			}
 		}
 		
-		throw new StockException("Item is not in list");
+		throw new StockException(itemName+" is not currently in stores inventory");
 	}
 	
 
