@@ -80,7 +80,7 @@ public class ReadManifestCSV {
 			// load next line
 			line = buffer.readLine();
 		}
-		buffer.close();    
+		buffer.close(); 
 		updateInventory();
 	}
 	
@@ -94,21 +94,29 @@ public class ReadManifestCSV {
 	 * @author Jacob Lyons (N9507175)
 	 */
 	public void updateInventory() throws StockException {
-	int quantityCount;
+	int quantityCount = 0;
 	Integer temperatureLevel = 30;
 	Item currentItem;
 	
-		for(int i = manifestItems.size()-1; i >= 1 ; i--) {			
-			try {
-				if(quantityBrought.get(i) !=-1) {
-					// get reference to item 
+		for(int i = manifestItems.size()-1; i >= 0 ; i--) {	
+			if(quantityBrought.get(i) !=-1) {
+				try {
+					// check if item reference exists 
 					currentItem = store.getInventory().getItemName(manifestItems.get(i));
-					// update item quantity 
+					// update item quantity
 					currentItem.setAmount(currentItem.getAmount()+quantityBrought.get(i));
+				
+				}catch (StockException e1) {
+					// catch all possible exceptions.
+					undoItemQuantityChanges(i);
+				}
+			
+			        // get reference to item 
+					currentItem = store.getInventory().getItemName(manifestItems.get(i));
 					// update total cost
-					totalManifestCost =+ (double)quantityBrought.get(i)*currentItem.getSellPrice();
+					totalManifestCost += (double)quantityBrought.get(i)*currentItem.getCostPrice();
 					// update counters
-					quantityCount =+ quantityBrought.get(i);
+					quantityCount += quantityBrought.get(i);
 					
 					// update truck temperature
 					Integer itemTemperature = currentItem.getTemperature();
@@ -117,32 +125,26 @@ public class ReadManifestCSV {
 					}
 					if(temperatureLevel > itemTemperature) {
 						temperatureLevel = itemTemperature;
+					}
 						
 					// calculate cost of trucks
-					}else if(manifestItems.get(i).equals(">Ordinary")) {
-						totalManifestCost += 750 + 0.25*quantityCount;
-						temperatureLevel = 30;
-						quantityCount = 0;
+				}else if(temperatureLevel > 10) {
+					totalManifestCost += 750 + 0.25*quantityCount;
+					temperatureLevel = 30;
+					quantityCount = 0;
 						
-					}else if(manifestItems.get(i).equals(">Refrigerated")) {
-						if((temperatureLevel < -20)|(temperatureLevel > 10)) {
-							throw new StockException("Item is outside trucks Temperature range");
-						}
-						totalManifestCost += 900 + 200.00*Math.pow(0.70, temperatureLevel/5.00);
-						temperatureLevel = 30;
-						quantityCount = 0;
-					
+				}else if(temperatureLevel <= 10) {
+					if((temperatureLevel < -20)|(temperatureLevel > 10)) {
+						throw new StockException("Truck is outside trucks Temperature range");
 					}
-					
+					totalManifestCost += 900 + 200.00*Math.pow(0.70, temperatureLevel/5.00);
+
+					temperatureLevel = 30;
+					quantityCount = 0;
 				}
-				
-			}catch (StockException e) {
-				// undo changes
-				undoItemQuantityChanges(i);
-			}	
-			// update stores capital
-			store.setCapital(store.getCapital()-totalManifestCost);
-		}		
+		}
+		// update stores capital
+		store.setCapital(store.getCapital()-totalManifestCost);			
 	}
 	
 	/**
@@ -161,7 +163,7 @@ public class ReadManifestCSV {
 			// update item quantity 
 			currentItem.setAmount(currentItem.getAmount()-quantityBrought.get(i));
 		}
-		throw new StockException(manifestItems.get(index)+"is not in store inventory, unable to update manifest.\n"
+		throw new StockException(manifestItems.get(index)+" is not in store inventory, unable to update store.\n"
 				+ "No change has been made to the stores inventory");
 	}
 
