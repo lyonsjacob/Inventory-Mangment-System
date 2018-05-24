@@ -86,17 +86,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 5: Needs Reorder
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Test
-	public void needsReorder() {
-		//Assert item needs reorder.
-		assertTrue(item.isBelowReorderPoint());
-	}
-	
-	/**
-	 * Test 6: Get Name.
+	 * Test 5: Get Name.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
@@ -110,7 +100,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 7: Get Cost Price.
+	 * Test 6: Get Cost Price.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
@@ -124,7 +114,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 8: Get Sell Price.
+	 * Test 7: Get Sell Price.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
@@ -138,7 +128,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 9: Get Reorder Point.
+	 * Test 8: Get Reorder Point.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
@@ -152,7 +142,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 10: Get Reorder Amount.
+	 * Test 9: Get Reorder Amount.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
@@ -166,7 +156,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 11: Get Temperature.
+	 * Test 10: Get Temperature.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
@@ -180,7 +170,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 12: Get Temperature for Item With No Temperature.
+	 * Test 11: Get Temperature for Item With No Temperature.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
@@ -194,24 +184,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 13: Test To String.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Test
-	public void testToString() {
-		//Create new item.
-		item = new Item(0, "Milk", 3, 4, 100, 150, 3);
-		
-		//Create variables.
-		String expectedOutput = "0, Milk, 3.0, 4.0, 100, 150, 3\n";
-		String actualOutput = item.toString();
-		
-		//Assert they are equal.
-		assertEquals(expectedOutput, actualOutput);
-	}
-	
-	/**
-	 * Test 14: Test To String with No Temperature.
+	 * Test 12: Test To String with No Temperature.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
@@ -228,7 +201,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 15: Can't Set negative Amount.
+	 * Test 13: Can't Set negative Amount.
 	 * @throws StockException because amount can't be set to negative.
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -239,7 +212,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 16. Can't have negative costPrice.
+	 * Test 14. Can't have negative costPrice.
 	 * @throws StockException because costPrice can't be negative.
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -249,7 +222,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 17. Can't have negative costPrice.
+	 * Test 15. Can't have negative costPrice.
 	 * @throws StockException because sellPrice can't be negative.
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -259,7 +232,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 18. Can't have negative reorderPoint.
+	 * Test 16. Can't have negative reorderPoint.
 	 * @throws StockException because reorderPoint can't be negative.
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -269,7 +242,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 19. Can't have negative reorderAmount.
+	 * Test 17. Can't have negative reorderAmount.
 	 * @throws StockException because reorderAmount can't be negative.
 	 * @author Mitchell Willemse (n9470620).
 	 */
