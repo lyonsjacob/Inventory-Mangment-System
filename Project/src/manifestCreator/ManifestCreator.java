@@ -24,7 +24,7 @@ public class ManifestCreator {
 	 * will look at the reorder points and the amount of each item in the inventory and
 	 * decide whether an item needs to be reordered. This will create a list of items that need
 	 * to be ordered and creates a series of trucks. The items will be strategically added to trucks
-	 * and then added to the manifest.
+	 * and then added to the manifest so the lowest price possible will be acieved.
 	 * @param inventory The inventory to look at.
 	 * @return The created manifest full of trucks.
 	 * @throws StockException 

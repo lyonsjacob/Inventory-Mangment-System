@@ -29,6 +29,7 @@ public class OrdinaryTruck extends Truck {
 	public OrdinaryTruck() {
 		cargo = new LinkedHashMap<String, Integer>();
 		cargoQuantity = 0;
+		cost = 0;
 	}
 	
 	
@@ -46,10 +47,10 @@ public class OrdinaryTruck extends Truck {
 		if ((cargoQuantity + amount) <= 1000) {
 			cargo.put(itemName, amount);
 			cargoQuantity += amount;
+			getCost();
 		} else {
 			throw new DeliveryException("Cargo limit is exceeded!");
 		}
-
 	}
 
 	

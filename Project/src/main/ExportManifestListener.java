@@ -21,11 +21,24 @@ import store.Store;
 public class ExportManifestListener implements ActionListener {
 
 	/**
-	 * Invoked when an action occurs.
+	 * Invoked when Export Manifest button is clicked.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		createManifest();
+	}
+	
+	
+	
+	/**
+	 * Shows a dialog box that allows the user to choose a directory to save their
+	 * manifest too. The manifest is then generated based on the store's inventory and
+	 * exported as a .csv file to the chosen location. Shows an error message box when
+	 * exceptions occur.
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	public void createManifest() {
 		//Create ErrorMessageBox.
 		ErrorMessageBox popUpBox = new ErrorMessageBox();
 		
@@ -44,6 +57,7 @@ public class ExportManifestListener implements ActionListener {
 			popUpBox.ErrorMessage(e2.getMessage());
 		}
 		
+		//No items need to be ordered, or no items are in the inventory.
 		if (manifest == null) {
 			popUpBox.ErrorMessage("No Manifest to Create!");
 			return;
@@ -82,5 +96,4 @@ public class ExportManifestListener implements ActionListener {
 		table.updateTable();
 		table.updateLable();
 	}
-
 }

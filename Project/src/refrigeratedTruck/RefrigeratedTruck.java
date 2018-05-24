@@ -34,6 +34,7 @@ public class RefrigeratedTruck extends Truck {
 	public RefrigeratedTruck() {
 		cargoQuantity = 0;
 		cargo = new LinkedHashMap<String, Integer>();
+		cost = 0;
 	}
 	
 	
@@ -73,6 +74,7 @@ public class RefrigeratedTruck extends Truck {
 		if ((cargoQuantity + amount) <= 800) {
 			cargo.put(itemName, amount);
 			cargoQuantity += amount;
+			getCost();
 		} else {
 			throw new DeliveryException("Cargo limit is exceeded!");
 		}
