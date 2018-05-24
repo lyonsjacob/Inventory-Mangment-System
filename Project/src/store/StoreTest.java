@@ -11,8 +11,6 @@ import exceptions.StockException;
 import static org.junit.Assert.*;
 
 /**
- * An object for representing the store itself.
- * 
  * The following tests are designed for the Store class, which will
  * be based on the Singleton pattern.
  * 
@@ -47,6 +45,7 @@ public class StoreTest {
 		Store s1 = Store.getInstance();
 		Store s2 = Store.getInstance();
 		
+		//Assert both instances are the same.
 		assertEquals("Both Store Objects are Same", s1, s2);
 	}
 	
@@ -56,38 +55,36 @@ public class StoreTest {
 	 */
 	@Test
 	public void setCapital() {
-		double capital = 99700.01;
-		store.setCapital(capital);
+		//Set capital of store.
+		store.setCapital(99700.01);
 		
+		//Set variables.
 		double expectedCapital = 99700.01;
 		double actualCapital = store.getCapital();
 		
+		//Assert.
 		assertEquals(expectedCapital, actualCapital, 0.01);
 	}
 	
-	/**
-	 * Test 4: Test Empty Name.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Test
-	public void emptyName() {
-		String expectedName = "Store";
-		assertEquals("No store name has been set yet.", expectedName, store.getName());
-	}
-	
 	/*
-	 * Test 5: Set Store Name.
+	 * Test 4: Set Store Name.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void setName() {
-		String name = "CAB302 Store!";
-		store.setName(name);
-		assertEquals(name, store.getName());
+		//Set store name.
+		store.setName("CAB302 Store!");
+		
+		//Create Variables
+		String expectedName = "CAB302 Store!";
+		String actualName = store.getName();
+		
+		//Assert
+		assertEquals(expectedName, actualName);
 	}
 	
 	/**
-	 * Test 6: Get and Set Inventory.
+	 * Test 5: Get and Set Inventory.
 	 * @throws StockException
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -96,7 +93,7 @@ public class StoreTest {
 		//Get Empty Inventory (a Stock object) from Store.
 		Stock inventory = store.getInventory();
 		
-		//Create Test Item to Add to inventory.
+		//Create Test Item to add to inventory.
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		inventory.put(testItem);
 		
@@ -107,23 +104,24 @@ public class StoreTest {
 		int expectedAmount = 1;
 		int actualAmount = store.getAmount();
 		
+		//Assert.
 		assertEquals("Should be one item in the inventory now.", expectedAmount, actualAmount);
 	}
 	
 	/**
-	 * Test 7: Get Capital in Dollar Format.
+	 * Test 6: Get Capital in Dollar Format.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void getCapitalDollars() {
-		//Set store capital
+		//Set store capital.
 		store.setCapital(12345.67);
 		
-		//Get Values
+		//Get Values.
 		String expectedOutput = "$12,345.67";
 		String actualOutput = store.getCapitalDolarFormat();
 		
-		//Assert
+		//Assert.
 		assertEquals(expectedOutput, actualOutput);
 	}
 }

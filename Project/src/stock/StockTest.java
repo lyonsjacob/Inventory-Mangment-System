@@ -2,23 +2,15 @@
 
 import item.Item;
 import exceptions.StockException;
-
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /***
  * The following tests are for the basic functionality of
  * the Stock class.
  * 
- *  A collection of items. Can be used for representing store inventory,
- *  stock orders, sales logs, and truck cargo.
- * 
- * @author Mitchell Willemse (n9470620) & Jacob Lyons
- *
+ * @author Mitchell Willemse (n9470620).
  */
 public class StockTest {
 	
@@ -45,31 +37,37 @@ public class StockTest {
 	 */
 	@Test
 	public void addItem() throws StockException {
+		//Create item.
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
+		
+		//Add it to inventory.
 		stock.put(testItem);
 		
+		//Get item by name to ensure it is stored in inventory.
 		assertEquals(testItem, stock.getItemName("Ice Cream"));
 	}
 	
 	/**
 	 * Test 3: Set Quantity. Uses the setQuantity() method to change the 'Amount' in the
 	 * Item object.
-	 * 
-	 * I'm keeping setQuantity and getQuantity because although these methods exist
-	 * in the Item class and we could just use the Stock.Get method to change them, it
-	 * seems a lot more neater to encapsulate them within the stock class.
 	 * @throws StockException 
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void setQuantity() throws StockException {
+		//Create item and add it to inventory.
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		stock.put(testItem);
 		
-		int newQuantity = 700;
-		stock.setQuantity("Ice Cream", newQuantity);
+		//Change the quantity (amount) of that item.
+		stock.setQuantity("Ice Cream", 700);
 		
-		assertEquals(newQuantity, stock.getQuantity("Ice Cream"));
+		//Create variables.
+		int expectedQuantity = 700;
+		int actualQuantity = stock.getQuantity("Ice Cream");
+		
+		//Assert.
+		assertEquals(expectedQuantity, actualQuantity);
 	}
 		
 	/**
@@ -79,14 +77,16 @@ public class StockTest {
 	 */
 	@Test 
 	public void clearInventory() throws StockException {
+		//Create items and add them to inventory.
 		Item testItem1= new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		Item testItem2 = new Item(7, "Chips", 3, 4, 300, 400);
-		
 		stock.put(testItem1);
 		stock.put(testItem2);
 		
+		//Clear the inventory.
 		stock.clear();
 		
+		//Assert inventory total is 0.
 		assertEquals(0, stock.getStockQuantity());
 	}
 	
@@ -97,9 +97,11 @@ public class StockTest {
 	 */
 	@Test (expected = StockException.class)
 	public void negativeQuantity() throws StockException {
+		//Create item and add it to inventory.
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		stock.put(testItem);
 		
+		//Attempt to set negative quantity.
 		stock.setQuantity("Ice Cream", -5);
 	}
 		
@@ -110,6 +112,7 @@ public class StockTest {
 	 */
 	@Test (expected = StockException.class) 
 	public void unkmownItem() throws StockException {
+		//Tries to change quantity for item that isn't in inventory.
 		stock.setQuantity("Cookies", 5);
 	}
 	
@@ -120,6 +123,7 @@ public class StockTest {
 	 */
 	@Test
 	public void getStockQuantity() throws StockException {
+		//Create items and add them to inventory.
 		Item testItem1 = new Item(3, "Ice Cream", 3, 4, 300, 400, -20);
 		Item testItem2 = new Item(4, "Tofu", 3, 4, 300, 400, 3);
 		Item testItem3 = new Item(7, "Chips", 3, 4, 300, 400);
@@ -128,9 +132,11 @@ public class StockTest {
 		stock.put(testItem2);
 		stock.put(testItem3);
 		
+		//Create variables.
 		int expectedOutput = 3;
 		int actualOutput = stock.getStockQuantity();
 		
+		//Assert.
 		assertEquals(expectedOutput, actualOutput);
 	}
 	
@@ -141,6 +147,7 @@ public class StockTest {
 	 */
 	@Test
 	public void testIterator() throws StockException {
+		//Create items and add them to inventory.
 		Item testItem1 = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
 		Item testItem2 = new Item(0, "Coffee", 2, 3, 200, 225);
 		Item testItem3 = new Item(0, "Milk", 3, 4, 100, 150, 3);
@@ -149,13 +156,16 @@ public class StockTest {
 		stock.put(testItem2);
 		stock.put(testItem3);
 		
+		//Create variables.
 		String expectedOutput = "Ice CreamCoffeeMilk";
 		String actualOutput = "";
 		
+		//Iterate through inventory.
 	    for (Item i : stock) {
 	        actualOutput += i.getName();
 	    }
 		
+	    //Assert.
 		assertEquals(expectedOutput, actualOutput);
 	}
 }

@@ -12,7 +12,6 @@ import static org.junit.Assert.*;
  * the item class.
  * 
  * @author Mitchell Willemse (n9470620).
- *
  */
 public class ItemTest {
 
@@ -27,6 +26,7 @@ public class ItemTest {
 	 */
 	@Before @Test
 	public void setUpItem() {
+		//Create variables.
 		int amount = 0;
 		String name = "Ice Cream";
 		double costPrice = 3;
@@ -35,7 +35,7 @@ public class ItemTest {
 		int reorderAmount = 400;
 		int temperature = -20;
 		
-		
+		//Create item.
 		item = new Item(amount, name, costPrice, sellPrice, reorderPoint, reorderAmount, temperature);
 	}
 	
@@ -45,6 +45,7 @@ public class ItemTest {
 	 */
 	@Test
 	public void setUpItemWithoutTemp() {
+		//Create variables.
 		int amount = 0;
 		String name = "Ice Cream";
 		double costPrice = 3;
@@ -52,7 +53,7 @@ public class ItemTest {
 		int reorderPoint = 300;
 		int reorderAmount = 400;
 		
-		
+		//Create item.
 		item = new Item(amount, name, costPrice, sellPrice, reorderPoint, reorderAmount);
 	}
 	
@@ -62,6 +63,7 @@ public class ItemTest {
 	 */
 	@Test
 	public void getAmount() {
+		//Assert amount is 0.
 		assertEquals(0, item.getAmount());
 	}
 	
@@ -72,98 +74,122 @@ public class ItemTest {
 	 */
 	@Test
 	public void setAmount() throws StockException {
-		int newAmount = 400;
+		//Set amount of item to 400.
 		item.setAmount(400);
 		
-		assertEquals(newAmount, item.getAmount());
+		//Create variables.
+		int expectedAmount = 400;
+		int actualAmount = item.getAmount();
+		
+		//Assert they are equal.
+		assertEquals(expectedAmount, actualAmount);
 	}
 	
 	/**
-	 * Test 5: Can't Set Negative Amount
-	 * @throws StockException
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Test (expected = StockException.class) 
-	public void setNegativeAmount() throws StockException {
-		item.setAmount(-5);
-	}
-	
-	/**
-	 * Test 6: Needs Reorder
+	 * Test 5: Needs Reorder
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void needsReorder() {
-		assertEquals(true, item.isBelowReorderPoint());
+		//Assert item needs reorder.
+		assertTrue(item.isBelowReorderPoint());
 	}
 	
 	/**
-	 * Test 7: Get Name.
+	 * Test 6: Get Name.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void getName() {
+		//Create variables.
 		String expectedName = "Ice Cream";
-		assertEquals(expectedName, item.getName());
+		String actualname = item.getName();
+		
+		//Assert they are equal.
+		assertEquals(expectedName, actualname);
 	}
 	
 	/**
-	 * Test 8: Get Cost Price.
+	 * Test 7: Get Cost Price.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void getCostPrice() {
-		int expectedCostPrice = 3;
-		assertEquals(expectedCostPrice, item.getCostPrice(), 1);
+		//Create variables.
+		double expectedCostPrice = 3;
+		double actualCostPrice = item.getCostPrice();
+		
+		//Assert they are equal.
+		assertEquals(expectedCostPrice, actualCostPrice, 0.01);
 	}
 	
 	/**
-	 * Test 9: Get Sell Price.
+	 * Test 8: Get Sell Price.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void getSellPrice() {
+		//Create variables.
 		int expectedSellPrice = 4;
-		assertEquals(expectedSellPrice, item.getSellPrice(), 1);
+		double actualSellPrice = item.getSellPrice();
+		
+		//Assert they are equal.
+		assertEquals(expectedSellPrice, actualSellPrice, 0.01);
 	}
 	
 	/**
-	 * Test 10: Get Reorder Point.
+	 * Test 9: Get Reorder Point.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void getReorderPoint() {
+		//Create variables.
 		int expectedReorderPoint = 300;
-		assertEquals(expectedReorderPoint, item.getReorderPoint());
+		int actualReorderPoint = item.getReorderPoint();
+		
+		//Assert they are equal.
+		assertEquals(expectedReorderPoint, actualReorderPoint);
 	}
 	
 	/**
-	 * Test 11: Get Reorder Amount.
+	 * Test 10: Get Reorder Amount.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void getReorderAmount() {
+		//Create variables.
 		int expectedReorderAmount = 400;
-		assertEquals(expectedReorderAmount, item.getReorderAmount());
+		int actualReorderAmount = item.getReorderAmount();
+		
+		//Assert they are equal.
+		assertEquals(expectedReorderAmount, actualReorderAmount);
 	}
 	
 	/**
-	 * Test 12: Get Temperature.
+	 * Test 11: Get Temperature.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void getTemperature() {
-		Integer expectedTemperature = -20;
-		assertEquals(expectedTemperature, item.getTemperature());
+		//Create variables.
+		int expectedTemperature = -20;
+		int actualTemperature = item.getTemperature();
+		
+		//Assert they are equal.
+		assertEquals(expectedTemperature, actualTemperature);
 	}
 	
 	/**
-	 * Test 13: Get Temperature for Item With No Temperature.
+	 * Test 12: Get Temperature for Item With No Temperature.
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
 	public void testItemNoTemperature() {
+		//Create new item with no temperature.
 		item = new Item(0, "Coffee", 2, 3, 200, 225);
+		
+		//Ensure that when temperature is sought, null is returned,
+		//as there is no temperature.
 		assertNull(item.getTemperature());
 	}
 	
@@ -173,10 +199,15 @@ public class ItemTest {
 	 */
 	@Test
 	public void testToString() {
+		//Create new item.
 		item = new Item(0, "Milk", 3, 4, 100, 150, 3);
-		String expectedOutput = "0, Milk, 3.0, 4.0, 100, 150, 3\n";
 		
-		assertEquals(expectedOutput, item.toString());
+		//Create variables.
+		String expectedOutput = "0, Milk, 3.0, 4.0, 100, 150, 3\n";
+		String actualOutput = item.toString();
+		
+		//Assert they are equal.
+		assertEquals(expectedOutput, actualOutput);
 	}
 	
 	/**
@@ -185,9 +216,65 @@ public class ItemTest {
 	 */
 	@Test
 	public void testToStringNoTemperature() {
+		//Create new item, no temperature.
 		item = new Item(0, "Coffee", 2, 3, 200, 225);
-		String expectedOutput = "0, Coffee, 2.0, 3.0, 200, 225\n";
 		
-		assertEquals(expectedOutput, item.toString());
+		//Create variables.
+		String expectedOutput = "0, Coffee, 2.0, 3.0, 200, 225\n";
+		String actualOutput = item.toString();
+		
+		//Assert they are equal.
+		assertEquals(expectedOutput, actualOutput);
+	}
+	
+	/**
+	 * Test 15: Can't Set negative Amount.
+	 * @throws StockException because amount can't be set to negative.
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	@Test (expected = StockException.class) 
+	public void setNegativeAmount() throws StockException {
+		//Attempt to set negative amount.
+		item.setAmount(-5);
+	}
+	
+	/**
+	 * Test 16. Can't have negative costPrice.
+	 * @throws StockException because costPrice can't be negative.
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	@Test (expected = StockException.class)
+	public void setNegativeCost() throws StockException {
+		item = new Item(0, "Test", -5, 0, 0, 0);
+	}
+	
+	/**
+	 * Test 17. Can't have negative costPrice.
+	 * @throws StockException because sellPrice can't be negative.
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	@Test (expected = StockException.class)
+	public void setNegativeSell() throws StockException {
+		item = new Item(0, "Test", 0, -5, 0, 0);
+	}
+	
+	/**
+	 * Test 18. Can't have negative reorderPoint.
+	 * @throws StockException because reorderPoint can't be negative.
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	@Test (expected = StockException.class)
+	public void setNegativeReorderPoint() throws StockException {
+		item = new Item(0, "Test", 0, 0, -5, 0);
+	}
+	
+	/**
+	 * Test 19. Can't have negative reorderAmount.
+	 * @throws StockException because reorderAmount can't be negative.
+	 * @author Mitchell Willemse (n9470620).
+	 */
+	@Test (expected = StockException.class)
+	public void setNegativeReorderAmount() throws StockException {
+		item = new Item(0, "Test", 0, 0, 0, -5);
 	}
 }
