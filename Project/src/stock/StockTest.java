@@ -46,32 +46,9 @@ public class StockTest {
 		//Get item by name to ensure it is stored in inventory.
 		assertEquals(testItem, stock.getItemName("Ice Cream"));
 	}
-	
-	/**
-	 * Test 3: Set Quantity. Uses the setQuantity() method to change the 'Amount' in the
-	 * Item object.
-	 * @throws StockException 
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Test
-	public void setQuantity() throws StockException {
-		//Create item and add it to inventory.
-		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
-		stock.put(testItem);
-		
-		//Change the quantity (amount) of that item.
-		stock.setQuantity("Ice Cream", 700);
-		
-		//Create variables.
-		int expectedQuantity = 700;
-		int actualQuantity = stock.getQuantity("Ice Cream");
-		
-		//Assert.
-		assertEquals(expectedQuantity, actualQuantity);
-	}
 		
 	/**
-	 * Test 4: Clear inventory.
+	 * Test 3: Clear inventory.
 	 * @throws StockException 
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -91,33 +68,7 @@ public class StockTest {
 	}
 	
 	/*
-	 * Test 5: Can't Have Negative Quantity. Tries to use setQuantity() to set a negative
-	 * 'Amount' Receives StockException.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Test (expected = StockException.class)
-	public void negativeQuantity() throws StockException {
-		//Create item and add it to inventory.
-		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
-		stock.put(testItem);
-		
-		//Attempt to set negative quantity.
-		stock.setQuantity("Ice Cream", -5);
-	}
-		
-	/*
-	 * Test 6: Can't Set Quantity for Non-Existent Item. Tries to use setQuantity() for an
-	 * Item that has not been added to Stock. StockException() is thrown.
-	 * @author Mitchell Willemse (n9470620).
-	 */
-	@Test (expected = StockException.class) 
-	public void unkmownItem() throws StockException {
-		//Tries to change quantity for item that isn't in inventory.
-		stock.setQuantity("Cookies", 5);
-	}
-	
-	/*
-	 * Test 7: Get Stock Quantity. use getStockQuantity() to get the number of Items stored
+	 * Test 5: Get Stock Quantity. use getStockQuantity() to get the number of Items stored
 	 * in the Stock object.
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -141,7 +92,7 @@ public class StockTest {
 	}
 	
 	/*
-	 * Test 8: Test Iterator. Tests to make sure the Stock class can be used to iterate
+	 * Test 6: Test Iterator. Tests to make sure the Stock class can be used to iterate
 	 * through each Item in the Stock object. Ensures each Item is properly iterated through.
 	 * @author Mitchell Willemse (n9470620).
 	 */
