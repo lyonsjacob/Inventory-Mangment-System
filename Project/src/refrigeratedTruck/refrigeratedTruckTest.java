@@ -2,13 +2,10 @@ package refrigeratedTruck;
 
 import static org.junit.Assert.*;
 
-import java.util.Map;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import exceptions.DeliveryException;
-import ordinaryTruck.OrdinaryTruck;
 
 public class refrigeratedTruckTest {
 
@@ -79,14 +76,12 @@ public class refrigeratedTruckTest {
 	
 	
 	// Test: check to see if truck temperature is replaced with a warmer temperature
-	@Test 
+	@Test (expected = DeliveryException.class)
 	public void incorectTempTest() throws DeliveryException {
 		String itemName = "tomatos";
 		int quantity = 300;
 		int temperature = 10;	
 		refrigeratedTruck.addItem(itemName, quantity, temperature);
-		assertEquals(-20, refrigeratedTruck.getTemperature());
-		
 	}
 	
 	
@@ -101,8 +96,7 @@ public class refrigeratedTruckTest {
 		
 		String itemName1 = "milk";
 		int quantity1 = 100;
-		int temperature = 4;
-		refrigeratedTruck.addItem(itemName1, quantity1, temperature);
+		refrigeratedTruck.addItem(itemName1, quantity1);
 		
 		int expectedQuantity = 500;
 		assertEquals(expectedQuantity, refrigeratedTruck.getTotalQuantity());
@@ -139,7 +133,7 @@ public class refrigeratedTruckTest {
 	public void toStringTest() throws DeliveryException {
 			
 		refrigeratedTruck.addItem("milk", 100);
-		String itemString = ">Refrigerated \n icecream,300 \n milk,100\n";
+		String itemString = ">Refrigerated\nicecream,300\nmilk,100\n";
 		assertEquals(itemString, refrigeratedTruck.convertToString());
 	}
 		
@@ -155,8 +149,7 @@ public class refrigeratedTruckTest {
 		
 		String itemName1 = "milk";
 		int quantity1 = 100;
-		int temperature = 4;
-		refrigeratedTruck.addItem(itemName1, quantity1,temperature);
+		refrigeratedTruck.addItem(itemName1, quantity1);
 		
 		double cost = 900 + 200.00*Math.pow(0.70,-20.00/5.00);	
 		assertEquals(cost, refrigeratedTruck.getCost(),0.001);

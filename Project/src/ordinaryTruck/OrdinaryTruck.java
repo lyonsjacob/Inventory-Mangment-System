@@ -44,6 +44,10 @@ public class OrdinaryTruck extends Truck {
 	 */
 	@Override
 	public void addItem(String itemName, int amount) throws DeliveryException {
+		if (amount < 0) {
+			throw new DeliveryException("Can't set negative item amount for truck!");
+		}
+		
 		if ((cargoQuantity + amount) <= 1000) {
 			cargo.put(itemName, amount);
 			cargoQuantity += amount;

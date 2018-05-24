@@ -72,7 +72,7 @@ public class ordinaryTruckTest {
 	@Test
 	public void toStringTest() throws DeliveryException {
 		ordinaryTruck.addItem("milk", 100);
-		String itemString = ">Ordinary \n Coffee,300 \n milk,100";
+		String itemString = ">Ordinary\nCoffee,300\nmilk,100\n";
 		assertEquals(itemString, ordinaryTruck.convertToString());
 	}
 	

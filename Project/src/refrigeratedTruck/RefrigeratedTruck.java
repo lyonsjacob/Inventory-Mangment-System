@@ -23,7 +23,7 @@ public class RefrigeratedTruck extends Truck {
 	
 	private Map<String, Integer> cargo;
 	private int cargoQuantity;
-	private int temperature;
+	private Integer temperature;
 	private double cost;
 	final int MAX_CARGO = 800;
 	
@@ -35,6 +35,7 @@ public class RefrigeratedTruck extends Truck {
 		cargoQuantity = 0;
 		cargo = new LinkedHashMap<String, Integer>();
 		cost = 0;
+		temperature = null;
 	}
 	
 	
@@ -49,6 +50,13 @@ public class RefrigeratedTruck extends Truck {
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	public void addItem(String itemName, int amount, int temperature) throws DeliveryException {
+		if (this.temperature != null) {
+			if (temperature > this.temperature) {
+				//can't set to a warmer temperature
+				throw new DeliveryException("Temperature can not be set to be warmer");
+			}
+		}
+		
 		//Set the temperature for the truck
 		if (temperature <= 10 && temperature >= -20) {	
 			this.temperature = temperature;
@@ -71,6 +79,10 @@ public class RefrigeratedTruck extends Truck {
 	 */
 	@Override
 	public void addItem(String itemName, int amount) throws DeliveryException {
+		if (amount < 0) {
+			throw new DeliveryException("Can't set negative item amount for truck!");
+		}
+		
 		if ((cargoQuantity + amount) <= 800) {
 			cargo.put(itemName, amount);
 			cargoQuantity += amount;

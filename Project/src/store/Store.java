@@ -2,8 +2,6 @@ package store;
 
 import java.text.NumberFormat;
 
-import javax.swing.JLabel;
-
 import stock.Stock;
 
 /**
