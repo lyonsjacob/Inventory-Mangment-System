@@ -84,25 +84,19 @@ public class StoreTest {
 	}
 	
 	/**
-	 * Test 5: Get and Set Inventory.
+	 * Test 5: Get Inventory.
 	 * @throws StockException
 	 * @author Mitchell Willemse (n9470620).
 	 */
 	@Test
-	public void setInventory() throws StockException {
-		//Get Empty Inventory (a Stock object) from Store.
-		Stock inventory = store.getInventory();
-		
+	public void getInventory() throws StockException {
 		//Create Test Item to add to inventory.
 		Item testItem = new Item(0, "Ice Cream", 3, 4, 300, 400, -20);
-		inventory.put(testItem);
-		
-		//Set This Back to the Store's Inventory.
-		store.setInventory(inventory);
+		store.getInventory().put(testItem);
 		
 		//Get Values
 		int expectedAmount = 1;
-		int actualAmount = store.getAmount();
+		int actualAmount = store.getInventory().getStockQuantity();
 		
 		//Assert.
 		assertEquals("Should be one item in the inventory now.", expectedAmount, actualAmount);
