@@ -49,26 +49,6 @@ public class ManifestTest {
 		}
 		
 		
-		
-		// gets truck at specified index.
-		@Test 
-		public void truckAtIndexTest() {
-			Truck testTruck = manifest.getTruck(0);
-			
-			assertEquals(testTruck.convertToString(), ">Ordinary\nCoffee,300\n");
-			
-		}
-		
-		
-		// get number of trucks 
-		@Test 
-		public void getNumberOfTrucksTest() {
-			int numTrucks = manifest.getNumOfTrucks();
-			assertEquals(numTrucks, 2);
-		}
-		
-
-		
 		/*Test: Iterator and if truck has been added to manifest.
 		 * by using the trucks convertToString method to get 
 		 * the details of the truck.
