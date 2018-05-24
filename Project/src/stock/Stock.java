@@ -80,31 +80,6 @@ public class Stock implements Iterable<Item> {
 		throw new StockException("Item is not in list");
 	}
 	
-	
-	/**
-	 * This class sets the quantity of the item
-	 * 
-	 * @param itemName
-	 * @param quantity
-	 * @throws StockException
-	 * @author Jacob Lyons
-	 */
-	public void setQuantity(String itemName, int quantity) throws StockException {
-		getItemName(itemName).setAmount(quantity);
-	}
-	
-	
-	/**
-	 * This class gets the quantity of the item.
-	 * 
-	 * @param itemName
-	 * @param quantity
-	 * @throws StockException
-	 * @author Jacob Lyons
-	 */
-	public int getQuantity(String itemName) throws StockException{
-		return getItemName(itemName).getAmount();
-	}
 
 
 	/**

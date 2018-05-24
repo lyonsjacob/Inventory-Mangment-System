@@ -32,19 +32,6 @@ public class ordinaryTruckTest {
 	
 	
 	
-	// Test: get hash map where item and cost are stored
-	@Test
-	public void GetMapTest() {	
-		Map<String, Integer> itemQuantityMap;;
-		int quantity = 300;
-		itemQuantityMap = ordinaryTruck.GetMap();
-		int expectedQuantity = itemQuantityMap.get("Coffee");
-		
-		assertEquals(quantity, expectedQuantity);	
-	}
-	
-	
-	
 	// Test: get the quantity of items held in the truck 
 	@Test
 	public void getTotalQuantityTest() {
