@@ -76,20 +76,7 @@ public class refrigeratedTruckTest {
 		assertEquals(-20, refrigeratedTruck.getTemperature());
 		
 	}
-
-		
-		
 	
-	// Test: get hash map where item and cost are stored
-	@Test
-	public void GetHashMapTest() {	
-		Map<String, Integer> itemQuantityMap;
-		int quantity = 300;
-		itemQuantityMap = refrigeratedTruck.GetMap();
-		int expectedQuantity = itemQuantityMap.get("icecream");
-		assertEquals(quantity, expectedQuantity);	
-	}
-		
 	
 	
 	
