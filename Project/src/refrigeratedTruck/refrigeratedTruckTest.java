@@ -40,7 +40,19 @@ public class refrigeratedTruckTest {
 		int quantity = 300;
 		refrigeratedTruck.addItem(itemName, quantity);
 	}
-	    
+	
+	
+	
+	
+	//Test: cannot add an item with negative quantity
+	@Test(expected = DeliveryException.class)
+	public void itemNegativeQuantity() throws DeliveryException {
+		String itemName = "ice";
+		int quantity = -1;
+		int temperature = -20;	
+		refrigeratedTruck.addItem(itemName, quantity, temperature);
+	}
+		    
 	
 	
 	
@@ -68,7 +80,7 @@ public class refrigeratedTruckTest {
 	
 	// Test: check to see if truck temperature is replaced with a warmer temperature
 	@Test 
-	public void incorectTempAddedTest() throws DeliveryException {
+	public void incorectTempTest() throws DeliveryException {
 		String itemName = "tomatos";
 		int quantity = 300;
 		int temperature = 10;	
@@ -82,9 +94,18 @@ public class refrigeratedTruckTest {
 	
 	// Test: get the quantity of items held in the truck 
 	@Test
-	public void getTotalQuantityTest() {
-		int quantity = 300;
-		assertEquals(quantity, refrigeratedTruck.getTotalQuantity());
+	public void getTotalQuantityTest() throws DeliveryException {
+		String itemName = "beans";
+		int quantity = 100;
+		refrigeratedTruck.addItem(itemName, quantity);
+		
+		String itemName1 = "milk";
+		int quantity1 = 100;
+		int temperature = 4;
+		refrigeratedTruck.addItem(itemName1, quantity1, temperature);
+		
+		int expectedQuantity = 500;
+		assertEquals(expectedQuantity, refrigeratedTruck.getTotalQuantity());
 	}
 		
 	
@@ -118,7 +139,7 @@ public class refrigeratedTruckTest {
 	public void toStringTest() throws DeliveryException {
 			
 		refrigeratedTruck.addItem("milk", 100);
-		String itemString = ">Refrigerated \n icecream,300 \n milk,100";
+		String itemString = ">Refrigerated \n icecream,300 \n milk,100\n";
 		assertEquals(itemString, refrigeratedTruck.convertToString());
 	}
 		
@@ -127,9 +148,18 @@ public class refrigeratedTruckTest {
 	
 	// Test: get truck cost
 	@Test
-	public void getcostTest() {
+	public void getcostTest() throws DeliveryException {
+		String itemName = "beans";
+		int quantity = 100;
+		refrigeratedTruck.addItem(itemName, quantity);
+		
+		String itemName1 = "milk";
+		int quantity1 = 100;
+		int temperature = 4;
+		refrigeratedTruck.addItem(itemName1, quantity1,temperature);
+		
 		double cost = 900 + 200.00*Math.pow(0.70,-20.00/5.00);	
-		assertEquals(cost, refrigeratedTruck.getCost(),0.01);
+		assertEquals(cost, refrigeratedTruck.getCost(),0.001);
 	}
 	
 	

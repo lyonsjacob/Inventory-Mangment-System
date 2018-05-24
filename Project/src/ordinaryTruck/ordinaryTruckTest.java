@@ -62,6 +62,14 @@ public class ordinaryTruckTest {
 	}
 	
 	
+	//Test: cannot add an item with negative quantity
+	@Test(expected = DeliveryException.class)
+	public void itemNegativeQuantity() throws DeliveryException {
+		String itemName = "peas";
+		int quantity = -1;	
+		ordinaryTruck.addItem(itemName, quantity);
+	}
+	
 	
 	
 	

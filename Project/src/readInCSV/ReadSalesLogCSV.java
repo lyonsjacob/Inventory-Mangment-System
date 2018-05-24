@@ -94,7 +94,7 @@ public class ReadSalesLogCSV {
 				store.setCapital(store.getCapital()+grossProfit);
 				
 			} catch (StockException e) {
-				undoChanges(i);
+				undoChanges(i, e.getMessage());
 			}	
 		}  
 	}
@@ -107,7 +107,7 @@ public class ReadSalesLogCSV {
 	 * @param index -the index of the array list witch exception occurred
 	 * @throws StockException
 	 */
-	public void undoChanges(int index) throws StockException {
+	public void undoChanges(int index, String errorMessage) throws StockException {
 		Item currentItem;
 		
 		for(int i=0; i < index; i++) {
@@ -120,8 +120,7 @@ public class ReadSalesLogCSV {
 			store.setCapital(store.getCapital()+grossProfit);				
 		}
 		
-		throw new StockException(soldItems.get(index)+"is not in store inventory or the amount sold is larger than the amount in stock.\n"
-				+ "No change has been made to the stores inventory");
+		throw new StockException(errorMessage+"\n No change has been made to the stores inventory");
 	}
 
 }
