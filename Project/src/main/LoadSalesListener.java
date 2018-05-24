@@ -52,7 +52,7 @@ public class LoadSalesListener implements ActionListener {
 				// Display exception message in pop up window. 
 				popUpBox.ErrorMessage(e1.getMessage());
 			}
-	    // Update infromation in the GUI
+	    // Update information in the GUI
 		UpdateGUIElements table = UpdateGUIElements.getInstance();
 		table.updateTable();
 		table.updateLable();
