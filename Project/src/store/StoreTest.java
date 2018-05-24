@@ -1,7 +1,6 @@
 package store;
 
 import item.Item;
-import stock.Stock;
 
 import org.junit.Before;
 import org.junit.Test;
