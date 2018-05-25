@@ -31,8 +31,22 @@ public class Item {
 	 * @param reorderPoint	-quantity when item requires re-stocking 
 	 * @param reorderAmount	-order quantity
 	 * @author Jacob lyons
+	 * @throws StockException 
 	 */
-	public Item(int amount, String name, double costPrice, double salePrice, int reorderPoint, int reorderAmount, int temperature) {
+	public Item(int amount, String name, double costPrice, double salePrice, int reorderPoint, int reorderAmount, int temperature) throws StockException {
+		
+		if (costPrice < 0.0) {
+			throw new StockException("Cannot set " +name+" to have negative cost price");
+		}
+		if (salePrice < 0.0) {
+			throw new StockException("Cannot set " +name+" to have negative sale price");
+		}
+		if (reorderPoint < 0.0) {
+			throw new StockException("Cannot set " +name+" to have negative reorder point");
+		}
+		if (reorderAmount < 0.0) {
+			throw new StockException("Cannot set " +name+" to have negative reorder amount");
+		}
 		this.name = name;
 		this.costPrice = costPrice;
 		this.salePrice = salePrice; 
@@ -53,13 +67,27 @@ public class Item {
 	 * @param reorderAmount	-Order quantity
 	 * @param temperature 	-Item temperature
 	 * @author Jacob Lyons
+	 * @throws StockException 
 	 */
-	public Item(int amount, String name, double costPrice2, double sellPrice, int reorderPoint, int reorderAmount) {
+	public Item(int amount, String name, double costPrice, double salePrice, int reorderPoint, int reorderAmount) throws StockException {
+		if (costPrice < 0.0) {
+			throw new StockException("Cannot set " +name+" to have negative cost price");
+		}
+		if (salePrice < 0.0) {
+			throw new StockException("Cannot set " +name+" to have negative sale price");
+		}
+		if (reorderPoint < 0.0) {
+			throw new StockException("Cannot set " +name+" to have negative reorder point");
+		}
+		if (reorderAmount < 0.0) {
+			throw new StockException("Cannot set " +name+" to have negative reorder amount");
+		}
 		this.name = name;
-		this.costPrice = costPrice2; 
-		this.salePrice = sellPrice; 
+		this.costPrice = costPrice; 
+		this.salePrice = salePrice; 
 		this.reorderAmount = reorderAmount;
 		this.reorderPoint = reorderPoint;
+		
 		
 		this.amount = amount;
 	}
@@ -83,6 +111,7 @@ public class Item {
 	public double getCostPrice() {
 		return this.costPrice;
 	}
+	
 	
 	/**
 	 * Gets the sale price of item

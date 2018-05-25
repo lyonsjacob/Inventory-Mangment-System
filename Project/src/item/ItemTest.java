@@ -23,9 +23,10 @@ public class ItemTest {
 	/**
 	 * Test 1: Constructing an Item object. 
 	 * @author Mitchell Willemse (n9470620).
+	 * @throws StockException 
 	 */
 	@Before @Test
-	public void setUpItem() {
+	public void setUpItem() throws StockException {
 		//Create variables.
 		int amount = 0;
 		String name = "Ice Cream";
@@ -42,9 +43,10 @@ public class ItemTest {
 	/**
 	 * Test 2: Constructing an Item Object without Temperature
 	 * @author Mitchell Willemse (n9470620).
+	 * @throws StockException 
 	 */
 	@Test
-	public void setUpItemWithoutTemp() {
+	public void setUpItemWithoutTemp() throws StockException {
 		//Create variables.
 		int amount = 0;
 		String name = "Ice Cream";
@@ -172,9 +174,10 @@ public class ItemTest {
 	/**
 	 * Test 11: Get Temperature for Item With No Temperature.
 	 * @author Mitchell Willemse (n9470620).
+	 * @throws StockException 
 	 */
 	@Test
-	public void testItemNoTemperature() {
+	public void testItemNoTemperature() throws StockException {
 		//Create new item with no temperature.
 		item = new Item(0, "Coffee", 2, 3, 200, 225);
 		
@@ -186,9 +189,10 @@ public class ItemTest {
 	/**
 	 * Test 12: Test To String with No Temperature.
 	 * @author Mitchell Willemse (n9470620).
+	 * @throws StockException 
 	 */
 	@Test
-	public void testToStringNoTemperature() {
+	public void testToStringNoTemperature() throws StockException {
 		//Create new item, no temperature.
 		item = new Item(0, "Coffee", 2, 3, 200, 225);
 		
