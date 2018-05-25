@@ -169,7 +169,7 @@ public class Item {
 	public void setAmount(int amount)throws StockException{
 		
 		if(amount < 0){
-			throw new StockException("Can't Set Negative Amount");
+			throw new StockException("Can't Set "+getName()+" to have a negative amount");
 		}
 		this.amount = amount;
 	}

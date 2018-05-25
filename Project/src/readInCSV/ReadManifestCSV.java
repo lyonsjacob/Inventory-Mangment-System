@@ -81,11 +81,6 @@ public class ReadManifestCSV {
 			line = buffer.readLine();
 		}
 		buffer.close(); 
-		
-		
-		for(int i = manifestItems.size()-1; i >= 0 ; i--) {
-			System.out.println(manifestItems.get(i)+", "+quantityBrought.get(i));
-		}
 		updateInventory();
 	}
 	

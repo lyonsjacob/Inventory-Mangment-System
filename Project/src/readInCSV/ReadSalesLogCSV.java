@@ -114,10 +114,10 @@ public class ReadSalesLogCSV {
 			//get item
 			currentItem = store.getInventory().getItemName(soldItems.get(i));
 			// undo quantity update
-			currentItem.setAmount(currentItem.getAmount()-quantitySold.get(i));			
+			currentItem.setAmount(currentItem.getAmount()+quantitySold.get(i));			
 			// update capital
 			double grossProfit = (double)quantitySold.get(i)*currentItem.getSellPrice();
-			store.setCapital(store.getCapital()+grossProfit);				
+			store.setCapital(store.getCapital()-grossProfit);				
 		}
 		
 		throw new StockException(errorMessage+"\n No change has been made to the stores inventory");
