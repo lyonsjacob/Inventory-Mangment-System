@@ -1,0 +1,1587 @@
+Jake (79):
+      added refrigerated truck
+      created ordinary truck test case
+      added test cases to ordinary truck
+      completed initial ordinary truck test case
+      completed initial ordinary truck test case syntax fix
+      completed initial refrigerated truck test case
+      completed initial refrigerated truck test case
+      completed initial refrigerated truck test case
+      completed initial refrigerated truck test case syntax fix
+      Item class compleated
+      Item class updated
+      Truck class updated
+      test 1 in Stock passed
+      test 1 in Stock passed
+      Truck updated
+      Truck updated
+      Manifest test class created
+      added store class.
+      Removed cost from truck class.
+      update to truck test class.
+      update to truck test class.
+      update to truck test class.
+      update item class
+      finished store test class, stock test cases may need changes.
+      removed srockexception class from stock class
+      Fixed test order in truck
+      Fixed test order in truck
+      Fixed test order in truck
+      Filled out item test cases, exceptions need to be handled (they are so painful haha)
+      Added exceptions to truck and a few comlicated tests, not sure about quantity exceptions because only the program can add items to the truck. This is not influenced by any uncontrolable factors therefore they are not nessesary. They are handy for dbug maybe we could remove them after program testing. I will ask the tutor on thursday
+      Updated Manifest unit testing
+      fixed toString in item class
+      created readInCSV Package
+      created sort test case in stock class
+      created item read in class.... not tested
+      debuged item read in class and added table update to main
+      debuged item read in class and added table update to main
+      debuged item read in class and added table update to main
+      added sales log read in class
+      debug read in sales log, attched it to the button listener, fixed bug in stock class
+      Updated truck and manifest test class
+      Updated truck and manifest test class
+      built manifest read in class... not tested
+      updated manifest test class
+      attached mainfest to listener
+      creater file selector class and added it to the load csv process
+      updated stock.put to check if the item exisits useing the item name as a key
+      updated load in item
+      updated trucks
+      updated trucks
+      comented read in CSV classes
+      Created pop box
+      Merge branch 'master' of https://bitbucket.org/moreevilthansanta/cab302_assignment2
+      code to handle exceptions for file loaders written
+      added author to stock classes
+      Updated tests in manifest class, string format is causing errors
+      Dynamic table update added
+      Dynamic table update added and dubugged
+      Added author name to methods and updated comments
+      deleted old Jtable from main, commented new Jtable creator method
+      added dynamicaly updating label
+      Refactored DataLable Class
+      Refactored UpdateGUIElements
+      Adeed coments to store class
+      Added comments to the load CSV classes
+      Added comments to the load CSV classes(unsaved update)
+      Added comments to varios classes
+      refactor item class
+      Refactoer Manifest test class
+      Refactoer Truck  classes
+      Refactoer Stock class
+      Refactoer Store class
+      Fixed bug in manifest loader
+      fixed bugs in read manifest class
+      added test cases to truck clases
+      Removed un-used imports from various classes
+      Finished GUI report
+      Updated Item class
+      Fixed bug in read sales CSV class
+
+Mitchell Willemse (79):
+      Initial Commit
+      Added Item JUnit Test
+      Added Stock JUnit Test
+      Added Store JUnit Test
+      Added Test Cases for Item Object
+      Added More Item Test Cases.
+      Added Item Test Case for No Temperature.
+      Fixed Syntax Issues in Item Test.
+      Added Initial Stock Test Cases.
+      More Test Cases.
+      Completed Initial Stock Test Cases.
+      Created Three Exception Classes.
+      Initial Test Cases for Store Object.
+      Created Abstract Truck Class.
+      Renamed ordinaryTruck to ordinaryTruckTest. Added OrdinaryTruck and RefrigeratedTruck classes. Syntax fixes in Truck class.
+      StockTest class fixes.
+      Added Iterator Test Case to StockTest.
+      Changed Truck to Interface.
+      Updated ItemTest, StockTest and StoreTest.
+      Fixed Truck Classes.
+      Fixed StoreTest.
+      Small Fixes to ItemTest.
+      Small Fixes to StockTest.
+      Implemented RefrigeratedTruck Object.
+      Fixed Small Bug in RefrigeratedTruckTest.
+      Implemented OrdinaryTruck.
+      Renamed Manifest to ManifestTest.
+      Created Manifest Class.
+      Added Methods to Manifest Class.
+      ItemTest Fixes.
+      Created Main Class.
+      Created Simple GUI.
+      Fixed Table and Cleaned Up GUI
+      Implemented Manifest Class. Added Constructor to OrdinaryTruck Class.
+      Fixes to StockTest.
+      Added JavaDoc comments to Truck, OrdinaryTruck, RefrigeratedTruck and Manifest.
+      Added Action Listeners for GUI Buttons.
+      Added Throws to StockTest.
+      Added Throws to StoreTest.
+      Added Sort() Method to Stock Class. Fixed Bug in Test 8 in StockTest Class.
+      Created ManifestCreator Class.
+      Initial Implementation of ManifestCreator.
+      Further Implementation of ManifestCreator.
+      Created ManifestCreatorTest.
+      Added Name Tags to Methods and Fixed Comments in Several Classes.
+      Implemented getTruckString() in Manifest Class.
+      Removed Test Code from Main and moved to ManifestCreatorTest.
+      Implemented ManifestCreator.
+      Added convertToString to Truck Classes. Changed GetHashMap to GetMap.
+      Added ClearInventory() Test to StockTest Class.
+      ManifestCreator Now Splits Items.
+      Merge branch 'master' of https://bitbucket.org/moreevilthansanta/cab302_assignment2
+      Removed Sort from Stock Class.
+      Fixed Test2 in StockTest.
+      Added ManifestCreator to ExportManifestListener.
+      Created WriteOutCSV Class.
+      Implemented WriteOutCSV and ExportManifestListener.
+      Created FileFilter for ExportManifestListener.
+      Forced Appendix of .csv to ExportManifestListener.
+      Fixes to StoreTest Class.
+      Added Regex Tests to WriteOutCSV.
+      Added Comments to ManifestCreator and General Code Refactoring.
+      Removed Unused Imports.
+      Comment Fixes in Multiple Classes.
+      Tiny Comment Fix in OrdinaryTruck.
+      Initial Report Commit.
+      Code Optimisations in Truck Classes, ManifestCreator and ExportManifestListener.
+      Fixes to ItemTest, StockTest and StoreTest.
+      Refactor ItemTest Class.
+      Refactor Manifest Class.
+      Refactor Truck, OrdinaryTruck, RefrigeratedTruck Classes.
+      Refactor StockTest Class.
+      Refactor StoreTest Class.
+      Fix to StoreTest.
+      Completed Technical Description in Report. Added Diagram.
+      Fixes to OrdinaryTruck and RefrigeratedTruck Classes and removed Unused Imports.
+      Final Fixes to ItemTest and Manifest Class.
+      Created Report PDF.
+      Generated JavaDoc.
+
+* 1bf3b27 Generated JavaDoc.
+* b1a8185 Created Report PDF.
+* 5e79c3a Final Fixes to ItemTest and Manifest Class.
+* 34f3124 Fixed bug in read sales CSV class
+* 937d7e5 Updated Item class
+* e2dc235 Finished GUI report
+* 8418ad7 Fixes to OrdinaryTruck and RefrigeratedTruck Classes and removed Unused Imports.
+* 7c7249b Removed un-used imports from various classes
+* 9398a63 added test cases to truck clases
+* bbf09cc fixed bugs in read manifest class
+* 884f1c8 Completed Technical Description in Report. Added Diagram.
+* 0488d76  Fixed bug in manifest loader
+* 557734c Fix to StoreTest.
+* f95bacd Refactor StoreTest Class.
+* 8cab641  Refactoer Store class
+* 324c098 Refactor StockTest Class.
+* 5efb323  Refactoer Stock class
+* b44a431  Refactoer Truck  classes
+* 6404b34 Refactor Truck, OrdinaryTruck, RefrigeratedTruck Classes.
+* 2fc709b  Refactoer Manifest test class
+* 2b113ba Refactor Manifest Class.
+* 17a3040 Refactor ItemTest Class.
+* 7487f32 refactor item class
+* 2de649a Fixes to ItemTest, StockTest and StoreTest.
+* 911814f Added comments to varios classes
+* abbcd45 Added comments to the load CSV classes(unsaved update)
+* 086f91f Added comments to the load CSV classes
+* 7cc2ca5 Code Optimisations in Truck Classes, ManifestCreator and ExportManifestListener.
+* 2453b70 Initial Report Commit.
+* b1814c6 Tiny Comment Fix in OrdinaryTruck.
+* 146cdb3 Comment Fixes in Multiple Classes.
+* d929da1 Removed Unused Imports.
+* f343569 Added Comments to ManifestCreator and General Code Refactoring.
+* a6779ad Added Regex Tests to WriteOutCSV.
+* dfac499 Fixes to StoreTest Class.
+* 98d3815 Forced Appendix of .csv to ExportManifestListener.
+* 8eca5f7 Adeed coments to store class
+* 8d0c13e Refactored UpdateGUIElements
+* 99b22a1 Refactored DataLable Class
+* f41338d added dynamicaly updating label
+* 977df0e Created FileFilter for ExportManifestListener.
+* 216d0e4 deleted old Jtable from main, commented new Jtable creator method
+* b0841f5 Added author name to methods and updated comments
+* d5978a7 Dynamic table update added and dubugged
+* 65ae85b Dynamic table update added
+* 1b511c1 Updated tests in manifest class, string format is causing errors
+* 9fe243e added author to stock classes
+* 511fe42  code to handle exceptions for file loaders written
+*   6a04945 Merge branch 'master' of https://bitbucket.org/moreevilthansanta/cab302_assignment2
+|\  
+| * f143e5f Implemented WriteOutCSV and ExportManifestListener.
+| * b7fef68 Created WriteOutCSV Class.
+| * c08014a Added ManifestCreator to ExportManifestListener.
+| * 06170f2 Fixed Test2 in StockTest.
+| * a23df96 Removed Sort from Stock Class.
+* | e3f4da5 Created pop box
+|/  
+*   ee1141c Merge branch 'master' of https://bitbucket.org/moreevilthansanta/cab302_assignment2
+|\  
+| * f6b7e21 comented read in CSV classes
+| * 67804e4 updated trucks
+| * fd7fe7e updated trucks
+* | e7eb144 ManifestCreator Now Splits Items.
+|/  
+* 2049e0f updated load in item
+* c91ecde updated stock.put to check if the item exisits useing the item name as a key
+* 9924d6c Added ClearInventory() Test to StockTest Class.
+* f7bff68 Added convertToString to Truck Classes. Changed GetHashMap to GetMap.
+* d4f03ce Implemented ManifestCreator.
+* 9de9872 creater file selector class and added it to the load csv process
+* 43b3542 attached mainfest to listener
+* 22d5223 updated manifest test class
+* 6b62f8b built manifest read in class... not tested
+* ac08577 Updated truck and manifest test class
+* 53e47c9 Updated truck and manifest test class
+* a31135d  debug read in sales log, attched it to the button listener, fixed bug in stock class
+* a2f3da6 added sales log read in class
+* be3d2af debuged item read in class and added table update to main
+* 118183c debuged item read in class and added table update to main
+* b65347c debuged item read in class and added table update to main
+* 4ec545e Removed Test Code from Main and moved to ManifestCreatorTest.
+* 8a016ed Implemented getTruckString() in Manifest Class.
+* dffaf95 Added Name Tags to Methods and Fixed Comments in Several Classes.
+* 5bcd8cb Created ManifestCreatorTest.
+* f3f4feb created item read in class.... not tested
+* 7108741 Further Implementation of ManifestCreator.
+* 4852228 Initial Implementation of ManifestCreator.
+* ba5f2a2 Created ManifestCreator Class.
+* 04328a5 Added Sort() Method to Stock Class. Fixed Bug in Test 8 in StockTest Class.
+* 066979c created sort test case in stock class
+* 1b3a322 created readInCSV Package
+* 949019c Added Throws to StoreTest.
+* b185a1c Added Throws to StockTest.
+* d392b46 fixed toString in item class
+* 3ece34e Updated Manifest unit testing
+* 5931747 Added exceptions to truck and a few comlicated tests, not sure about quantity exceptions because only the program can add items to the truck. This is not influenced by any uncontrolable factors therefore they are not nessesary. They are handy for dbug maybe we could remove them after program testing. I will ask the tutor on thursday
+* 5cfb756 Filled out item test cases, exceptions need to be handled (they are so painful haha)
+* 1dc25c3 Added Action Listeners for GUI Buttons.
+* 413bca2 Added JavaDoc comments to Truck, OrdinaryTruck, RefrigeratedTruck and Manifest.
+* 272ca44 Fixed test order in truck
+* 547ef7f Fixed test order in truck
+* 73915ae Fixed test order in truck
+* 6011b00 Fixes to StockTest.
+* 61129cb Implemented Manifest Class. Added Constructor to OrdinaryTruck Class.
+* 987379a Fixed Table and Cleaned Up GUI
+* 761d252 Created Simple GUI.
+* 3c491c5 Created Main Class.
+* e562408 ItemTest Fixes.
+* 7f41e5d Added Methods to Manifest Class.
+* 38e7951 Created Manifest Class.
+* 584351a Renamed Manifest to ManifestTest.
+* 46fed57 Implemented OrdinaryTruck.
+* 782ad2a Fixed Small Bug in RefrigeratedTruckTest.
+* 216814b Implemented RefrigeratedTruck Object.
+* 6983fd9 Small Fixes to StockTest.
+* f25322c Small Fixes to ItemTest.
+* 4c9298c removed srockexception class from stock class
+* 0affc2e finished store test class, stock test cases may need changes.
+* 667b88e update item class
+* e7e9103 update to truck test class.
+* 592ee5c update to truck test class.
+* e8acdc5 update to truck test class.
+* ef3b4a7 Fixed StoreTest.
+* 1b53ca8 Fixed Truck Classes.
+* ecd2e61 Updated ItemTest, StockTest and StoreTest.
+* 4566fb5 Changed Truck to Interface.
+* 01698b7 Added Iterator Test Case to StockTest.
+* 21711db Removed cost from truck class.
+* a09a542 added store class.
+* 113f932 Manifest test class created
+* 6e29958 Truck updated
+* 7525342 Truck updated
+* 851dfa7 test 1 in Stock passed
+* 4ed1821 test 1 in Stock passed
+* b57507b Truck class updated
+* 2a14404 Item class updated
+* 655dc07 StockTest class fixes.
+* 8f6cb84 Renamed ordinaryTruck to ordinaryTruckTest. Added OrdinaryTruck and RefrigeratedTruck classes. Syntax fixes in Truck class.
+* c7781cd Created Abstract Truck Class.
+* 57fed28 Initial Test Cases for Store Object.
+* 29bc57f Created Three Exception Classes.
+* 5dece96 Completed Initial Stock Test Cases.
+* b42b1d3 More Test Cases.
+* 3d3898b Added Initial Stock Test Cases.
+* de18120 Fixed Syntax Issues in Item Test.
+* 52206eb Added Item Test Case for No Temperature.
+* 0707116 Added More Item Test Cases.
+* d4d0d56 Item class compleated
+* 637cc47 completed initial refrigerated truck test case syntax fix
+* cda587b completed initial refrigerated truck test case
+* 9795e96 completed initial refrigerated truck test case
+* 56435c2 completed initial refrigerated truck test case
+* 59dbb8a completed initial ordinary truck test case syntax fix
+* 53a2dd2 completed initial ordinary truck test case
+* 70be7c9 added test cases to ordinary truck
+* 709059b created ordinary truck test case
+* 0b35d7a added refrigerated truck
+* cd4a8d8 Added Test Cases for Item Object
+* 9f0c1cb Added Store JUnit Test
+* f9d37e2 Added Stock JUnit Test
+* 3c8b545 Added Item JUnit Test
+* 3dee21c Initial Commit
+commit 1bf3b27113e32210f7a5de951dfdfb3a723b0b02
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 25 16:24:04 2018 +1000
+
+    Generated JavaDoc.
+
+ 137 files changed, 25540 insertions(+)
+
+commit b1a81859afdeafd2087419bc8efe6c63b0f60709
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 25 16:20:50 2018 +1000
+
+    Created Report PDF.
+
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 5e79c3a9670582c918f2aecdcae5f89a3a57a531
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 25 16:14:56 2018 +1000
+
+    Final Fixes to ItemTest and Manifest Class.
+
+ 3 files changed, 7 insertions(+), 29 deletions(-)
+
+commit 34f312426e135d4f220fab177521bc02093b3a19
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 25 16:03:15 2018 +1000
+
+    Fixed bug in read sales CSV class
+
+ 3 files changed, 3 insertions(+), 8 deletions(-)
+
+commit 937d7e57b86824b898c87e7ee7d8a1deca42bfa7
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 25 15:47:12 2018 +1000
+
+    Updated Item class
+
+ 2 files changed, 41 insertions(+), 8 deletions(-)
+
+commit e2dc23539b0746a6100b9649fd87e1b7383b9e53
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 25 15:23:03 2018 +1000
+
+    Finished GUI report
+
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 8418ad72aa24f203d55a5a25465c6a4bf1bac0ab
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 25 09:41:05 2018 +1000
+
+    Fixes to OrdinaryTruck and RefrigeratedTruck Classes and removed Unused Imports.
+
+ 6 files changed, 22 insertions(+), 17 deletions(-)
+
+commit 7c7249bd482596e9839e3ab69243ee2486abec05
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 20:44:44 2018 +1000
+
+    Removed un-used imports from various classes
+
+ 5 files changed, 2 insertions(+), 15 deletions(-)
+
+commit 9398a63f149caaf64e8331c59c9692954dab68d0
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 20:39:35 2018 +1000
+
+    added test cases to truck clases
+
+ 3 files changed, 49 insertions(+), 12 deletions(-)
+
+commit bbf09cc511e6ce4696db88b4ca33a441225bc409
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 19:20:44 2018 +1000
+
+    fixed bugs in read manifest class
+
+ 3 files changed, 27 insertions(+), 22 deletions(-)
+
+commit 884f1c8ff77aa30bcf938d710bdd1597a2964b47
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 24 17:08:26 2018 +1000
+
+    Completed Technical Description in Report. Added Diagram.
+
+ 3 files changed, 1 insertion(+)
+
+commit 0488d76b8ea755360dc2de9446166d6a8be931cc
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 17:01:50 2018 +1000
+
+     Fixed bug in manifest loader
+
+ 1 file changed, 33 insertions(+), 31 deletions(-)
+
+commit 557734c3a16b5bebcf00ae231198710e257b87d4
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 24 14:04:10 2018 +1000
+
+    Fix to StoreTest.
+
+ 1 file changed, 1 deletion(-)
+
+commit f95bacddfca23d01c1843b93cb9362a280c94148
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 24 14:03:26 2018 +1000
+
+    Refactor StoreTest Class.
+
+ 1 file changed, 4 insertions(+), 10 deletions(-)
+
+commit 8cab641e761c906459a0e7a6e185fa112817948f
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 14:01:32 2018 +1000
+
+     Refactoer Store class
+
+ 1 file changed, 18 deletions(-)
+
+commit 324c098549536265614308f64a4f393a576a8ff4
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 24 13:53:54 2018 +1000
+
+    Refactor StockTest Class.
+
+ 1 file changed, 3 insertions(+), 52 deletions(-)
+
+commit 5efb323bc111ca9d4f3fc7973cd91a74ce1a24a8
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 13:52:30 2018 +1000
+
+     Refactoer Stock class
+
+ 2 files changed, 38 deletions(-)
+
+commit b44a43182ef4f0af72004e90ae55704102dafb8c
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 13:47:52 2018 +1000
+
+     Refactoer Truck  classes
+
+ 1 file changed, 13 deletions(-)
+
+commit 6404b34b47f0590e6ac4cc48cf257b2e0cd7476a
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 24 13:46:18 2018 +1000
+
+    Refactor Truck, OrdinaryTruck, RefrigeratedTruck Classes.
+
+ 3 files changed, 37 deletions(-)
+
+commit 2fc709bf0a0f084d4aeb4a182fe4c313c7bd1461
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 13:40:39 2018 +1000
+
+     Refactoer Manifest test class
+
+ 1 file changed, 20 deletions(-)
+
+commit 2b113baf1f875c84f566a65fe1f0deccb68c8128
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 24 13:37:06 2018 +1000
+
+    Refactor Manifest Class.
+
+ 1 file changed, 47 deletions(-)
+
+commit 17a30403331a0ddebe61f5fa99209a115aaedea0
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 24 13:29:26 2018 +1000
+
+    Refactor ItemTest Class.
+
+ 1 file changed, 13 insertions(+), 40 deletions(-)
+
+commit 7487f3299db64cbcacdd815a881c3ef5a6a36ccd
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 23:28:47 2018 +1000
+
+    refactor item class
+
+ 1 file changed, 35 deletions(-)
+
+commit 2de649aeb355a1c5ec8d7d0291a2bfff24bbf98b
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 24 13:19:28 2018 +1000
+
+    Fixes to ItemTest, StockTest and StoreTest.
+
+ 3 files changed, 170 insertions(+), 75 deletions(-)
+
+commit 911814f3d1c3f5d1e0972427e3e2cdaac2680259
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 23:05:21 2018 +1000
+
+    Added comments to varios classes
+
+ 3 files changed, 28 insertions(+), 35 deletions(-)
+
+commit abbcd4587ddfffd0da94f4fb5b6d5689ab7ced61
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 22:49:39 2018 +1000
+
+    Added comments to the load CSV classes(unsaved update)
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 086f91fecd48710096d51e6ce5f7aba8c1e72a29
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 24 22:47:20 2018 +1000
+
+    Added comments to the load CSV classes
+
+ 3 files changed, 53 insertions(+), 11 deletions(-)
+
+commit 7cc2ca5bd8d9ccc99b592866a77e99213879a254
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 24 10:47:37 2018 +1000
+
+    Code Optimisations in Truck Classes, ManifestCreator and ExportManifestListener.
+
+ 4 files changed, 20 insertions(+), 4 deletions(-)
+
+commit 2453b706e847fb7ba5bbc008d380d97aa687333f
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 24 10:35:04 2018 +1000
+
+    Initial Report Commit.
+
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b1814c6253aa2f5b31fe5dc90551251e57c2892d
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Wed May 23 12:53:41 2018 +1000
+
+    Tiny Comment Fix in OrdinaryTruck.
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 146cdb39efddab150eda8ae6623d202074a1647f
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Wed May 23 12:52:10 2018 +1000
+
+    Comment Fixes in Multiple Classes.
+
+ 10 files changed, 78 insertions(+), 27 deletions(-)
+
+commit d929da1985a0fb505dc0772d052fc9c4b9a444fa
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Wed May 23 12:37:16 2018 +1000
+
+    Removed Unused Imports.
+
+ 8 files changed, 7 insertions(+), 35 deletions(-)
+
+commit f34356903bfb78d37e5f839e8f8973aac20b531c
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Wed May 23 12:30:53 2018 +1000
+
+    Added Comments to ManifestCreator and General Code Refactoring.
+
+ 5 files changed, 49 insertions(+), 110 deletions(-)
+
+commit a6779ad0599d8851321a0b52f7cfa98ac847b737
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Wed May 23 12:13:19 2018 +1000
+
+    Added Regex Tests to WriteOutCSV.
+
+ 3 files changed, 43 insertions(+), 14 deletions(-)
+
+commit dfac4992031b692fce7453bef7156dcb1cb2db66
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Wed May 23 10:44:23 2018 +1000
+
+    Fixes to StoreTest Class.
+
+ 1 file changed, 28 insertions(+), 22 deletions(-)
+
+commit 98d381595a6ba2969c98dd74cc7872c39bf73138
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Wed May 23 10:35:19 2018 +1000
+
+    Forced Appendix of .csv to ExportManifestListener.
+
+ 1 file changed, 4 insertions(+)
+
+commit 8eca5f78622177bf8f7e4db8715578f0fca4639a
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 23 20:25:05 2018 +1000
+
+    Adeed coments to store class
+
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit 8d0c13e3adfbbf0ef51ebcfc3aaa4abc7acc2a45
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 23 20:21:39 2018 +1000
+
+    Refactored UpdateGUIElements
+
+ 2 files changed, 25 insertions(+), 7 deletions(-)
+
+commit 99b22a1b4dde6618a7739f4190acf2fc079a2809
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 23 20:08:05 2018 +1000
+
+    Refactored DataLable Class
+
+ 6 files changed, 24 insertions(+), 12 deletions(-)
+
+commit f41338d771a620bbbeded2e79b387e2a93fdb2d8
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 23 19:53:43 2018 +1000
+
+    added dynamicaly updating label
+
+ 7 files changed, 37 insertions(+), 8 deletions(-)
+
+commit 977df0efe4be276353dcff362c0e86be74b9745b
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Tue May 22 16:54:44 2018 +1000
+
+    Created FileFilter for ExportManifestListener.
+
+ 1 file changed, 14 insertions(+), 10 deletions(-)
+
+commit 216d0e40ceccc493432e36a5d22172427848c1b4
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 23 01:42:57 2018 +1000
+
+    deleted old Jtable from main, commented new Jtable creator method
+
+ 2 files changed, 22 insertions(+), 41 deletions(-)
+
+commit b0841f531f156da50e5763f6ef5c28bd153895fb
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 23 00:14:48 2018 +1000
+
+    Added author name to methods and updated comments
+
+ 5 files changed, 52 insertions(+), 50 deletions(-)
+
+commit d5978a73162d8b3e9601072d9240946a20a7aae0
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Tue May 22 23:46:37 2018 +1000
+
+    Dynamic table update added and dubugged
+
+ 4 files changed, 25 insertions(+), 10 deletions(-)
+
+commit 65ae85b27c8c670ad91fc25805557905717b2b8c
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Tue May 22 23:05:04 2018 +1000
+
+    Dynamic table update added
+
+ 6 files changed, 80 insertions(+), 6 deletions(-)
+
+commit 1b511c148808da787bc697e23af8fa6fadf7a93f
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Tue May 22 22:08:22 2018 +1000
+
+    Updated tests in manifest class, string format is causing errors
+
+ 2 files changed, 31 insertions(+), 9 deletions(-)
+
+commit 9fe243eee35240e7fc72d3ecdb4ed4bba32cb4dd
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Tue May 22 21:16:24 2018 +1000
+
+    added author to stock classes
+
+ 2 files changed, 20 insertions(+), 4 deletions(-)
+
+commit 511fe42fd772825b7b8547bc236281f2c5d25073
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 18 19:20:58 2018 +1000
+
+     code to handle exceptions for file loaders written
+
+ 3 files changed, 28 insertions(+), 42 deletions(-)
+
+commit 6a049459210f71b0c34df02d4c5a32028d904fa2
+Merge: e3f4da5 f143e5f
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 18 18:03:04 2018 +1000
+
+    Merge branch 'master' of https://bitbucket.org/moreevilthansanta/cab302_assignment2
+    
+    "added pop up box"
+
+commit e3f4da505b6f6d3907346fab639c6965a9892550
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 18 18:02:16 2018 +1000
+
+    Created pop box
+
+ 4 files changed, 30 insertions(+), 11 deletions(-)
+
+commit f143e5fb13e9735a7627b78dcaa9b174c10fc9f3
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 17 17:45:19 2018 +1000
+
+    Implemented WriteOutCSV and ExportManifestListener.
+
+ 2 files changed, 39 insertions(+), 2 deletions(-)
+
+commit b7fef6818df039a51685c7c2ef29ebd4c21cb751
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 17 17:25:54 2018 +1000
+
+    Created WriteOutCSV Class.
+
+ 1 file changed, 23 insertions(+)
+
+commit c08014a9bfb96c19c5b57954bd04f1441714f6c0
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 17 17:19:42 2018 +1000
+
+    Added ManifestCreator to ExportManifestListener.
+
+ 1 file changed, 16 insertions(+)
+
+commit 06170f212aab350f0edf5421e8950ab32124ed41
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 17 17:11:23 2018 +1000
+
+    Fixed Test2 in StockTest.
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a23df96a00c6e81aa43c4993a439f1e27828758e
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 17 17:09:12 2018 +1000
+
+    Removed Sort from Stock Class.
+
+ 2 files changed, 1 insertion(+), 68 deletions(-)
+
+commit ee1141c0f61a7f956b42df3680cdbfdfed4b9567
+Merge: e7eb144 f6b7e21
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 17 17:06:40 2018 +1000
+
+    Merge branch 'master' of https://bitbucket.org/moreevilthansanta/cab302_assignment2
+
+commit f6b7e211c71ff03b7eab7e61fd70ad5f66201ff5
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 18 02:48:32 2018 +1000
+
+    comented read in CSV classes
+
+ 2 files changed, 70 insertions(+), 2 deletions(-)
+
+commit 67804e42262c7e582edc1f0041c15005688b50b6
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 18 02:10:06 2018 +1000
+
+    updated trucks
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fd7fe7e47ff63b2ee5411ae1969e1d1f687e5785
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 18 02:08:32 2018 +1000
+
+    updated trucks
+
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 2049e0f3ff1bb28e209b3a560aba102f566b14ab
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 18 00:00:20 2018 +1000
+
+    updated load in item
+
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit c91ecdebb8df49480bdfd22f2fbe2e0582a71897
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 17 23:53:16 2018 +1000
+
+    updated stock.put to check if the item exisits useing the item name as a key
+
+ 2 files changed, 18 insertions(+), 6 deletions(-)
+
+commit e7eb144612f7b644163705fff743ed69e8eb984e
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 17 17:03:53 2018 +1000
+
+    ManifestCreator Now Splits Items.
+
+ 4 files changed, 81 insertions(+), 31 deletions(-)
+
+commit 9924d6c3c483a0424744145a4630ea7dea50668a
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Tue May 15 22:52:28 2018 +1000
+
+    Added ClearInventory() Test to StockTest Class.
+
+ 1 file changed, 13 insertions(+), 7 deletions(-)
+
+commit f7bff68e6fe7cf30a88f767276234e3f8fb090da
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Tue May 15 14:03:02 2018 +1000
+
+    Added convertToString to Truck Classes. Changed GetHashMap to GetMap.
+
+ 4 files changed, 48 insertions(+), 15 deletions(-)
+
+commit d4f03cec2777af0f62de767ec2e9502fc949e2bf
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Tue May 15 13:48:34 2018 +1000
+
+    Implemented ManifestCreator.
+
+ 3 files changed, 67 insertions(+), 47 deletions(-)
+
+commit 9de9872dd464ec481bfd256948d142a9153e87e5
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 21:58:40 2018 +1000
+
+    creater file selector class and added it to the load csv process
+
+ 5 files changed, 55 insertions(+), 8 deletions(-)
+
+commit 43b3542590b4e86a66b41528e418ccd442847ba7
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 18:11:33 2018 +1000
+
+    attached mainfest to listener
+
+ 2 files changed, 32 insertions(+), 7 deletions(-)
+
+commit 22d5223bb89a1885dd71572ff6593c8078867d03
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 17:41:38 2018 +1000
+
+    updated manifest test class
+
+ 1 file changed, 9 deletions(-)
+
+commit 6b62f8baf1fb9fadefd8cc91229265864e05b828
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 17:34:24 2018 +1000
+
+    built manifest read in class... not tested
+
+ 1 file changed, 120 insertions(+)
+
+commit ac0857762c8ae467f4b01f8b606dda9083ddca2e
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 15:19:54 2018 +1000
+
+    Updated truck and manifest test class
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 53e47c9d3c8a1a54703f1365de0f4714c3fd65a4
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 15:18:43 2018 +1000
+
+    Updated truck and manifest test class
+
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+
+commit a31135dc07b408b8fd31db6682d64f67939696d9
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 14:56:24 2018 +1000
+
+     debug read in sales log, attched it to the button listener, fixed bug in stock class
+
+ 3 files changed, 31 insertions(+), 3 deletions(-)
+
+commit a2f3da65d89c84a3ca137677a1f61093c4c4cce1
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 14:26:16 2018 +1000
+
+    added sales log read in class
+
+ 2 files changed, 95 insertions(+), 1 deletion(-)
+
+commit be3d2af5d95351ed7108c29e52163b6820cc096b
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 12:57:50 2018 +1000
+
+    debuged item read in class and added table update to main
+
+ 2 files changed, 9 insertions(+), 5 deletions(-)
+
+commit 118183ceda00aa53c61724d8f7e33481db0f4595
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 12:48:10 2018 +1000
+
+    debuged item read in class and added table update to main
+
+ 4 files changed, 8 insertions(+), 5 deletions(-)
+
+commit b65347cec60a5edb83f33851dcddc3a7383debe4
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sun May 13 12:42:29 2018 +1000
+
+    debuged item read in class and added table update to main
+
+ 4 files changed, 113 insertions(+), 46 deletions(-)
+
+commit 4ec545e4cb109c87d80473adbfe14876e3eab1be
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sat May 12 15:03:28 2018 +1000
+
+    Removed Test Code from Main and moved to ManifestCreatorTest.
+
+ 2 files changed, 31 insertions(+), 31 deletions(-)
+
+commit 8a016ede12ee8024d17371168f10831c97938029
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sat May 12 14:56:34 2018 +1000
+
+    Implemented getTruckString() in Manifest Class.
+
+ 4 files changed, 52 insertions(+), 8 deletions(-)
+
+commit dffaf95e5f3d949b48fe5d57906edb6603e80dc3
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sat May 12 14:38:54 2018 +1000
+
+    Added Name Tags to Methods and Fixed Comments in Several Classes.
+
+ 16 files changed, 185 insertions(+), 69 deletions(-)
+
+commit 5bcd8cba335f23fb33451ff11022fc88795f4d51
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sat May 12 14:21:20 2018 +1000
+
+    Created ManifestCreatorTest.
+
+ 1 file changed, 14 insertions(+)
+
+commit f3f4febbaed2e0b8577521555028ed121d0a3c60
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 10 19:35:53 2018 +1000
+
+    created item read in class.... not tested
+
+ 1 file changed, 123 insertions(+)
+
+commit 7108741134b70698d4c0c503d2b4b0f41a874112
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 10 18:43:32 2018 +1000
+
+    Further Implementation of ManifestCreator.
+
+ 3 files changed, 48 insertions(+), 9 deletions(-)
+
+commit 485222862e60e841a7e2196ca845efc569de4ed0
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 10 17:58:43 2018 +1000
+
+    Initial Implementation of ManifestCreator.
+
+ 4 files changed, 144 insertions(+)
+
+commit ba5f2a21af0daf0ea8ebc003536800a831e57538
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 10 16:48:07 2018 +1000
+
+    Created ManifestCreator Class.
+
+ 1 file changed, 10 insertions(+)
+
+commit 04328a59e94879beede5b8d4320dc77252696783
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 10 16:43:03 2018 +1000
+
+    Added Sort() Method to Stock Class. Fixed Bug in Test 8 in StockTest Class.
+
+ 2 files changed, 65 insertions(+), 14 deletions(-)
+
+commit 066979c0904dffe52a44d6f527861f1edfba49ef
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 10 16:12:48 2018 +1000
+
+    created sort test case in stock class
+
+ 1 file changed, 27 insertions(+)
+
+commit 1b3a3222ebdfac10b16aa63ffa07d36b67bad32f
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 10 15:53:32 2018 +1000
+
+    created readInCSV Package
+
+ 3 files changed, 15 insertions(+)
+
+commit 949019cd14539e71a9c267b32333fddea92846c5
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 10 15:36:43 2018 +1000
+
+    Added Throws to StoreTest.
+
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit b185a1cead47ece5462a753026cfc2bf84425aba
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 10 15:32:52 2018 +1000
+
+    Added Throws to StockTest.
+
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit d392b4688540064ada1ecdb58ab1a1ca765d7fb8
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Tue May 8 19:57:40 2018 +1000
+
+    fixed toString in item class
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 3ece34ee4642006ec5723ee124bfe09817f99826
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Tue May 8 19:49:38 2018 +1000
+
+    Updated Manifest unit testing
+
+ 1 file changed, 28 insertions(+), 19 deletions(-)
+
+commit 5931747cffa0779e5082f2c5b52ee59b46adddc6
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Tue May 8 19:15:01 2018 +1000
+
+    Added exceptions to truck and a few comlicated tests, not sure about quantity exceptions because only the program can add items to the truck. This is not influenced by any uncontrolable factors therefore they are not nessesary. They are handy for dbug maybe we could remove them after program testing. I will ask the tutor on thursday
+
+ 2 files changed, 143 insertions(+), 55 deletions(-)
+
+commit 5cfb75652215e821db019d69ba1c252814351c5c
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Tue May 8 18:15:18 2018 +1000
+
+    Filled out item test cases, exceptions need to be handled (they are so painful haha)
+
+ 3 files changed, 59 insertions(+), 7 deletions(-)
+
+commit 1dc25c382dfb8fc9aeb695579dc4d2d5afab902d
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Tue May 8 11:25:28 2018 +1000
+
+    Added Action Listeners for GUI Buttons.
+
+ 5 files changed, 107 insertions(+), 10 deletions(-)
+
+commit 413bca2651f85e734c94467cdcab8c4b52a44681
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Tue May 8 10:21:06 2018 +1000
+
+    Added JavaDoc comments to Truck, OrdinaryTruck, RefrigeratedTruck and Manifest.
+
+ 4 files changed, 173 insertions(+), 37 deletions(-)
+
+commit 272ca4410dfd1f24627aae20325fcf8029749db7
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Mon May 7 19:02:42 2018 +1000
+
+    Fixed test order in truck
+
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+commit 547ef7f52ea6804409abb3ddd5ddd514c13d7f5e
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Mon May 7 19:01:25 2018 +1000
+
+    Fixed test order in truck
+
+ 2 files changed, 13 insertions(+), 7 deletions(-)
+
+commit 73915aeb90c573d6dc0065e5e5cc8fd70cfd0414
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Mon May 7 18:40:35 2018 +1000
+
+    Fixed test order in truck
+
+ 3 files changed, 66 insertions(+), 83 deletions(-)
+
+commit 6011b00b4682112ff14d92e80114849254cd9440
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Mon May 7 14:48:25 2018 +1000
+
+    Fixes to StockTest.
+
+ 1 file changed, 71 insertions(+), 19 deletions(-)
+
+commit 61129cbdfeedd8f880f7543831aa29fc5e711763
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sat May 5 14:33:35 2018 +1000
+
+    Implemented Manifest Class. Added Constructor to OrdinaryTruck Class.
+
+ 3 files changed, 89 insertions(+), 7 deletions(-)
+
+commit 987379af2233e9940db7ba1ab4d8d0629383aec6
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sat May 5 13:26:32 2018 +1000
+
+    Fixed Table and Cleaned Up GUI
+
+ 1 file changed, 21 insertions(+), 3 deletions(-)
+
+commit 761d2529db494737fff5e173bc1cc7695919c3f5
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sat May 5 12:38:04 2018 +1000
+
+    Created Simple GUI.
+
+ 1 file changed, 54 insertions(+), 3 deletions(-)
+
+commit 3c491c57c2b500bc88353b0bdc9bb61c8f6c1f91
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sat May 5 12:11:14 2018 +1000
+
+    Created Main Class.
+
+ 1 file changed, 10 insertions(+)
+
+commit e5624087e4e7ff63b9aaf33fca100a6ff3294b0e
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 4 18:54:03 2018 +1000
+
+    ItemTest Fixes.
+
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 7f41e5d9e0f6ba3a1a4fa102c81ef467555a2f25
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 4 17:53:10 2018 +1000
+
+    Added Methods to Manifest Class.
+
+ 1 file changed, 19 insertions(+)
+
+commit 38e7951f3f0770718f1b4bc53205c7cbcba0ad19
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 4 17:49:45 2018 +1000
+
+    Created Manifest Class.
+
+ 1 file changed, 9 insertions(+)
+
+commit 584351ab997e78e79e272c02e7fa9f0962361061
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 4 17:48:29 2018 +1000
+
+    Renamed Manifest to ManifestTest.
+
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 46fed577114ec189a5d1ec4893946b5adebcfa28
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 4 17:45:35 2018 +1000
+
+    Implemented OrdinaryTruck.
+
+ 1 file changed, 28 insertions(+)
+
+commit 782ad2ad053713e4d476b5006d7ff037692841d5
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 4 17:42:03 2018 +1000
+
+    Fixed Small Bug in RefrigeratedTruckTest.
+
+ 1 file changed, 5 insertions(+)
+
+commit 216814b05fba74fce9b2070773c1f34f49b2594b
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 4 17:36:04 2018 +1000
+
+    Implemented RefrigeratedTruck Object.
+
+ 2 files changed, 57 insertions(+), 1 deletion(-)
+
+commit 6983fd9b1d641860e487cf9789c7f39c86ee2eee
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 4 17:08:08 2018 +1000
+
+    Small Fixes to StockTest.
+
+ 1 file changed, 22 insertions(+), 20 deletions(-)
+
+commit f25322ce5819d16b5c5cb7b45234e0e3ea97539a
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Fri May 4 17:00:59 2018 +1000
+
+    Small Fixes to ItemTest.
+
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 4c9298c33fce3eb1b9426e2578bc759057503806
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 4 16:17:37 2018 +1000
+
+    removed srockexception class from stock class
+
+ 1 file changed, 17 deletions(-)
+
+commit 0affc2efb40eaaaeb8fea8d368a348503616f27d
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 4 16:13:48 2018 +1000
+
+    finished store test class, stock test cases may need changes.
+
+ 4 files changed, 45 insertions(+), 9 deletions(-)
+
+commit 667b88e0cb770e50213639f2301fec966a130c47
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Fri May 4 15:21:58 2018 +1000
+
+    update item class
+
+ 3 files changed, 104 insertions(+), 15 deletions(-)
+
+commit e7e9103a031cb0ef537cce0d08706e7189358fc7
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 3 18:12:34 2018 +1000
+
+    update to truck test class.
+
+ 2 files changed, 12 deletions(-)
+
+commit 592ee5c0a7ba05962515b03cf5a21c425f0f19e3
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 3 18:10:26 2018 +1000
+
+    update to truck test class.
+
+ 2 files changed, 22 insertions(+), 1 deletion(-)
+
+commit e8acdc5284729c2cac789acc92f3394884afd180
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 3 17:27:56 2018 +1000
+
+    update to truck test class.
+
+ 1 file changed, 25 insertions(+), 1 deletion(-)
+
+commit ef3b4a789d82c341f69f35ddf39c52d64519c2c0
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 3 17:19:48 2018 +1000
+
+    Fixed StoreTest.
+
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+commit 1b53ca8a7bed9cacc3c6bd83739796c1cd2a7f66
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 3 17:00:20 2018 +1000
+
+    Fixed Truck Classes.
+
+ 3 files changed, 4 insertions(+), 74 deletions(-)
+
+commit ecd2e6168eb9023352d08ca492ff1578c9f00bbf
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 3 16:40:05 2018 +1000
+
+    Updated ItemTest, StockTest and StoreTest.
+
+ 4 files changed, 103 insertions(+), 63 deletions(-)
+
+commit 4566fb5b563c6da078315cce9332d73aa4045eef
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 3 15:45:59 2018 +1000
+
+    Changed Truck to Interface.
+
+ 3 files changed, 71 insertions(+), 26 deletions(-)
+
+commit 01698b703c3aaa0fc9d8af3b4ec2a82d26d6bc54
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Thu May 3 15:27:27 2018 +1000
+
+    Added Iterator Test Case to StockTest.
+
+ 1 file changed, 29 insertions(+), 22 deletions(-)
+
+commit 21711dbdc1bcecb795a1d530911e6c117cc81b02
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 3 12:43:53 2018 +1000
+
+    Removed cost from truck class.
+
+ 2 files changed, 5 insertions(+), 18 deletions(-)
+
+commit a09a5428b7e8f5ff1a4aae8e1d9c4a96957d19d4
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Thu May 3 12:40:34 2018 +1000
+
+    added store class.
+
+ 1 file changed, 86 insertions(+)
+
+commit 113f932d00dd2319943cb5c362a37ffe80b979ce
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 2 16:34:02 2018 +1000
+
+    Manifest test class created
+
+ 3 files changed, 20 insertions(+), 6 deletions(-)
+
+commit 6e29958b22c70d09058c942d5a9d208d889bb7ff
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 2 15:59:39 2018 +1000
+
+    Truck updated
+
+ 3 files changed, 19 insertions(+), 1 deletion(-)
+
+commit 75253420097fb3a5945c45cbbf9f324273b25de6
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 2 15:47:34 2018 +1000
+
+    Truck updated
+
+ 3 files changed, 41 insertions(+), 2 deletions(-)
+
+commit 851dfa729090b8748ff7487e8d1bb1fa78dcbdd3
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 2 15:15:02 2018 +1000
+
+    test 1 in Stock passed
+
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit 4ed182181fc7f8fe5827b84788c3cf207c7ec918
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 2 15:12:04 2018 +1000
+
+    test 1 in Stock passed
+
+ 1 file changed, 22 insertions(+)
+
+commit b57507b9c9357f24e515a0a1c79a53a433eea3b9
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 2 14:44:39 2018 +1000
+
+    Truck class updated
+
+ 2 files changed, 14 insertions(+), 25 deletions(-)
+
+commit 2a144045bdaecdc9f7f05385b304a556de51823c
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Wed May 2 14:34:46 2018 +1000
+
+    Item class updated
+
+ 1 file changed, 61 insertions(+), 10 deletions(-)
+
+commit 655dc07f091416e7bd1ebbcd844d34f1536fad0b
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 20:30:58 2018 +1000
+
+    StockTest class fixes.
+
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 8f6cb8433f82ded6d269c95bdb280128260cba07
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 20:27:15 2018 +1000
+
+    Renamed ordinaryTruck to ordinaryTruckTest. Added OrdinaryTruck and RefrigeratedTruck classes. Syntax fixes in Truck class.
+
+ 4 files changed, 43 insertions(+), 3 deletions(-)
+
+commit c7781cd670c0a6dacb6a73265979e990f64720e6
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 20:17:27 2018 +1000
+
+    Created Abstract Truck Class.
+
+ 1 file changed, 16 insertions(+)
+
+commit 57fed28d9acf33889daae447f49c2c3061e91366
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 20:04:39 2018 +1000
+
+    Initial Test Cases for Store Object.
+
+ 2 files changed, 83 insertions(+), 7 deletions(-)
+
+commit 29bc57f16bc8f36a030abdf01880ee851d4e0a6d
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 16:38:59 2018 +1000
+
+    Created Three Exception Classes.
+
+ 4 files changed, 68 insertions(+), 3 deletions(-)
+
+commit 5dece96cfc348c4525328d2101e8e1f6d4b9c68f
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 16:24:01 2018 +1000
+
+    Completed Initial Stock Test Cases.
+
+ 1 file changed, 61 insertions(+), 12 deletions(-)
+
+commit b42b1d303f57eb62b6737cd9111deda77dfaf0ba
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 15:51:33 2018 +1000
+
+    More Test Cases.
+
+ 2 files changed, 52 insertions(+), 21 deletions(-)
+
+commit 3d3898bad2455afedaf461fb3be56f9addfa6fd8
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 12:02:56 2018 +1000
+
+    Added Initial Stock Test Cases.
+
+ 1 file changed, 31 insertions(+), 3 deletions(-)
+
+commit de1812049d03bd3f23c9bf0b3ae47ad82696773f
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 11:41:48 2018 +1000
+
+    Fixed Syntax Issues in Item Test.
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 52206eb71b09b0cf06b34823e2cbe38f152c1ba5
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 11:32:08 2018 +1000
+
+    Added Item Test Case for No Temperature.
+
+ 1 file changed, 15 insertions(+), 5 deletions(-)
+
+commit 07071160ae5fde7d7e83e7a0d4d7cb9f28e1bc85
+Author: Mitchell Willemse <mitchell.p.willemse@gmail.com>
+Date:   Sun Apr 29 11:11:34 2018 +1000
+
+    Added More Item Test Cases.
+
+ 1 file changed, 49 insertions(+), 12 deletions(-)
+
+commit d4d0d560ac579c32413f65cd584d2faf2ca9463c
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sat Apr 28 13:19:48 2018 +1000
+
+    Item class compleated
+
+ 1 file changed, 44 insertions(+)
+
+commit 637cc47a7c3c388d1297da7d127751bc9a55ba2b
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sat Apr 28 12:57:01 2018 +1000
+
+    completed initial refrigerated truck test case syntax fix
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cda587b32e9ce24108222b19f7182b5e00c607dd
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sat Apr 28 12:55:06 2018 +1000
+
+    completed initial refrigerated truck test case
+
+ 2 files changed, 7 insertions(+), 7 deletions(-)
+
+commit 9795e9677eee8d4bd87efea296b8767f06ceda46
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sat Apr 28 12:52:29 2018 +1000
+
+    completed initial refrigerated truck test case
+
+ 1 file changed, 15 insertions(+), 7 deletions(-)
+
+commit 56435c28fbf7e398c65c647e8198df096e6fdcd2
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sat Apr 28 12:39:43 2018 +1000
+
+    completed initial refrigerated truck test case
+
+ 2 files changed, 72 insertions(+), 8 deletions(-)
+
+commit 59dbb8a1efc55db08e92cb5a6973d202dfec6b59
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sat Apr 28 12:14:28 2018 +1000
+
+    completed initial ordinary truck test case syntax fix
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 53a2dd274b0072ddadd514c7069d383daeb013df
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sat Apr 28 12:09:11 2018 +1000
+
+    completed initial ordinary truck test case
+
+ 1 file changed, 22 insertions(+), 7 deletions(-)
+
+commit 70be7c9cfce164fdb0b407bacd0873385977b55c
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sat Apr 28 11:25:19 2018 +1000
+
+    added test cases to ordinary truck
+
+ 1 file changed, 43 insertions(+), 3 deletions(-)
+
+commit 709059be45c4babad60c14a79825d38e36056815
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sat Apr 28 10:22:41 2018 +1000
+
+    created ordinary truck test case
+
+ 1 file changed, 14 insertions(+)
+
+commit 0b35d7a452e138b63d5e3978f5c5c2e85fdecaf8
+Author: Jake <jb.lyons@connect.qut.edu.au>
+Date:   Sat Apr 28 10:18:17 2018 +1000
+
+    added refrigerated truck
+
+ 1 file changed, 14 insertions(+)
+
+commit cd4a8d802c6c9eaae7ac966e390648599dfb6802
+Author: Mitchell Willemse <mitchellwillemse@Mitchells-MacBook-Pro.local>
+Date:   Fri Apr 27 19:38:19 2018 +1000
+
+    Added Test Cases for Item Object
+
+ 1 file changed, 27 insertions(+), 3 deletions(-)
+
+commit 9f0c1cbd9c46e98a9d4fb2e093963fc8903ae754
+Author: Mitchell Willemse <mitchellwillemse@Mitchells-MacBook-Pro.local>
+Date:   Fri Apr 27 10:46:22 2018 +1000
+
+    Added Store JUnit Test
+
+ 1 file changed, 14 insertions(+)
+
+commit f9d37e2d48f6e9e04e93752e619bb413026ca6b9
+Author: Mitchell Willemse <mitchellwillemse@Mitchells-MacBook-Pro.local>
+Date:   Fri Apr 27 10:45:07 2018 +1000
+
+    Added Stock JUnit Test
+
+ 1 file changed, 14 insertions(+)
+
+commit 3c8b545c8ff11eb9dd0da166aafbb10214f2c2ac
+Author: Mitchell Willemse <mitchellwillemse@Mitchells-MacBook-Pro.local>
+Date:   Fri Apr 27 10:38:53 2018 +1000
+
+    Added Item JUnit Test
+
+ 2 files changed, 15 insertions(+)
+
+commit 3dee21cd1c9e39972926aedec1ab34df160fe682
+Author: Mitchell Willemse <mitchellwillemse@Mitchells-MacBook-Pro.local>
+Date:   Thu Apr 26 16:50:03 2018 +1000
+
+    Initial Commit
+
+ 3 files changed, 24 insertions(+)
