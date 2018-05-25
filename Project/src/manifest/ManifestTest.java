@@ -47,13 +47,14 @@ public class ManifestTest {
 		/*Test: Iterator and if truck has been added to manifest.
 		 * by using the trucks convertToString method to get 
 		 * the details of the truck.
+		 * @author Jacob Lyons
 		 */
 		@Test
 		public void addTruckTest() throws DeliveryException {
 			
 			String truckDetails ="";
 		    for(Truck i : manifest) {
-		      truckDetails = i.convertToString(); 
+		      truckDetails += i.convertToString(); 
 		    }
 		    
 		    String itemString = ">Ordinary\nCoffee,300\n>Refrigerated\nmilk,400\n";

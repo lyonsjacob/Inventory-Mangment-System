@@ -187,25 +187,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 12: Test To String with No Temperature.
-	 * @author Mitchell Willemse (n9470620).
-	 * @throws StockException 
-	 */
-	@Test
-	public void testToStringNoTemperature() throws StockException {
-		//Create new item, no temperature.
-		item = new Item(0, "Coffee", 2, 3, 200, 225);
-		
-		//Create variables.
-		String expectedOutput = "0, Coffee, 2.0, 3.0, 200, 225\n";
-		String actualOutput = item.toString();
-		
-		//Assert they are equal.
-		assertEquals(expectedOutput, actualOutput);
-	}
-	
-	/**
-	 * Test 13: Can't Set negative Amount.
+	 * Test 12: Can't Set negative Amount.
 	 * @throws StockException because amount can't be set to negative.
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -216,7 +198,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 14. Can't have negative costPrice.
+	 * Test 13. Can't have negative costPrice.
 	 * @throws StockException because costPrice can't be negative.
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -226,7 +208,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 15. Can't have negative costPrice.
+	 * Test 14. Can't have negative costPrice.
 	 * @throws StockException because sellPrice can't be negative.
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -236,7 +218,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 16. Can't have negative reorderPoint.
+	 * Test 15. Can't have negative reorderPoint.
 	 * @throws StockException because reorderPoint can't be negative.
 	 * @author Mitchell Willemse (n9470620).
 	 */
@@ -246,7 +228,7 @@ public class ItemTest {
 	}
 	
 	/**
-	 * Test 17. Can't have negative reorderAmount.
+	 * Test 16. Can't have negative reorderAmount.
 	 * @throws StockException because reorderAmount can't be negative.
 	 * @author Mitchell Willemse (n9470620).
 	 */
